@@ -1,0 +1,595 @@
+process,product_name,type,unit,value,product_type,carbon_content,data_source
+"benzene, from methanol-to-aromatics",benzene,PRODUCT,kg,1.0,intermediate,0.9230769230769231,AB
+"benzene, from methanol-to-aromatics",cooling_water,UTILITIES,MJ,-0.4882948615178236,intermediate,0.0,AB
+"benzene, from methanol-to-aromatics",electricity,UTILITIES,kWh,-0.12130555555555554,intermediate,0.0,AB
+"benzene, from methanol-to-aromatics",methanol,RAW MATERIALS,kg,-2.591093117,intermediate,0.375,AB
+"benzene, from methanol-to-aromatics",steam_high,UTILITIES,MJ,-4.9386,intermediate,0.0,AB
+"ethylene, from methanol-to-olefins",electricity,UTILITIES,kWh,-0.458,intermediate,0.0,https://onlinelibrary.wiley.com/doi/10.1111/jiec.12583
+"ethylene, from methanol-to-olefins",ethylene,PRODUCT,kg,1.0,intermediate,0.85714,https://onlinelibrary.wiley.com/doi/10.1111/jiec.12583
+"ethylene, from methanol-to-olefins",methanol,RAW MATERIALS,kg,-2.571,intermediate,0.375,https://onlinelibrary.wiley.com/doi/10.1111/jiec.12583
+"ethylene, from methanol-to-olefins",steam_high,UTILITIES,MJ,-5.5872,intermediate,0.0,https://onlinelibrary.wiley.com/doi/10.1111/jiec.12583
+"propylene, from methanol-to-olefins",electricity,UTILITIES,kWh,-0.458,intermediate,0.0,https://onlinelibrary.wiley.com/doi/10.1111/jiec.12583
+"propylene, from methanol-to-olefins",methanol,RAW MATERIALS,kg,-2.571,intermediate,0.375,https://onlinelibrary.wiley.com/doi/10.1111/jiec.12583
+"propylene, from methanol-to-olefins",propylene,PRODUCT,kg,1.0,intermediate,0.85714,https://onlinelibrary.wiley.com/doi/10.1111/jiec.12583
+"propylene, from methanol-to-olefins",steam_high,UTILITIES,MJ,-5.5872,intermediate,0.0,https://onlinelibrary.wiley.com/doi/10.1111/jiec.12583
+"p-xylene, from methanol-to-aromatics",cooling_water,UTILITIES,MJ,-0.4882948615178236,intermediate,0.0,AB
+"p-xylene, from methanol-to-aromatics",electricity,UTILITIES,kWh,-0.12130555555555554,intermediate,0.0,AB
+"p-xylene, from methanol-to-aromatics",methanol,RAW MATERIALS,kg,-2.591093117,intermediate,0.375,AB
+"p-xylene, from methanol-to-aromatics",p-xylene,PRODUCT,kg,1.0,intermediate,0.9056603773584906,AB
+"p-xylene, from methanol-to-aromatics",steam_high,UTILITIES,MJ,-4.9386,intermediate,0.0,AB
+"toluene, from methanol-to-aromatics",cooling_water,UTILITIES,MJ,-0.4882948615178236,intermediate,0.0,AB
+"toluene, from methanol-to-aromatics",electricity,UTILITIES,kWh,-0.12130555555555554,intermediate,0.0,AB
+"toluene, from methanol-to-aromatics",methanol,RAW MATERIALS,kg,-2.591093117,intermediate,0.375,AB
+"toluene, from methanol-to-aromatics",steam_high,UTILITIES,MJ,-4.9386,intermediate,0.0,AB
+"toluene, from methanol-to-aromatics",toluene,PRODUCT,kg,1.0,intermediate,0.91304,AB
+"acetic_acid, from methanol carbonylation",acetic_acid,PRODUCT,kg,1.0,intermediate,0.4,ihsmarkit
+"terephthalic_acid, from p-xylene by air oxidation",acetic_acid,RAW MATERIALS,kg,-0.0485438461538461,intermediate,0.4,ihsmarkit
+"adipic_acid, from phenol via cyclohexanol",adipic_acid,PRODUCT,kg,1.0,intermediate,0.493,ihsmarkit
+"polyol_polyester, from adipic acid and deg",adipic_acid,RAW MATERIALS,kg,-0.63879,intermediate,0.493,ihsmarkit
+"polymeric_mdi, by phosgenation",aniline,RAW MATERIALS,kg,-0.7691532162520732,intermediate,0.774,ihsmarkit
+"nitrobenzene, from benzene by nitration",benzene,RAW MATERIALS,kg,-0.6405,intermediate,0.9230769230769231,ihsmarkit
+"polybutadiene, by solution process",benzene,RAW MATERIALS,kg,-0.008012,intermediate,0.9230769230769231,ihsmarkit
+"polybutadiene, by solution process",butadiene,RAW MATERIALS,kg,-1.0208,intermediate,0.889,ihsmarkit
+"butene_1, from ethylene by dimerization",butene_1,PRODUCT,kg,1.0,intermediate,0.857,ihsmarkit
+"ldpe, by gas phase process",butene_1,RAW MATERIALS,kg,-0.0734333333333333,intermediate,0.857,ihsmarkit
+"acetic_acid, from methanol carbonylation",carbon_monoxide,RAW MATERIALS,kg,-0.4911840755388889,intermediate,0.42857142857142855,ihsmarkit
+"polymeric_mdi, by phosgenation",carbon_monoxide,RAW MATERIALS,kg,-0.237432336818872,intermediate,0.42857142857142855,ihsmarkit
+"polymeric_mdi, by phosgenation",chlorine,RAW MATERIALS,kg,-0.2416763293894047,raw_material,0.0,ihsmarkit
+"vinyl_chloride, from ethylene by a balanced process",chlorine,RAW MATERIALS,kg,-0.5787,raw_material,0.0,ihsmarkit
+"ethylene_oxide, from ethylene by oxygen oxidation",co2_feedstock,BY-PRODUCT CREDITS,kg,0.2515407142857143,raw_material,0.2727272727272727,ihsmarkit
+"acetic_acid, from methanol carbonylation",cooling_water,UTILITIES,MJ,-2.5045076933256336,intermediate,0.0,ihsmarkit
+"adipic_acid, from phenol via cyclohexanol",cooling_water,UTILITIES,MJ,-7.82543572904757,intermediate,0.0,ihsmarkit
+"butene_1, from ethylene by dimerization",cooling_water,UTILITIES,MJ,-3.207684333044608,intermediate,0.0,ihsmarkit
+"diethylene_glycol, from ethylene via eo",cooling_water,UTILITIES,MJ,-9.310116389208288,intermediate,0.0,ihsmarkit
+"dinitrotoluene, from toluene by nitration",cooling_water,UTILITIES,MJ,-0.6573495019488955,intermediate,0.0,ihsmarkit
+"ethylene_glycol, from ethylene via eo",cooling_water,UTILITIES,MJ,-6.285389396787137,intermediate,0.0,ihsmarkit
+"ethylene_oxide, from ethylene by oxygen oxidation",cooling_water,UTILITIES,MJ,-5.184250216543958,intermediate,0.0,ihsmarkit
+"gpps, by continuous bulk polymerization",cooling_water,UTILITIES,MJ,-0.548694781290602,intermediate,0.0,ihsmarkit
+"hdpe, by gas phase process",cooling_water,UTILITIES,MJ,-2.2559959668687743,intermediate,0.0,ihsmarkit
+"hips, by continuous bulk polymerization",cooling_water,UTILITIES,MJ,-0.463758932438285,intermediate,0.0,ihsmarkit
+"ldpe, by gas phase process",cooling_water,UTILITIES,MJ,-1.942681987151725,intermediate,0.0,ihsmarkit
+"nitrobenzene, from benzene by nitration",cooling_water,UTILITIES,MJ,-1.5360740580337806,intermediate,0.0,ihsmarkit
+"pet, by tpa process",cooling_water,UTILITIES,MJ,-0.7060293958423559,intermediate,0.0,ihsmarkit
+"polybutadiene, by solution process",cooling_water,UTILITIES,MJ,-5.391981647899525,intermediate,0.0,ihsmarkit
+"polymeric_mdi, by phosgenation",cooling_water,UTILITIES,MJ,-5.602415968973945,intermediate,0.0,ihsmarkit
+"polyol_polyether, from po and eo by semi-continuous process",cooling_water,UTILITIES,MJ,-0.5172956366392377,intermediate,0.0,ihsmarkit
+"pp, by gas phase process",cooling_water,UTILITIES,MJ,-2.252720513930995,intermediate,0.0,ihsmarkit
+"pur_flexible, from toluene diisocyanate and polyol",cooling_water,UTILITIES,MJ,-0.03953131766998701,intermediate,0.0,ihsmarkit
+"pvc, by suspension polymerization",cooling_water,UTILITIES,MJ,-0.9284213043164429,intermediate,0.0,ihsmarkit
+"terephthalic_acid, from p-xylene by air oxidation",cooling_water,UTILITIES,MJ,-5.649354719825433,intermediate,0.0,ihsmarkit
+"vinyl_chloride, from ethylene by a balanced process",cooling_water,UTILITIES,MJ,-3.8740694023386744,intermediate,0.0,ihsmarkit
+"diethylene_glycol, from ethylene via eo",diethylene_glycol,PRODUCT,kg,1.0,intermediate,0.453,ihsmarkit
+"polyol_polyester, from adipic acid and deg",diethylene_glycol,RAW MATERIALS,kg,-0.5001,intermediate,0.453,ihsmarkit
+"dinitrotoluene, from toluene by nitration",dinitrotoluene,PRODUCT,kg,1.0,intermediate,0.462,ihsmarkit
+"acetic_acid, from methanol carbonylation",electricity,UTILITIES,kWh,-0.0931159122222222,intermediate,0.0,ihsmarkit
+"adipic_acid, from phenol via cyclohexanol",electricity,UTILITIES,kWh,-0.0748754310430185,intermediate,0.0,ihsmarkit
+"butene_1, from ethylene by dimerization",electricity,UTILITIES,kWh,-0.13897721,intermediate,0.0,ihsmarkit
+"diethylene_glycol, from ethylene via eo",electricity,UTILITIES,kWh,-1.4629220181926272,intermediate,0.0,ihsmarkit
+"dinitrotoluene, from toluene by nitration",electricity,UTILITIES,kWh,-0.0485017,intermediate,0.0,ihsmarkit
+"ethylene_glycol, from ethylene via eo",electricity,UTILITIES,kWh,-0.9876390538073933,intermediate,0.0,ihsmarkit
+"ethylene_oxide, from ethylene by oxygen oxidation",electricity,UTILITIES,kWh,-0.470962505,intermediate,0.0,ihsmarkit
+"gpps, by continuous bulk polymerization",electricity,UTILITIES,kWh,-0.078705025,intermediate,0.0,ihsmarkit
+"hdpe, by gas phase process",electricity,UTILITIES,kWh,-0.3662815125,intermediate,0.0,ihsmarkit
+"hips, by continuous bulk polymerization",electricity,UTILITIES,kWh,-0.095195605,intermediate,0.0,ihsmarkit
+"ldpe, by gas phase process",electricity,UTILITIES,kWh,-0.2932295066666666,intermediate,0.0,ihsmarkit
+"nitrobenzene, from benzene by nitration",electricity,UTILITIES,kWh,-0.036376275,intermediate,0.0,ihsmarkit
+"pet, by tpa process",electricity,UTILITIES,kWh,-0.05379169,intermediate,0.0,ihsmarkit
+"polybutadiene, by solution process",electricity,UTILITIES,kWh,-0.5606752179999999,intermediate,0.0,ihsmarkit
+"polymeric_mdi, by phosgenation",electricity,UTILITIES,kWh,-0.8592034336534733,intermediate,0.0,ihsmarkit
+"polyol_polyester, from adipic acid and deg",electricity,UTILITIES,kWh,-0.61224575,intermediate,0.0,ihsmarkit
+"polyol_polyether, from po and eo by semi-continuous process",electricity,UTILITIES,kWh,-0.0551155699999999,intermediate,0.0,ihsmarkit
+"pp, by gas phase process",electricity,UTILITIES,kWh,-0.3029077983333333,intermediate,0.0,ihsmarkit
+"pur_flexible, from toluene diisocyanate and polyol",electricity,UTILITIES,kWh,-0.13437175,intermediate,0.0,ihsmarkit
+"pur_rigid, from polymeric MDI and polyol",electricity,UTILITIES,kWh,-1.2478163999999998,intermediate,0.0,ihsmarkit
+"pvc, by suspension polymerization",electricity,UTILITIES,kWh,-0.3264825666666667,intermediate,0.0,ihsmarkit
+"terephthalic_acid, from p-xylene by air oxidation",electricity,UTILITIES,kWh,-0.2213915961538462,intermediate,0.0,ihsmarkit
+"vinyl_chloride, from ethylene by a balanced process",electricity,UTILITIES,kWh,-0.06948971,intermediate,0.0,ihsmarkit
+"butene_1, from ethylene by dimerization",ethylene,RAW MATERIALS,kg,-1.05515,intermediate,0.85714,ihsmarkit
+"diethylene_glycol, from ethylene via eo",ethylene,RAW MATERIALS,kg,-0.8418342626022521,intermediate,0.85714,ihsmarkit
+"ethylene_glycol, from ethylene via eo",ethylene,RAW MATERIALS,kg,-0.5683340494159247,intermediate,0.85714,ihsmarkit
+"ethylene_oxide, from ethylene by oxygen oxidation",ethylene,RAW MATERIALS,kg,-0.796435,intermediate,0.85714,ihsmarkit
+"hdpe, by gas phase process",ethylene,RAW MATERIALS,kg,-1.00505,intermediate,0.85714,ihsmarkit
+"ldpe, by gas phase process",ethylene,RAW MATERIALS,kg,-0.96736,intermediate,0.85714,ihsmarkit
+"vinyl_chloride, from ethylene by a balanced process",ethylene,RAW MATERIALS,kg,-0.4674,intermediate,0.85714,ihsmarkit
+"ethylene_glycol, from ethylene via eo",ethylene_glycol,PRODUCT,kg,1.0,intermediate,0.387,ihsmarkit
+"pet, by tpa process",ethylene_glycol,RAW MATERIALS,kg,-0.328665,intermediate,0.387,ihsmarkit
+"ethylene_oxide, from ethylene by oxygen oxidation",ethylene_oxide,PRODUCT,kg,1.0,intermediate,0.545,ihsmarkit
+"polyol_polyether, from po and eo by semi-continuous process",ethylene_oxide,RAW MATERIALS,kg,-0.1007,intermediate,0.545,ihsmarkit
+"polymeric_mdi, by phosgenation",formaldehyde,RAW MATERIALS,kg,-0.0588735527677667,intermediate,0.4,ihsmarkit
+"polyol_polyether, from po and eo by semi-continuous process",glycerin,RAW MATERIALS,kg,-0.031,raw_material,0.39,ihsmarkit
+"gpps, by continuous bulk polymerization",gpps,PRODUCT,kg,1.0,intermediate,0.857,ihsmarkit
+"hdpe, by gas phase process",hdpe,PRODUCT,kg,1.0,intermediate,0.857,ihsmarkit
+"dinitrotoluene, from toluene by nitration",heat_high,UTILITIES,MJ,-4.186799983008,intermediate,0.0,ihsmarkit
+"gpps, by continuous bulk polymerization",heat_high,UTILITIES,MJ,-0.511836299316,intermediate,0.0,ihsmarkit
+"hips, by continuous bulk polymerization",heat_high,UTILITIES,MJ,-0.511836299316,intermediate,0.0,ihsmarkit
+"nitrobenzene, from benzene by nitration",heat_high,UTILITIES,MJ,-1.265460306048,intermediate,0.0,ihsmarkit
+"pet, by tpa process",heat_high,UTILITIES,MJ,-2.141548195752,intermediate,0.0,ihsmarkit
+"polymeric_mdi, by phosgenation",heat_high,UTILITIES,MJ,-0.8178489562221349,intermediate,0.0,ihsmarkit
+"terephthalic_acid, from p-xylene by air oxidation",heat_high,UTILITIES,MJ,-0.7163421552996925,intermediate,0.0,ihsmarkit
+"vinyl_chloride, from ethylene by a balanced process",heat_high,UTILITIES,MJ,-2.6586179824320006,intermediate,0.0,ihsmarkit
+"hips, by continuous bulk polymerization",hips,PRODUCT,kg,1.0,intermediate,0.923,ihsmarkit
+"adipic_acid, from phenol via cyclohexanol",hydrogen,RAW MATERIALS,kg,-0.0392631553237625,intermediate,0.0,ihsmarkit
+"terephthalic_acid, from p-xylene by air oxidation",hydrogen,RAW MATERIALS,kg,-0.0016906177,intermediate,0.0,ihsmarkit
+"ldpe, by gas phase process",ldpe,PRODUCT,kg,1.0,intermediate,0.857,ihsmarkit
+"acetic_acid, from methanol carbonylation",methanol,RAW MATERIALS,kg,-0.5403866666666666,intermediate,0.375,ihsmarkit
+"adipic_acid, from phenol via cyclohexanol",n2o_emission,EMISSION,kg,0.0115570981922834,emission,0.0,ihsmarkit
+"adipic_acid, from phenol via cyclohexanol",nitric_acid,RAW MATERIALS,kg,-0.3677951888688839,intermediate,0.0,ihsmarkit
+"dinitrotoluene, from toluene by nitration",nitric_acid,RAW MATERIALS,kg,-0.6204954973821992,intermediate,0.0,ihsmarkit
+"nitrobenzene, from benzene by nitration",nitric_acid,RAW MATERIALS,kg,-0.310896,intermediate,0.0,ihsmarkit
+"nitrobenzene, from benzene by nitration",nitrobenzene,PRODUCT,kg,1.0,intermediate,0.585,ihsmarkit
+"acetic_acid, from methanol carbonylation",nitrogen_liquid,UTILITIES,kg,-0.0015290560277777,intermediate,0.0,ihsmarkit
+"hdpe, by gas phase process",nitrogen_liquid,UTILITIES,kg,-0.056118906275,intermediate,0.0,ihsmarkit
+"ldpe, by gas phase process",nitrogen_liquid,UTILITIES,kg,-0.0229817142333333,intermediate,0.0,ihsmarkit
+"polymeric_mdi, by phosgenation",nitrogen_liquid,UTILITIES,kg,-0.05084843568375,intermediate,0.0,ihsmarkit
+"polyol_polyester, from adipic acid and deg",nitrogen_liquid,UTILITIES,kg,-0.01788996135,intermediate,0.0,ihsmarkit
+"polyol_polyether, from po and eo by semi-continuous process",nitrogen_liquid,UTILITIES,kg,-0.0542203349,intermediate,0.0,ihsmarkit
+"pp, by gas phase process",nitrogen_liquid,UTILITIES,kg,-0.0360898923083333,intermediate,0.0,ihsmarkit
+"pvc, by suspension polymerization",nitrogen_liquid,UTILITIES,kg,-0.0068807540666666,intermediate,0.0,ihsmarkit
+"terephthalic_acid, from p-xylene by air oxidation",nitrogen_liquid,UTILITIES,kg,-0.0076500746615384,intermediate,0.0,ihsmarkit
+"diethylene_glycol, from ethylene via eo",oxygen_liquid,RAW MATERIALS,kg,-0.8323112824063907,intermediate,0.0,ihsmarkit
+"ethylene_glycol, from ethylene via eo",oxygen_liquid,RAW MATERIALS,kg,-0.5619049526950435,intermediate,0.0,ihsmarkit
+"ethylene_oxide, from ethylene by oxygen oxidation",oxygen_liquid,RAW MATERIALS,kg,-0.8113049999999999,intermediate,0.0,ihsmarkit
+"polymeric_mdi, by phosgenation",oxygen_liquid,RAW MATERIALS,kg,-0.0483438440574428,intermediate,0.0,ihsmarkit
+"vinyl_chloride, from ethylene by a balanced process",oxygen_liquid,RAW MATERIALS,kg,-0.1378,intermediate,0.0,ihsmarkit
+"terephthalic_acid, from p-xylene by air oxidation",p-xylene,RAW MATERIALS,kg,-0.6547607692307693,intermediate,0.9056603773584906,ihsmarkit
+"pet, by tpa process",pet,PRODUCT,kg,1.0,intermediate,0.63,ihsmarkit
+"adipic_acid, from phenol via cyclohexanol",phenol,RAW MATERIALS,kg,-0.6723009521880527,intermediate,0.766,ihsmarkit
+"hips, by continuous bulk polymerization",polybutadiene,RAW MATERIALS,kg,-0.0688999999999999,intermediate,0.888,ihsmarkit
+"polybutadiene, by solution process",polybutadiene,PRODUCT,kg,1.0,intermediate,0.888,ihsmarkit
+"polymeric_mdi, by phosgenation",polymeric_mdi,PRODUCT,kg,1.0,intermediate,0.72,ihsmarkit
+"pur_rigid, from polymeric MDI and polyol",polymeric_mdi,RAW MATERIALS,kg,-0.6398,intermediate,0.72,ihsmarkit
+"polyol_polyester, from adipic acid and deg",polyol_polyester,PRODUCT,kg,1.0,intermediate,0.475,ihsmarkit
+"pur_rigid, from polymeric MDI and polyol",polyol_polyester,RAW MATERIALS,kg,-0.115,intermediate,0.475,ihsmarkit
+"polyol_polyether, from po and eo by semi-continuous process",polyol_polyether,PRODUCT,kg,1.0,intermediate,0.609,ihsmarkit
+"pur_flexible, from toluene diisocyanate and polyol",polyol_polyether,RAW MATERIALS,kg,-0.66401,intermediate,0.609,ihsmarkit
+"pur_rigid, from polymeric MDI and polyol",polyol_polyether,RAW MATERIALS,kg,-0.1269,intermediate,0.609,ihsmarkit
+"pp, by gas phase process",pp,PRODUCT,kg,1.0,intermediate,0.857,ihsmarkit
+"pp, by gas phase process",propylene,RAW MATERIALS,kg,-1.01501,intermediate,0.85714,ihsmarkit
+"polyol_polyether, from po and eo by semi-continuous process",propylene_oxide,RAW MATERIALS,kg,-0.9147,intermediate,0.62,ihsmarkit
+"pur_flexible, from toluene diisocyanate and polyol",pur_flexible,PRODUCT,kg,1.0,intermediate,0.61,ihsmarkit
+"pur_rigid, from polymeric MDI and polyol",pur_rigid,PRODUCT,kg,1.0,intermediate,0.63,ihsmarkit
+"pvc, by suspension polymerization",pvc,PRODUCT,kg,1.0,intermediate,0.38,ihsmarkit
+"polymeric_mdi, by phosgenation",sodium_hydroxide,RAW MATERIALS,kg,-0.1461875990048127,raw_material,0.0,ihsmarkit
+"acetic_acid, from methanol carbonylation",steam_high,UTILITIES,MJ,-2.97504,intermediate,0.0,ihsmarkit
+"adipic_acid, from phenol via cyclohexanol",steam_high,UTILITIES,MJ,-17.298967329426922,intermediate,0.0,ihsmarkit
+"butene_1, from ethylene by dimerization",steam_high,UTILITIES,MJ,-9.088,intermediate,0.0,ihsmarkit
+"diethylene_glycol, from ethylene via eo",steam_high,UTILITIES,MJ,-34.20958321467538,intermediate,0.0,ihsmarkit
+"dinitrotoluene, from toluene by nitration",steam_high,UTILITIES,MJ,-0.7040000000000001,intermediate,0.0,ihsmarkit
+"ethylene_glycol, from ethylene via eo",steam_high,UTILITIES,MJ,-23.09536665462812,intermediate,0.0,ihsmarkit
+"ethylene_oxide, from ethylene by oxygen oxidation",steam_high,UTILITIES,MJ,-1.2764,intermediate,0.0,ihsmarkit
+"gpps, by continuous bulk polymerization",steam_high,UTILITIES,MJ,-0.2528,intermediate,0.0,ihsmarkit
+"hdpe, by gas phase process",steam_high,UTILITIES,MJ,-0.2064,intermediate,0.0,ihsmarkit
+"hips, by continuous bulk polymerization",steam_high,UTILITIES,MJ,-0.2528,intermediate,0.0,ihsmarkit
+"nitrobenzene, from benzene by nitration",steam_high,UTILITIES,MJ,-1.3456,intermediate,0.0,ihsmarkit
+"pet, by tpa process",steam_high,UTILITIES,MJ,-0.624,intermediate,0.0,ihsmarkit
+"polybutadiene, by solution process",steam_high,UTILITIES,MJ,-19.19744,intermediate,0.0,ihsmarkit
+"polymeric_mdi, by phosgenation",steam_high,UTILITIES,MJ,-7.171831295797229,intermediate,0.0,ihsmarkit
+"polyol_polyester, from adipic acid and deg",steam_high,UTILITIES,MJ,-1.2608,intermediate,0.0,ihsmarkit
+"polyol_polyether, from po and eo by semi-continuous process",steam_high,UTILITIES,MJ,-1.2608,intermediate,0.0,ihsmarkit
+"pp, by gas phase process",steam_high,UTILITIES,MJ,-0.5336533333333334,intermediate,0.0,ihsmarkit
+"pvc, by suspension polymerization",steam_high,UTILITIES,MJ,-1.824,intermediate,0.0,ihsmarkit
+"terephthalic_acid, from p-xylene by air oxidation",steam_high,UTILITIES,MJ,-6.3414375384615385,intermediate,0.0,ihsmarkit
+"vinyl_chloride, from ethylene by a balanced process",steam_high,UTILITIES,MJ,-0.9472,intermediate,0.0,ihsmarkit
+"gpps, by continuous bulk polymerization",styrene,RAW MATERIALS,kg,-1.0074999999999998,intermediate,0.923,ihsmarkit
+"hips, by continuous bulk polymerization",styrene,RAW MATERIALS,kg,-0.93315,intermediate,0.923,ihsmarkit
+"dinitrotoluene, from toluene by nitration",sulfuric_acid,RAW MATERIALS,kg,-0.027,raw_material,0.0,ihsmarkit
+"polymeric_mdi, by phosgenation",sulfuric_acid,RAW MATERIALS,kg,-0.0056633832940273,raw_material,0.0,ihsmarkit
+"pet, by tpa process",terephthalic_acid,RAW MATERIALS,kg,-0.860735,intermediate,0.578,ihsmarkit
+"terephthalic_acid, from p-xylene by air oxidation",terephthalic_acid,PRODUCT,kg,1.0,intermediate,0.578,ihsmarkit
+"dinitrotoluene, from toluene by nitration",toluene,RAW MATERIALS,kg,-0.52549,intermediate,0.91304,ihsmarkit
+"pur_flexible, from toluene diisocyanate and polyol",toluene_diisocyanate,RAW MATERIALS,kg,-0.38845,intermediate,0.621,ihsmarkit
+"pvc, by suspension polymerization",vinyl_chloride,RAW MATERIALS,kg,-1.00538,intermediate,0.384,ihsmarkit
+"vinyl_chloride, from ethylene by a balanced process",vinyl_chloride,PRODUCT,kg,1.0,intermediate,0.384,ihsmarkit
+"adipic_acid, from phenol via cyclohexanol",water,UTILITIES,kg,-0.6478476461892667,raw_material,0.0,ihsmarkit
+"hips, by continuous bulk polymerization",water,UTILITIES,kg,-0.208635,raw_material,0.0,ihsmarkit
+"nitrobenzene, from benzene by nitration",water,UTILITIES,kg,-0.584175,raw_material,0.0,ihsmarkit
+"pet, by tpa process",water,UTILITIES,kg,-0.06718,raw_material,0.0,ihsmarkit
+"polybutadiene, by solution process",water,UTILITIES,kg,-2.652168,raw_material,0.0,ihsmarkit
+"polymeric_mdi, by phosgenation",water,UTILITIES,kg,-1.205678193545816,raw_material,0.0,ihsmarkit
+"pp, by gas phase process",water,UTILITIES,kg,-0.1536933333333333,raw_material,0.0,ihsmarkit
+"pvc, by suspension polymerization",water,UTILITIES,kg,-1.201736666666667,raw_material,0.0,ihsmarkit
+"terephthalic_acid, from p-xylene by air oxidation",water,UTILITIES,kg,-1.8881676923076924,raw_material,0.0,ihsmarkit
+"toluene_diisocyanate, from dinitrotoluene by phosgenation",carbon_monoxide,RAW MATERIALS,kg,-0.2601768934202356,intermediate,0.42857142857142855,ihsmarkit
+"toluene_diisocyanate, from dinitrotoluene by phosgenation",co2_emission,EMISSION,kg,0.0650955299232763,emission,0.2727272727272727,ihsmarkit
+"toluene_diisocyanate, from dinitrotoluene by phosgenation",cooling_water,UTILITIES,MJ,-13.985523527141378,intermediate,0.0,ihsmarkit
+"toluene_diisocyanate, from dinitrotoluene by phosgenation",dinitrotoluene,RAW MATERIALS,kg,-1.1938943631461911,intermediate,0.462,ihsmarkit
+"toluene_diisocyanate, from dinitrotoluene by phosgenation",electricity,UTILITIES,kWh,-1.7977738556809617,intermediate,0.0,ihsmarkit
+"toluene_diisocyanate, from dinitrotoluene by phosgenation",heat_high,UTILITIES,MJ,-16.373970862396174,intermediate,0.0,ihsmarkit
+"toluene_diisocyanate, from dinitrotoluene by phosgenation",hydrogen,RAW MATERIALS,kg,-0.0793055548282115,intermediate,0.0,ihsmarkit
+"toluene_diisocyanate, from dinitrotoluene by phosgenation",nitrogen_liquid,UTILITIES,kg,-0.0573649451120802,intermediate,0.0,ihsmarkit
+"toluene_diisocyanate, from dinitrotoluene by phosgenation",oxygen_liquid,RAW MATERIALS,kg,-0.0913282066565495,intermediate,0.0,ihsmarkit
+"toluene_diisocyanate, from dinitrotoluene by phosgenation",sodium_hydroxide,RAW MATERIALS,kg,-0.0169266067399646,raw_material,0.0,ihsmarkit
+"toluene_diisocyanate, from dinitrotoluene by phosgenation",steam_high,UTILITIES,MJ,-11.174160906132965,intermediate,0.0,ihsmarkit
+"toluene_diisocyanate, from dinitrotoluene by phosgenation",sulfuric_acid,RAW MATERIALS,kg,-0.0106989142037941,raw_material,0.0,ihsmarkit
+"toluene_diisocyanate, from dinitrotoluene by phosgenation",toluene_diisocyanate,PRODUCT,kg,1.0,intermediate,0.621,ihsmarkit
+"toluene_diisocyanate, from dinitrotoluene by phosgenation",water,UTILITIES,kg,-2.198031964921588,raw_material,0.0,ihsmarkit
+"ethylbenzene, from benzene via liquid phase alkylation",benzene,RAW MATERIALS,kg,-0.7271824923950501,intermediate,0.9230769230769231,ihsmarkit
+"ethylbenzene, from benzene via liquid phase alkylation",co2_emission,EMISSION,kg,0.021000115427295,emission,0.2727272727272727,ihsmarkit
+"ethylbenzene, from benzene via liquid phase alkylation",cooling_water,UTILITIES,MJ,-0.11139749104285417,intermediate,0.0,ihsmarkit
+"ethylbenzene, from benzene via liquid phase alkylation",electricity,UTILITIES,kWh,-0.0457700998416699,intermediate,0.0,ihsmarkit
+"ethylbenzene, from benzene via liquid phase alkylation",ethylbenzene,PRODUCT,kg,1.0,intermediate,0.905,ihsmarkit
+"ethylbenzene, from benzene via liquid phase alkylation",ethylene,RAW MATERIALS,kg,-0.2611335736490383,intermediate,0.85714,ihsmarkit
+"ethylbenzene, from benzene via liquid phase alkylation",heat_high,UTILITIES,MJ,-2.556932010492866,intermediate,0.0,ihsmarkit
+"phenol, from cumene",co2_emission,EMISSION,kg,0.2004084268504156,emission,0.2727272727272727,ihsmarkit
+"phenol, from cumene",cooling_water,UTILITIES,MJ,-6.412758695108607,intermediate,0.0,ihsmarkit
+"phenol, from cumene",cumene,RAW MATERIALS,kg,-0.9714653422656088,intermediate,0.899,ihsmarkit
+"phenol, from cumene",electricity,UTILITIES,kWh,-0.1336481014472984,intermediate,0.0,ihsmarkit
+"phenol, from cumene",heat_high,UTILITIES,MJ,-0.1416407974409011,intermediate,0.0,ihsmarkit
+"phenol, from cumene",hydrogen,RAW MATERIALS,kg,-0.0001895030055812,intermediate,0.0,ihsmarkit
+"phenol, from cumene",nitrogen_liquid,UTILITIES,kg,-0.029718959402863,intermediate,0.0,ihsmarkit
+"phenol, from cumene",oxygen_liquid,RAW MATERIALS,kg,-0.0696541829477305,intermediate,0.0,ihsmarkit
+"phenol, from cumene",phenol,PRODUCT,kg,1.0,intermediate,0.766,ihsmarkit
+"phenol, from cumene",steam_high,UTILITIES,MJ,-11.579729018978846,intermediate,0.0,ihsmarkit
+"phenol, from cumene",water,UTILITIES,kg,-0.1925571104052304,raw_material,0.0,ihsmarkit
+"propylene, from ethylene by dimerization and oct",co2_emission,EMISSION,kg,0.1164631074538917,emission,0.2727272727272727,ihsmarkit
+"propylene, from ethylene by dimerization and oct",cooling_water,UTILITIES,MJ,-1.7268309482496318,intermediate,0.0,ihsmarkit
+"propylene, from ethylene by dimerization and oct",electricity,UTILITIES,kWh,-0.4610318855428705,intermediate,0.0,ihsmarkit
+"propylene, from ethylene by dimerization and oct",ethylene,RAW MATERIALS,kg,-1.091568740195186,intermediate,0.85714,ihsmarkit
+"propylene, from ethylene by dimerization and oct",heat_high,UTILITIES,MJ,-1.1898263136154257,intermediate,0.0,ihsmarkit
+"propylene, from ethylene by dimerization and oct",nitrogen_liquid,UTILITIES,kg,-0.0075483866664391,intermediate,0.0,ihsmarkit
+"propylene, from ethylene by dimerization and oct",propylene,PRODUCT,kg,1.0,intermediate,0.85714,ihsmarkit
+"propylene, from ethylene by dimerization and oct",steam_high,UTILITIES,MJ,-2.5653602770935526,intermediate,0.0,ihsmarkit
+"propylene_oxide, by the hppo process",co2_emission,EMISSION,kg,0.054719696827774,emission,0.2727272727272727,ihsmarkit
+"propylene_oxide, by the hppo process",cooling_water,UTILITIES,MJ,-10.87470321969877,intermediate,0.0,ihsmarkit
+"propylene_oxide, by the hppo process",electricity,UTILITIES,kWh,-0.9580234984532756,intermediate,0.0,ihsmarkit
+"propylene_oxide, by the hppo process",heat_high,UTILITIES,MJ,-0.2318336055197007,intermediate,0.0,ihsmarkit
+"propylene_oxide, by the hppo process",hydrogen,RAW MATERIALS,kg,-0.0454440587705361,intermediate,0.0,ihsmarkit
+"propylene_oxide, by the hppo process",methanol,RAW MATERIALS,kg,-0.0109880343884043,intermediate,0.375,ihsmarkit
+"propylene_oxide, by the hppo process",nitrogen_liquid,UTILITIES,kg,-0.0065482458956349,intermediate,0.0,ihsmarkit
+"propylene_oxide, by the hppo process",oxygen_liquid,RAW MATERIALS,kg,-0.526916822174455,intermediate,0.0,ihsmarkit
+"propylene_oxide, by the hppo process",propylene,RAW MATERIALS,kg,-0.8197160121332617,intermediate,0.85714,ihsmarkit
+"propylene_oxide, by the hppo process",propylene_oxide,PRODUCT,kg,1.0,intermediate,0.62,ihsmarkit
+"propylene_oxide, by the hppo process",steam_high,UTILITIES,MJ,-23.91294263510374,intermediate,0.0,ihsmarkit
+"propylene_oxide, by the hppo process",water,UTILITIES,kg,-1.4265621377250624,raw_material,0.0,ihsmarkit
+"styrene, from ethylbenzene by dehydrogenation",co2_emission,EMISSION,kg,0.160435769396687,emission,0.2727272727272727,ihsmarkit
+"styrene, from ethylbenzene by dehydrogenation",cooling_water,UTILITIES,MJ,-5.016129779530869,intermediate,0.0,ihsmarkit
+"styrene, from ethylbenzene by dehydrogenation",electricity,UTILITIES,kWh,-0.0589320035864513,intermediate,0.0,ihsmarkit
+"styrene, from ethylbenzene by dehydrogenation",ethylbenzene,RAW MATERIALS,kg,-1.02055041322884,intermediate,0.905,ihsmarkit
+"styrene, from ethylbenzene by dehydrogenation",heat_high,UTILITIES,MJ,-0.9080542284341342,intermediate,0.0,ihsmarkit
+"styrene, from ethylbenzene by dehydrogenation",nitrogen_liquid,UTILITIES,kg,-0.0022745017524964,intermediate,0.0,ihsmarkit
+"styrene, from ethylbenzene by dehydrogenation",oxygen_liquid,RAW MATERIALS,kg,-0.0470097950836669,intermediate,0.0,ihsmarkit
+"styrene, from ethylbenzene by dehydrogenation",steam_high,UTILITIES,MJ,-7.259813594906524,intermediate,0.0,ihsmarkit
+"styrene, from ethylbenzene by dehydrogenation",styrene,PRODUCT,kg,1.0,intermediate,0.923,ihsmarkit
+"styrene, from ethylbenzene by dehydrogenation",water,UTILITIES,kg,-0.1598164625185728,raw_material,0.0,ihsmarkit
+"aniline, from nitrobenzene",aniline,PRODUCT,kg,1.0,intermediate,0.774,ihsmarkit
+"aniline, from nitrobenzene",cooling_water,UTILITIES,MJ,-1.905010879120923,intermediate,0.0,ihsmarkit
+"aniline, from nitrobenzene",electricity,UTILITIES,kWh,-0.039371511483089,intermediate,0.0,ihsmarkit
+"aniline, from nitrobenzene",hydrogen,RAW MATERIALS,kg,-0.0724216176604615,intermediate,0.0,ihsmarkit
+"aniline, from nitrobenzene",nitrobenzene,RAW MATERIALS,kg,-1.3370547325952231,intermediate,0.585,ihsmarkit
+"aniline, from nitrobenzene",water,UTILITIES,kg,-0.2483935048325518,raw_material,0.0,ihsmarkit
+"cumene, from benzene and propylene",benzene,RAW MATERIALS,kg,-0.6632743188745865,intermediate,0.9230769230769231,ihsmarkit
+"cumene, from benzene and propylene",cooling_water,UTILITIES,MJ,-0.11293714096959083,intermediate,0.0,ihsmarkit
+"cumene, from benzene and propylene",cumene,PRODUCT,kg,1.0,intermediate,0.899,ihsmarkit
+"cumene, from benzene and propylene",electricity,UTILITIES,kWh,-0.0347198903046599,intermediate,0.0,ihsmarkit
+"cumene, from benzene and propylene",heat_high,UTILITIES,MJ,-1.467350210381139,intermediate,0.0,ihsmarkit
+"cumene, from benzene and propylene",propylene,RAW MATERIALS,kg,-0.3651593452878813,intermediate,0.85714,ihsmarkit
+"formaldehyde, from methanol",cooling_water,UTILITIES,MJ,-2.7521136944178193,intermediate,0.0,ihsmarkit
+"formaldehyde, from methanol",electricity,UTILITIES,kWh,-0.1352741963242434,intermediate,0.0,ihsmarkit
+"formaldehyde, from methanol",formaldehyde,PRODUCT,kg,1.0,intermediate,0.4,ihsmarkit
+"formaldehyde, from methanol",heat_high,UTILITIES,MJ,-0.4722285357044986,intermediate,0.0,ihsmarkit
+"formaldehyde, from methanol",methanol,RAW MATERIALS,kg,-1.144173825231198,intermediate,0.375,ihsmarkit
+"formaldehyde, from methanol",water,UTILITIES,kg,-1.4546653838052344,raw_material,0.0,ihsmarkit
+"heat, high temperature, from agricultural residue",agricultural_residue,RAW MATERIALS,kg,-0.06349206349206349,intermediate,0.494,https://www.ieabioenergy.com/wp-content/uploads/2022/02/Role-of-biomass-in-industrial-heat.pdf
+cooling water,cooling_water,PRODUCT,MJ,1.0,intermediate,0.0,JD
+cooling water,electricity,UTILITIES,kWh,-0.00166,intermediate,0.0,JD
+cooling water,water,RAW MATERIALS,kg,-0.61127,raw_material,0.0,JD
+"heat, high temperature, from agricultural residue",co2_emission_biogenic_short,EMISSION,kg,0.11500529100529099,emission,0.2727272727272727,https://www.ieabioenergy.com/wp-content/uploads/2022/02/Role-of-biomass-in-industrial-heat.pdf
+"heat, high temperature, from agricultural residue",heat_high,PRODUCT,MJ,1.0,intermediate,0.0,https://www.ieabioenergy.com/wp-content/uploads/2022/02/Role-of-biomass-in-industrial-heat.pdf
+"hydrogen, from PEM electrolysis",electricity,UTILITIES,kWh,-54.0,intermediate,0.0,https://doi.org/10.1016/j.est.2021.102759
+"hydrogen, from PEM electrolysis",hydrogen,PRODUCT,kg,1.0,intermediate,0.0,https://doi.org/10.1016/j.est.2021.102759
+"hydrogen, from PEM electrolysis",water,RAW MATERIALS,kg,-14.0,raw_material,0.0,https://doi.org/10.1016/j.est.2021.102759
+"nitric_acid, from ammonia",ammonia,RAW MATERIALS,kg,-0.26915,intermediate,0.0,ecoinvent
+"nitric_acid, from ammonia",electricity,UTILITIES,kWh,-0.0078977,intermediate,0.0,ecoinvent
+"nitric_acid, from ammonia",nitric_acid,PRODUCT,kg,1.0,intermediate,0.0,ecoinvent
+"nitric_acid, from ammonia",water,RAW MATERIALS,kg,-0.41415,raw_material,0.0,ecoinvent
+"nitrogen, from crogenic air separation, improved",electricity,UTILITIES,kWh,-0.258,intermediate,0.0,https://doi.org/10.1016/j.jclepro.2020.123027
+"nitrogen, from crogenic air separation, improved",nitrogen_liquid,PRODUCT,kg,1.0,intermediate,0.0,https://doi.org/10.1016/j.jclepro.2020.123027
+"nitric_acid, from ammonia",n2o_emission,EMISSION,kg,0.002,emission,0.0,ecoinvent
+"oxygen, from cryogenic air separation, improved",electricity,UTILITIES,kWh,-0.252,intermediate,0.0,https://doi.org/10.1016/j.jclepro.2020.123027
+"oxygen, from cryogenic air separation, improved",oxygen_liquid,PRODUCT,kg,1.0,intermediate,0.0,https://doi.org/10.1016/j.jclepro.2020.123027
+"potato starch, from potato",electricity,UTILITIES,kWh,-0.1675,intermediate,0.0,ecoinvent
+"potato starch, from potato",heat_high,UTILITIES,MJ,-1.624,intermediate,0.0,ecoinvent
+"potato starch, from potato",potato,RAW MATERIALS,kg,-3.92,raw_material,0.39,ecoinvent
+"potato starch, from potato",potato_starch,PRODUCT,kg,1.0,intermediate,0.4444444444444444,ecoinvent
+"potato starch, from potato",water,RAW MATERIALS,kg,-3.727,raw_material,0.0,ecoinvent
+"steam, high temperature, from heat",electricity,UTILITIES,kWh,-0.00808,intermediate,0.0,ecoinvent
+"steam, high temperature, from heat",heat_high,UTILITIES,MJ,-1.28,intermediate,0.0,ecoinvent
+"steam, high temperature, from heat",steam_high,PRODUCT,MJ,1.0,intermediate,0.0,ecoinvent
+"steam, high temperature, from heat",water,RAW MATERIALS,kg,-0.0618182,raw_material,0.0,ecoinvent
+"sulfur dioxide, from sulfur",electricity,UTILITIES,kWh,-0.416,intermediate,0.0,ecoinvent
+"sulfur dioxide, from sulfur",sulfur,RAW MATERIALS,kg,-0.55,raw_material,0.0,ecoinvent
+"sulfur dioxide, from sulfur",sulfur_dioxide,PRODUCT,kg,1.0,intermediate,0.0,ecoinvent
+"heat, high temperature, from agricultural residue",co_emission,EMISSION,kg,0.0001,emission,0.428,https://www.ieabioenergy.com/wp-content/uploads/2022/02/Role-of-biomass-in-industrial-heat.pdf
+"heat, high temperature, from agricultural residue",nmvoc_emission,EMISSION,kg,8.122222222222223e-06,emission,0.0,https://www.ieabioenergy.com/wp-content/uploads/2022/02/Role-of-biomass-in-industrial-heat.pdf
+"heat, high temperature, from agricultural residue",nox_emission_chemical,EMISSION,kg,2.1444444444444447e-05,emission,0.0,https://www.ieabioenergy.com/wp-content/uploads/2022/02/Role-of-biomass-in-industrial-heat.pdf
+"heat, high temperature, from agricultural residue",pm25_emission_chemical,EMISSION,kg,0.0001477777777777778,emission,0.0,https://www.ieabioenergy.com/wp-content/uploads/2022/02/Role-of-biomass-in-industrial-heat.pdf
+"heat, high temperature, from agricultural residue",sox_emission_chemical,EMISSION,kg,2.1444444444444447e-05,emission,0.0,https://www.ieabioenergy.com/wp-content/uploads/2022/02/Role-of-biomass-in-industrial-heat.pdf
+"ammonia, anhydrous, liquid, from ammonia production, steam reforming, liquid",ammonia,PRODUCT,kg,1.0,intermediate,0.0,ecoinvent 3.10
+"benzene, from BTX production, from pyrolysis gas, average",benzene,PRODUCT,kg,1.0,intermediate,0.9230769230769231,ecoinvent 3.10
+"benzene, from BTX production, from reformate, average",benzene,PRODUCT,kg,1.0,intermediate,0.9230769230769231,ecoinvent 3.10
+"butadiene, from butadiene purification, extractive distillation of crude butadiene",butadiene,PRODUCT,kg,1.0,intermediate,0.889,ecoinvent 3.10
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",butadiene_crude,PRODUCT,kg,1.0,intermediate,0.8882,ecoinvent 3.10
+"butadiene, from butadiene purification, extractive distillation of crude butadiene",butadiene_crude,RAW MATERIALS,kg,-1.020408163,intermediate,0.8882,ecoinvent 3.10
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",butane,RAW MATERIALS,kg,-0.1971150309179345,intermediate,0.8276,ecoinvent 3.10
+"butane, from natural gas liquids fractionation",butane,PRODUCT,kg,1.0,intermediate,0.8276,ecoinvent 3.10
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",butane,RAW MATERIALS,kg,-0.1971150294554347,intermediate,0.8276,ecoinvent 3.10
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",butane,RAW MATERIALS,kg,-0.1971150456908299,intermediate,0.8276,ecoinvent 3.10
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",butane,RAW MATERIALS,kg,-0.1971150474872509,intermediate,0.8276,ecoinvent 3.10
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",butane,RAW MATERIALS,kg,-0.1971150502376741,intermediate,0.8276,ecoinvent 3.10
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",butene_1,PRODUCT,kg,1.0,intermediate,0.857,ecoinvent 3.10
+"carbon monoxide, from carbon monoxide production",carbon_monoxide,PRODUCT,kg,1.0,intermediate,0.42857142857142855,ecoinvent 3.10
+"propylene, from potroleum refinery openration",ch4_emission,EMISSION,kg,2.678635763088485e-05,emission,0.0,ecoinvent 3.10
+"benzene, from BTX production, from pyrolysis gas, average",ch4_emission,EMISSION,kg,6.024394240705682e-06,emission,0.0,ecoinvent 3.10
+"benzene, from BTX production, from reformate, average",ch4_emission,EMISSION,kg,3.754905454433831e-06,emission,0.0,ecoinvent 3.10
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",ch4_emission,EMISSION,kg,1.9980121565692288e-05,emission,0.0,ecoinvent 3.10
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",ch4_emission,EMISSION,kg,1.9980121417449288e-05,emission,0.0,ecoinvent 3.10
+"diesel, from diesel production, petroleum refinery operation",ch4_emission,EMISSION,kg,1.958410291040828e-05,emission,0.0,ecoinvent 3.10
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",ch4_emission,EMISSION,kg,1.99801230631136e-05,emission,0.0,ecoinvent 3.10
+"heat, district or industrial, natural gas, from heat production, natural gas, at industrial furnace low-NOx >100kW",ch4_emission,EMISSION,kg,2.222222222222222e-06,emission,0.0,ecoinvent 3.10
+"heavy fuel oil, from heavy fuel oil production, petroleum refinery operation",ch4_emission,EMISSION,kg,1.083841689000138e-05,emission,0.0,ecoinvent 3.10
+"hydrogen, gaseous, low pressure, from hydrogen production, steam methane reforming",ch4_emission,EMISSION,kg,3.8960538038178334e-05,emission,0.0,ecoinvent 3.10
+"naphtha, from naphtha production, petroleum refinery operation",ch4_emission,EMISSION,kg,1.085002914488013e-05,emission,0.0,ecoinvent 3.10
+"natural gas liquids, from natural gas liquids production",ch4_emission,EMISSION,kg,2.157165368640092e-05,emission,0.0,ecoinvent 3.10
+"p-xylene, from BTX production, from pyrolysis gas, average",ch4_emission,EMISSION,kg,1.1793282280593537e-05,emission,0.0,ecoinvent 3.10
+"p-xylene, from BTX production, from reformate, average",ch4_emission,EMISSION,kg,5.747882452947126e-06,emission,0.0,ecoinvent 3.10
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",ch4_emission,EMISSION,kg,1.9980123245203754e-05,emission,0.0,ecoinvent 3.10
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",ch4_emission,EMISSION,kg,1.1217653817929096e-05,emission,0.0,ecoinvent 3.10
+"reformate, from reformate production, petroleum refinery operation",ch4_emission,EMISSION,kg,1.950126637054156e-05,emission,0.0,ecoinvent 3.10
+"toluene, liquid, from BTX production, from pyrolysis gas, average",ch4_emission,EMISSION,kg,4.950607956714421e-06,emission,0.0,ecoinvent 3.10
+"toluene, liquid, from BTX production, from reformate, average",ch4_emission,EMISSION,kg,2.347285215223048e-06,emission,0.0,ecoinvent 3.10
+"propylene, from potroleum refinery openration",co2_emission,EMISSION,kg,0.430753183979744,emission,0.2727272727272727,ecoinvent 3.10
+"ammonia, anhydrous, liquid, from ammonia production, steam reforming, liquid",co2_emission,EMISSION,kg,1.4056923568915891,emission,0.2727272727272727,ecoinvent 3.10
+"benzene, from BTX production, from pyrolysis gas, average",co2_emission,EMISSION,kg,0.2635916991508616,emission,0.2727272727272727,ecoinvent 3.10
+"benzene, from BTX production, from reformate, average",co2_emission,EMISSION,kg,0.1642923536707655,emission,0.2727272727272727,ecoinvent 3.10
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",co2_emission,EMISSION,kg,0.7246906939908963,emission,0.2727272727272727,ecoinvent 3.10
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",co2_emission,EMISSION,kg,0.7246906886140361,emission,0.2727272727272727,ecoinvent 3.10
+"diesel, from diesel production, petroleum refinery operation",co2_emission,EMISSION,kg,0.193439970390365,emission,0.2727272727272727,ecoinvent 3.10
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",co2_emission,EMISSION,kg,0.724690748303243,emission,0.2727272727272727,ecoinvent 3.10
+"heat, district or industrial, natural gas, from heat production, natural gas, at industrial furnace low-NOx >100kW",co2_emission,EMISSION,kg,0.0622222222222222,emission,0.2727272727272727,ecoinvent 3.10
+"heavy fuel oil, from heavy fuel oil production, petroleum refinery operation",co2_emission,EMISSION,kg,0.0926256878167964,emission,0.2727272727272727,ecoinvent 3.10
+"hydrogen, gaseous, low pressure, from hydrogen production, steam methane reforming",co2_emission,EMISSION,kg,8.346607106680535,emission,0.2727272727272727,ecoinvent 3.10
+"methanol, from methanol production, natural gas reforming",co2_emission,EMISSION,kg,0.3531,emission,0.2727272727272727,ecoinvent 3.10
+"naphtha, from naphtha production, petroleum refinery operation",co2_emission,EMISSION,kg,0.0904584174909915,emission,0.2727272727272727,ecoinvent 3.10
+"natural gas liquids, from natural gas liquids production",co2_emission,EMISSION,kg,0.0219662571074936,emission,0.2727272727272727,ecoinvent 3.10
+"p-xylene, from BTX production, from pyrolysis gas, average",co2_emission,EMISSION,kg,0.5160039649966971,emission,0.2727272727272727,ecoinvent 3.10
+"p-xylene, from BTX production, from reformate, average",co2_emission,EMISSION,kg,0.2514931862538638,emission,0.2727272727272727,ecoinvent 3.10
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",co2_emission,EMISSION,kg,0.7246907549077595,emission,0.2727272727272727,ecoinvent 3.10
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",co2_emission,EMISSION,kg,0.4068708643006193,emission,0.2727272727272727,ecoinvent 3.10
+"reformate, from reformate production, petroleum refinery operation",co2_emission,EMISSION,kg,0.3034688844351578,emission,0.2727272727272727,ecoinvent 3.10
+"toluene, liquid, from BTX production, from pyrolysis gas, average",co2_emission,EMISSION,kg,0.2166091910657015,emission,0.2727272727272727,ecoinvent 3.10
+"toluene, liquid, from BTX production, from reformate, average",co2_emission,EMISSION,kg,0.1027032550953354,emission,0.2727272727272727,ecoinvent 3.10
+"propylene, from potroleum refinery openration",co_emission,EMISSION,kg,0.0004849234836923,emission,0.428,ecoinvent 3.10
+"benzene, from BTX production, from pyrolysis gas, average",co_emission,EMISSION,kg,8.017078485519047e-05,emission,0.428,ecoinvent 3.10
+"benzene, from BTX production, from reformate, average",co_emission,EMISSION,kg,4.9969126428434e-05,emission,0.428,ecoinvent 3.10
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",co_emission,EMISSION,kg,0.0002126901780062,emission,0.428,ecoinvent 3.10
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",co_emission,EMISSION,kg,0.0002126901764281,emission,0.428,ecoinvent 3.10
+"diesel, from diesel production, petroleum refinery operation",co_emission,EMISSION,kg,7.362033484899456e-05,emission,0.428,ecoinvent 3.10
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",co_emission,EMISSION,kg,0.0002126901939464,emission,0.428,ecoinvent 3.10
+"heat, district or industrial, natural gas, from heat production, natural gas, at industrial furnace low-NOx >100kW",co_emission,EMISSION,kg,1.5555555555555518e-05,emission,0.428,ecoinvent 3.10
+"heavy fuel oil, from heavy fuel oil production, petroleum refinery operation",co_emission,EMISSION,kg,2.6382053229463364e-05,emission,0.428,ecoinvent 3.10
+"hydrogen, gaseous, low pressure, from hydrogen production, steam methane reforming",co_emission,EMISSION,kg,4.09178856429672e-05,emission,0.428,ecoinvent 3.10
+"methanol, from methanol production, natural gas reforming",co_emission,EMISSION,kg,0.0163,emission,0.428,ecoinvent 3.10
+"naphtha, from naphtha production, petroleum refinery operation",co_emission,EMISSION,kg,3.798669959982977e-05,emission,0.428,ecoinvent 3.10
+"p-xylene, from BTX production, from pyrolysis gas, average",co_emission,EMISSION,kg,0.0001569413718089,emission,0.428,ecoinvent 3.10
+"p-xylene, from BTX production, from reformate, average",co_emission,EMISSION,kg,7.649105109902137e-05,emission,0.428,ecoinvent 3.10
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",co_emission,EMISSION,kg,0.0002126901958847,emission,0.428,ecoinvent 3.10
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",co_emission,EMISSION,kg,0.000119412926468,emission,0.428,ecoinvent 3.10
+"reformate, from reformate production, petroleum refinery operation",co_emission,EMISSION,kg,8.743793648577949e-05,emission,0.428,ecoinvent 3.10
+"toluene, liquid, from BTX production, from pyrolysis gas, average",co_emission,EMISSION,kg,6.588116739080718e-05,emission,0.428,ecoinvent 3.10
+"toluene, liquid, from BTX production, from reformate, average",co_emission,EMISSION,kg,3.123694940030381e-05,emission,0.428,ecoinvent 3.10
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",diesel,RAW MATERIALS,kg,-0.0486703799863502,intermediate,0.86,ecoinvent 3.10
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",diesel,RAW MATERIALS,kg,-0.0486703796252391,intermediate,0.86,ecoinvent 3.10
+"diesel, from diesel production, petroleum refinery operation",diesel,PRODUCT,kg,1.0,intermediate,0.86,ecoinvent 3.10
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",diesel,RAW MATERIALS,kg,-0.0486703836339789,intermediate,0.86,ecoinvent 3.10
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",diesel,RAW MATERIALS,kg,-0.0486703840775396,intermediate,0.86,ecoinvent 3.10
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",diesel,RAW MATERIALS,kg,-0.0486703847566565,intermediate,0.86,ecoinvent 3.10
+"ammonia, anhydrous, liquid, from ammonia production, steam reforming, liquid",electricity,UTILITIES,kWh,-0.2277742244963221,intermediate,0.0,ecoinvent 3.10
+"benzene, from BTX production, from pyrolysis gas, average",electricity,UTILITIES,kWh,-0.0630662522017765,intermediate,0.0,ecoinvent 3.10
+"benzene, from BTX production, from reformate, average",electricity,UTILITIES,kWh,-0.072043958952951,intermediate,0.0,ecoinvent 3.10
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",electricity,UTILITIES,kWh,-0.1206742405167815,intermediate,0.0,ecoinvent 3.10
+"butadiene, from butadiene purification, extractive distillation of crude butadiene",electricity,UTILITIES,kWh,-0.2,intermediate,0.0,ecoinvent 3.10
+"butane, from natural gas liquids fractionation",electricity,UTILITIES,kWh,-0.1933991106053076,intermediate,0.0,ecoinvent 3.10
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",electricity,UTILITIES,kWh,-0.120674239621436,intermediate,0.0,ecoinvent 3.10
+"carbon monoxide, from carbon monoxide production",electricity,UTILITIES,kWh,-2.3,intermediate,0.0,ecoinvent 3.10
+"ethane, from natural gas liquids fractionation",electricity,UTILITIES,kWh,-0.2039007248738982,intermediate,0.0,ecoinvent 3.10
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",electricity,UTILITIES,kWh,-0.1206742495607795,intermediate,0.0,ecoinvent 3.10
+"methanol, from methanol production, natural gas reforming",electricity,UTILITIES,kWh,-0.088642952,intermediate,0.0,ecoinvent 3.10
+"natural gas liquids, from natural gas liquids production",electricity,UTILITIES,kWh,-0.0268330326343036,intermediate,0.0,ecoinvent 3.10
+"p-xylene, from BTX production, from pyrolysis gas, average",electricity,UTILITIES,kWh,-0.2755318211529454,intermediate,0.0,ecoinvent 3.10
+"p-xylene, from BTX production, from reformate, average",electricity,UTILITIES,kWh,-0.2643774621099557,intermediate,0.0,ecoinvent 3.10
+"propane, from natural gas liquids fractionation",electricity,UTILITIES,kWh,-0.1969811218927482,intermediate,0.0,ecoinvent 3.10
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",electricity,UTILITIES,kWh,-0.1206742506605522,intermediate,0.0,ecoinvent 3.10
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",electricity,UTILITIES,kWh,-0.0677514323628123,intermediate,0.0,ecoinvent 3.10
+"toluene, liquid, from BTX production, from pyrolysis gas, average",electricity,UTILITIES,kWh,-0.0478146095595986,intermediate,0.0,ecoinvent 3.10
+"toluene, liquid, from BTX production, from reformate, average",electricity,UTILITIES,kWh,-0.0403669144928444,intermediate,0.0,ecoinvent 3.10
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",ethane,RAW MATERIALS,kg,-0.0547541759410317,intermediate,0.8,ecoinvent 3.10
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",ethane,RAW MATERIALS,kg,-0.0547541755347817,intermediate,0.8,ecoinvent 3.10
+"ethane, from natural gas liquids fractionation",ethane,PRODUCT,kg,1.0,intermediate,0.8,ecoinvent 3.10
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",ethane,RAW MATERIALS,kg,-0.0547541800446138,intermediate,0.8,ecoinvent 3.10
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",ethane,RAW MATERIALS,kg,-0.0547541805436196,intermediate,0.8,ecoinvent 3.10
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",ethane,RAW MATERIALS,kg,-0.0547541813076261,intermediate,0.8,ecoinvent 3.10
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",ethylene,PRODUCT,kg,1.0,intermediate,0.85714,ecoinvent 3.10
+"ammonia, anhydrous, liquid, from ammonia production, steam reforming, liquid",heat_high,UTILITIES,MJ,-9.956987527982092,intermediate,0.0,ecoinvent 3.10
+"benzene, from BTX production, from pyrolysis gas, average",heat_high,UTILITIES,MJ,-1.7142832329052995,intermediate,0.0,ecoinvent 3.10
+"benzene, from BTX production, from reformate, average",heat_high,UTILITIES,MJ,-4.166920548617029,intermediate,0.0,ecoinvent 3.10
+"butadiene, from butadiene purification, extractive distillation of crude butadiene",heat_high,UTILITIES,MJ,-6.23385,intermediate,0.0,ecoinvent 3.10
+"butane, from natural gas liquids fractionation",heat_high,UTILITIES,MJ,-1.160375146111349,intermediate,0.0,ecoinvent 3.10
+"ethane, from natural gas liquids fractionation",heat_high,UTILITIES,MJ,-1.2233837719172338,intermediate,0.0,ecoinvent 3.10
+"heat, district or industrial, natural gas, from heat production, natural gas, at industrial furnace low-NOx >100kW",heat_high,PRODUCT,MJ,1.0,intermediate,0.0,ecoinvent 3.10
+"p-xylene, from BTX production, from pyrolysis gas, average",heat_high,UTILITIES,MJ,-3.355860401355887,intermediate,0.0,ecoinvent 3.10
+"p-xylene, from BTX production, from reformate, average",heat_high,UTILITIES,MJ,-6.378581243887003,intermediate,0.0,ecoinvent 3.10
+"propane, from natural gas liquids fractionation",heat_high,UTILITIES,MJ,-1.1818668523452986,intermediate,0.0,ecoinvent 3.10
+"toluene, liquid, from BTX production, from pyrolysis gas, average",heat_high,UTILITIES,MJ,-1.408729886158476,intermediate,0.0,ecoinvent 3.10
+"toluene, liquid, from BTX production, from reformate, average",heat_high,UTILITIES,MJ,-2.604846144722076,intermediate,0.0,ecoinvent 3.10
+"carbon monoxide, from carbon monoxide production",heavy_fuel_oil,RAW MATERIALS,kg,-0.66,intermediate,0.86,ecoinvent 3.10
+"heavy fuel oil, from heavy fuel oil production, petroleum refinery operation",heavy_fuel_oil,PRODUCT,kg,1.0,intermediate,0.86,ecoinvent 3.10
+"benzene, from BTX production, from pyrolysis gas, average",hydrogen,RAW MATERIALS,kg,-0.056853462008049,intermediate,0.0,ecoinvent 3.10
+"benzene, from BTX production, from reformate, average",hydrogen,RAW MATERIALS,kg,-0.0225115099448208,intermediate,0.0,ecoinvent 3.10
+"hydrogen, gaseous, low pressure, from hydrogen production, steam methane reforming",hydrogen,PRODUCT,kg,1.0,intermediate,0.0,ecoinvent 3.10
+"p-xylene, from BTX production, from pyrolysis gas, average",hydrogen,RAW MATERIALS,kg,-0.0587304235235047,intermediate,0.0,ecoinvent 3.10
+"toluene, liquid, from BTX production, from pyrolysis gas, average",hydrogen,RAW MATERIALS,kg,-0.0393122645436165,intermediate,0.0,ecoinvent 3.10
+"methanol, from methanol production, natural gas reforming",methanol,PRODUCT,kg,1.0,intermediate,0.375,ecoinvent 3.10
+"propylene, from potroleum refinery openration",n2o_emission,EMISSION,kg,1.6694484006195274e-05,emission,0.0,ecoinvent 3.10
+"benzene, from BTX production, from pyrolysis gas, average",n2o_emission,EMISSION,kg,6.951224113428927e-06,emission,0.0,ecoinvent 3.10
+"benzene, from BTX production, from reformate, average",n2o_emission,EMISSION,kg,4.332583216654421e-06,emission,0.0,ecoinvent 3.10
+"diesel, from diesel production, petroleum refinery operation",n2o_emission,EMISSION,kg,6.795409440659434e-06,emission,0.0,ecoinvent 3.10
+"heat, district or industrial, natural gas, from heat production, natural gas, at industrial furnace low-NOx >100kW",n2o_emission,EMISSION,kg,1.1111111111111114e-07,emission,0.0,ecoinvent 3.10
+"heavy fuel oil, from heavy fuel oil production, petroleum refinery operation",n2o_emission,EMISSION,kg,2.907332189277562e-06,emission,0.0,ecoinvent 3.10
+"hydrogen, gaseous, low pressure, from hydrogen production, steam methane reforming",n2o_emission,EMISSION,kg,1.9480269019089166e-06,emission,0.0,ecoinvent 3.10
+"naphtha, from naphtha production, petroleum refinery operation",n2o_emission,EMISSION,kg,3.002308521664396e-06,emission,0.0,ecoinvent 3.10
+"p-xylene, from BTX production, from pyrolysis gas, average",n2o_emission,EMISSION,kg,1.3607633380204084e-05,emission,0.0,ecoinvent 3.10
+"p-xylene, from BTX production, from reformate, average",n2o_emission,EMISSION,kg,6.632172061092838e-06,emission,0.0,ecoinvent 3.10
+"reformate, from reformate production, petroleum refinery operation",n2o_emission,EMISSION,kg,1.0500245863024082e-05,emission,0.0,ecoinvent 3.10
+"toluene, liquid, from BTX production, from pyrolysis gas, average",n2o_emission,EMISSION,kg,5.712239941457643e-06,emission,0.0,ecoinvent 3.10
+"toluene, liquid, from BTX production, from reformate, average",n2o_emission,EMISSION,kg,2.708406017565056e-06,emission,0.0,ecoinvent 3.10
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",naphtha,RAW MATERIALS,kg,-0.7787260674327057,intermediate,0.84826,ecoinvent 3.10
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",naphtha,RAW MATERIALS,kg,-0.7787260616549287,intermediate,0.84826,ecoinvent 3.10
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",naphtha,RAW MATERIALS,kg,-0.7787261257947633,intermediate,0.84826,ecoinvent 3.10
+"naphtha, from naphtha production, petroleum refinery operation",naphtha,PRODUCT,kg,1.0,intermediate,0.84826,ecoinvent 3.10
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",naphtha,RAW MATERIALS,kg,-0.778726132891735,intermediate,0.84826,ecoinvent 3.10
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",naphtha,RAW MATERIALS,kg,-0.7787261437576045,intermediate,0.84826,ecoinvent 3.10
+"ammonia, anhydrous, liquid, from ammonia production, steam reforming, liquid",natural_gas,RAW MATERIALS,kg,-0.44532547441547554,raw_material,0.75,ecoinvent 3.10
+"heat, district or industrial, natural gas, from heat production, natural gas, at industrial furnace low-NOx >100kW",natural_gas,RAW MATERIALS,kg,-0.022685185185185187,raw_material,0.75,ecoinvent 3.10
+"hydrogen, gaseous, low pressure, from hydrogen production, steam methane reforming",natural_gas,RAW MATERIALS,kg,-3.123153319005705,raw_material,0.75,ecoinvent 3.10
+"methanol, from methanol production, natural gas reforming",natural_gas,RAW MATERIALS,kg,-0.6488906128374794,raw_material,0.75,ecoinvent 3.10
+"natural gas liquids, from natural gas liquids production",natural_gas,RAW MATERIALS,kg,-0.9667783816771164,raw_material,0.75,ecoinvent 3.10
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",natural_gas_liquids,RAW MATERIALS,kg,-0.0267687071401578,intermediate,0.82,ecoinvent 3.10
+"butane, from natural gas liquids fractionation",natural_gas_liquids,RAW MATERIALS,kg,-0.975876024852698,intermediate,0.82,ecoinvent 3.10
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",natural_gas_liquids,RAW MATERIALS,kg,-0.0267687069415468,intermediate,0.82,ecoinvent 3.10
+"ethane, from natural gas liquids fractionation",natural_gas_liquids,RAW MATERIALS,kg,-1.0288663077701998,intermediate,0.82,ecoinvent 3.10
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",natural_gas_liquids,RAW MATERIALS,kg,-0.0267687091463534,intermediate,0.82,ecoinvent 3.10
+"natural gas liquids, from natural gas liquids production",natural_gas_liquids,PRODUCT,kg,1.0,intermediate,0.82,ecoinvent 3.10
+"propane, from natural gas liquids fractionation",natural_gas_liquids,RAW MATERIALS,kg,-0.9939505595556982,intermediate,0.82,ecoinvent 3.10
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",natural_gas_liquids,RAW MATERIALS,kg,-0.0267687093903118,intermediate,0.82,ecoinvent 3.10
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",natural_gas_liquids,RAW MATERIALS,kg,-0.0267687097638261,intermediate,0.82,ecoinvent 3.10
+"propylene, from potroleum refinery openration",nh3_emission_chemical,EMISSION,kg,5.512760047812447e-06,emission,0.0,ecoinvent 3.10
+"diesel, from diesel production, petroleum refinery operation",nh3_emission_chemical,EMISSION,kg,4.324734615271036e-07,emission,0.0,ecoinvent 3.10
+"heavy fuel oil, from heavy fuel oil production, petroleum refinery operation",nh3_emission_chemical,EMISSION,kg,2.2450946296396378e-07,emission,0.0,ecoinvent 3.10
+"naphtha, from naphtha production, petroleum refinery operation",nh3_emission_chemical,EMISSION,kg,3.047905683107184e-07,emission,0.0,ecoinvent 3.10
+"reformate, from reformate production, petroleum refinery operation",nh3_emission_chemical,EMISSION,kg,1.2862090037643884e-07,emission,0.0,ecoinvent 3.10
+"propylene, from potroleum refinery openration",nmvoc_emission,EMISSION,kg,0.0002578601002386,emission,0.0,ecoinvent 3.10
+"benzene, from BTX production, from pyrolysis gas, average",nmvoc_emission,EMISSION,kg,1.4493125744755628e-05,emission,0.0,ecoinvent 3.10
+"benzene, from BTX production, from reformate, average",nmvoc_emission,EMISSION,kg,1.1344712515248484e-05,emission,0.0,ecoinvent 3.10
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",nmvoc_emission,EMISSION,kg,0.0003941911483898,emission,0.0,ecoinvent 3.10
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",nmvoc_emission,EMISSION,kg,0.000394191145465,emission,0.0,ecoinvent 3.10
+"diesel, from diesel production, petroleum refinery operation",nmvoc_emission,EMISSION,kg,0.0002539147540299,emission,0.0,ecoinvent 3.10
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",nmvoc_emission,EMISSION,kg,0.0003941911779326,emission,0.0,ecoinvent 3.10
+"heavy fuel oil, from heavy fuel oil production, petroleum refinery operation",nmvoc_emission,EMISSION,kg,0.0002258142357797,emission,0.0,ecoinvent 3.10
+"naphtha, from naphtha production, petroleum refinery operation",nmvoc_emission,EMISSION,kg,0.0002409595918133,emission,0.0,ecoinvent 3.10
+"natural gas liquids, from natural gas liquids production",nmvoc_emission,EMISSION,kg,8.839116632476492e-05,emission,0.0,ecoinvent 3.10
+"p-xylene, from BTX production, from pyrolysis gas, average",nmvoc_emission,EMISSION,kg,2.0543676059107408e-05,emission,0.0,ecoinvent 3.10
+"p-xylene, from BTX production, from reformate, average",nmvoc_emission,EMISSION,kg,1.3697396795913997e-05,emission,0.0,ecoinvent 3.10
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",nmvoc_emission,EMISSION,kg,0.0003941911815251,emission,0.0,ecoinvent 3.10
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",nmvoc_emission,EMISSION,kg,0.0002213149617828,emission,0.0,ecoinvent 3.10
+"reformate, from reformate production, petroleum refinery operation",nmvoc_emission,EMISSION,kg,0.0002267385403428,emission,0.0,ecoinvent 3.10
+"toluene, liquid, from BTX production, from pyrolysis gas, average",nmvoc_emission,EMISSION,kg,1.3557384845492983e-05,emission,0.0,ecoinvent 3.10
+"toluene, liquid, from BTX production, from reformate, average",nmvoc_emission,EMISSION,kg,9.894813168854476e-06,emission,0.0,ecoinvent 3.10
+"propylene, from potroleum refinery openration",nox_emission_chemical,EMISSION,kg,0.0007628702555222,emission,0.0,ecoinvent 3.10
+"ammonia, anhydrous, liquid, from ammonia production, steam reforming, liquid",nox_emission_chemical,EMISSION,kg,0.0006833226734889,emission,0.0,ecoinvent 3.10
+"benzene, from BTX production, from pyrolysis gas, average",nox_emission_chemical,EMISSION,kg,0.0002734148154261,emission,0.0,ecoinvent 3.10
+"benzene, from BTX production, from reformate, average",nox_emission_chemical,EMISSION,kg,0.0001704149398404,emission,0.0,ecoinvent 3.10
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",nox_emission_chemical,EMISSION,kg,0.0004798202408141,emission,0.0,ecoinvent 3.10
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",nox_emission_chemical,EMISSION,kg,0.0004798202372541,emission,0.0,ecoinvent 3.10
+"diesel, from diesel production, petroleum refinery operation",nox_emission_chemical,EMISSION,kg,0.0002388005006572,emission,0.0,ecoinvent 3.10
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",nox_emission_chemical,EMISSION,kg,0.0004798202767745,emission,0.0,ecoinvent 3.10
+"heat, district or industrial, natural gas, from heat production, natural gas, at industrial furnace low-NOx >100kW",nox_emission_chemical,EMISSION,kg,2.5555555555555527e-05,emission,0.0,ecoinvent 3.10
+"heavy fuel oil, from heavy fuel oil production, petroleum refinery operation",nox_emission_chemical,EMISSION,kg,9.8942190703882e-05,emission,0.0,ecoinvent 3.10
+"hydrogen, gaseous, low pressure, from hydrogen production, steam methane reforming",nox_emission_chemical,EMISSION,kg,0.0003490258362533,emission,0.0,ecoinvent 3.10
+"naphtha, from naphtha production, petroleum refinery operation",nox_emission_chemical,EMISSION,kg,0.0001073357123594,emission,0.0,ecoinvent 3.10
+"natural gas liquids, from natural gas liquids production",nox_emission_chemical,EMISSION,kg,2.0256308949425264e-05,emission,0.0,ecoinvent 3.10
+"p-xylene, from BTX production, from pyrolysis gas, average",nox_emission_chemical,EMISSION,kg,0.0005352335802045,emission,0.0,ecoinvent 3.10
+"p-xylene, from BTX production, from reformate, average",nox_emission_chemical,EMISSION,kg,0.0002608654343806,emission,0.0,ecoinvent 3.10
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",nox_emission_chemical,EMISSION,kg,0.0004798202811474,emission,0.0,ecoinvent 3.10
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",nox_emission_chemical,EMISSION,kg,0.0002693906210025,emission,0.0,ecoinvent 3.10
+"reformate, from reformate production, petroleum refinery operation",nox_emission_chemical,EMISSION,kg,0.0003572740781681,emission,0.0,ecoinvent 3.10
+"toluene, liquid, from BTX production, from pyrolysis gas, average",nox_emission_chemical,EMISSION,kg,0.0002246814379421,emission,0.0,ecoinvent 3.10
+"toluene, liquid, from BTX production, from reformate, average",nox_emission_chemical,EMISSION,kg,0.0001065306366817,emission,0.0,ecoinvent 3.10
+"carbon monoxide, from carbon monoxide production",oxygen_liquid,RAW MATERIALS,kg,-1.142857143,intermediate,0.0,ecoinvent 3.10
+"p-xylene, from BTX production, from pyrolysis gas, average",p-xylene,PRODUCT,kg,1.0,intermediate,0.9056603773584906,ecoinvent 3.10
+"p-xylene, from BTX production, from reformate, average",p-xylene,PRODUCT,kg,1.0,intermediate,0.9056603773584906,ecoinvent 3.10
+"propylene, from potroleum refinery openration",petroleum,RAW MATERIALS,kg,-1.170856374961072,raw_material,0.63,ecoinvent 3.10
+"diesel, from diesel production, petroleum refinery operation",petroleum,RAW MATERIALS,kg,-1.0825660005786404,raw_material,0.63,ecoinvent 3.10
+"heavy fuel oil, from heavy fuel oil production, petroleum refinery operation",petroleum,RAW MATERIALS,kg,-0.9805853825051132,raw_material,0.63,ecoinvent 3.10
+"naphtha, from naphtha production, petroleum refinery operation",petroleum,RAW MATERIALS,kg,-1.0656073683289071,raw_material,0.63,ecoinvent 3.10
+"reformate, from reformate production, petroleum refinery operation",petroleum,RAW MATERIALS,kg,-1.0510904317997674,raw_material,0.63,ecoinvent 3.10
+"propylene, from potroleum refinery openration",pm25_emission_chemical,EMISSION,kg,6.664600997981687e-05,emission,0.0,ecoinvent 3.10
+"diesel, from diesel production, petroleum refinery operation",pm25_emission_chemical,EMISSION,kg,4.497677223629248e-05,emission,0.0,ecoinvent 3.10
+"heat, district or industrial, natural gas, from heat production, natural gas, at industrial furnace low-NOx >100kW",pm25_emission_chemical,EMISSION,kg,1.1111111111111114e-07,emission,0.0,ecoinvent 3.10
+"heavy fuel oil, from heavy fuel oil production, petroleum refinery operation",pm25_emission_chemical,EMISSION,kg,1.929926206236548e-05,emission,0.0,ecoinvent 3.10
+"hydrogen, gaseous, low pressure, from hydrogen production, steam methane reforming",pm25_emission_chemical,EMISSION,kg,3.896053803817833e-06,emission,0.0,ecoinvent 3.10
+"naphtha, from naphtha production, petroleum refinery operation",pm25_emission_chemical,EMISSION,kg,1.615341834655731e-05,emission,0.0,ecoinvent 3.10
+"reformate, from reformate production, petroleum refinery operation",pm25_emission_chemical,EMISSION,kg,6.994826505463547e-05,emission,0.0,ecoinvent 3.10
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",propane,RAW MATERIALS,kg,-0.092473725678735,intermediate,0.828,ecoinvent 3.10
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",propane,RAW MATERIALS,kg,-0.0924737249926239,intermediate,0.828,ecoinvent 3.10
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",propane,RAW MATERIALS,kg,-0.0924737326092297,intermediate,0.828,ecoinvent 3.10
+"propane, from natural gas liquids fractionation",propane,PRODUCT,kg,1.0,intermediate,0.828,ecoinvent 3.10
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",propane,RAW MATERIALS,kg,-0.0924737334519951,intermediate,0.828,ecoinvent 3.10
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",propane,RAW MATERIALS,kg,-0.0924737347423172,intermediate,0.828,ecoinvent 3.10
+"propylene, from potroleum refinery openration",propylene,PRODUCT,kg,1.0,intermediate,0.85714,ecoinvent 3.10
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",propylene,PRODUCT,kg,1.0,intermediate,0.85714,ecoinvent 3.10
+"benzene, from BTX production, from pyrolysis gas, average",pyrolysis_gas,RAW MATERIALS,kg,-1.0742658268614966,intermediate,0.9075,ecoinvent 3.10
+"p-xylene, from BTX production, from pyrolysis gas, average",pyrolysis_gas,RAW MATERIALS,kg,-1.1560694258689228,intermediate,0.9075,ecoinvent 3.10
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",pyrolysis_gas,PRODUCT,kg,1.0,intermediate,0.9075,ecoinvent 3.10
+"toluene, liquid, from BTX production, from pyrolysis gas, average",pyrolysis_gas,RAW MATERIALS,kg,-1.0726112047259178,intermediate,0.9075,ecoinvent 3.10
+"benzene, from BTX production, from reformate, average",reformate,RAW MATERIALS,kg,-1.0382080121377717,intermediate,0.92,ecoinvent 3.10
+"p-xylene, from BTX production, from reformate, average",reformate,RAW MATERIALS,kg,-1.0846206748739151,intermediate,0.92,ecoinvent 3.10
+"reformate, from reformate production, petroleum refinery operation",reformate,PRODUCT,kg,1.0,intermediate,0.92,ecoinvent 3.10
+"toluene, liquid, from BTX production, from reformate, average",reformate,RAW MATERIALS,kg,-1.034557501720613,intermediate,0.92,ecoinvent 3.10
+"propylene, from potroleum refinery openration",sox_emission_chemical,EMISSION,kg,0.0027664291295982,emission,0.0,ecoinvent 3.10
+"benzene, from BTX production, from pyrolysis gas, average",sox_emission_chemical,EMISSION,kg,0.0005701013156522,emission,0.0,ecoinvent 3.10
+"benzene, from BTX production, from reformate, average",sox_emission_chemical,EMISSION,kg,0.0003553347365633,emission,0.0,ecoinvent 3.10
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",sox_emission_chemical,EMISSION,kg,1.4821563393597612e-05,emission,0.0,ecoinvent 3.10
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",sox_emission_chemical,EMISSION,kg,1.4821563283628663e-05,emission,0.0,ecoinvent 3.10
+"diesel, from diesel production, petroleum refinery operation",sox_emission_chemical,EMISSION,kg,0.0010916604584945,emission,0.0,ecoinvent 3.10
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",sox_emission_chemical,EMISSION,kg,1.4821564504407915e-05,emission,0.0,ecoinvent 3.10
+"heat, district or industrial, natural gas, from heat production, natural gas, at industrial furnace low-NOx >100kW",sox_emission_chemical,EMISSION,kg,6.111111111111116e-07,emission,0.0,ecoinvent 3.10
+"heavy fuel oil, from heavy fuel oil production, petroleum refinery operation",sox_emission_chemical,EMISSION,kg,0.0004727044630532,emission,0.0,ecoinvent 3.10
+"hydrogen, gaseous, low pressure, from hydrogen production, steam methane reforming",sox_emission_chemical,EMISSION,kg,1.0718808311939016e-05,emission,0.0,ecoinvent 3.10
+"naphtha, from naphtha production, petroleum refinery operation",sox_emission_chemical,EMISSION,kg,0.0004813063727952,emission,0.0,ecoinvent 3.10
+"natural gas liquids, from natural gas liquids production",sox_emission_chemical,EMISSION,kg,6.221580605894909e-08,emission,0.0,ecoinvent 3.10
+"p-xylene, from BTX production, from pyrolysis gas, average",sox_emission_chemical,EMISSION,kg,0.0011160235328884,emission,0.0,ecoinvent 3.10
+"p-xylene, from BTX production, from reformate, average",sox_emission_chemical,EMISSION,kg,0.0005439344137954,emission,0.0,ecoinvent 3.10
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",sox_emission_chemical,EMISSION,kg,1.4821564639485212e-05,emission,0.0,ecoinvent 3.10
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",sox_emission_chemical,EMISSION,kg,8.321429208686977e-06,emission,0.0,ecoinvent 3.10
+"reformate, from reformate production, petroleum refinery operation",sox_emission_chemical,EMISSION,kg,0.0018363549531884,emission,0.0,ecoinvent 3.10
+"toluene, liquid, from BTX production, from pyrolysis gas, average",sox_emission_chemical,EMISSION,kg,0.0004684866223281,emission,0.0,ecoinvent 3.10
+"toluene, liquid, from BTX production, from reformate, average",sox_emission_chemical,EMISSION,kg,0.000222128621802,emission,0.0,ecoinvent 3.10
+"toluene, liquid, from BTX production, from pyrolysis gas, average",toluene,PRODUCT,kg,1.0,intermediate,0.91304,ecoinvent 3.10
+"toluene, liquid, from BTX production, from reformate, average",toluene,PRODUCT,kg,1.0,intermediate,0.91304,ecoinvent 3.10
+"ammonia, anhydrous, liquid, from ammonia production, steam reforming, liquid",water,RAW MATERIALS,kg,-0.7038223536936361,raw_material,0.0,ecoinvent 3.10
+"benzene, from BTX production, from pyrolysis gas, average",water,RAW MATERIALS,kg,-0.0277044366678807,raw_material,0.0,ecoinvent 3.10
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",water,RAW MATERIALS,kg,-2.1790319278805144,raw_material,0.0,ecoinvent 3.10
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",water,RAW MATERIALS,kg,-2.1790319117131336,raw_material,0.0,ecoinvent 3.10
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",water,RAW MATERIALS,kg,-2.179032091189273,raw_material,0.0,ecoinvent 3.10
+"hydrogen, gaseous, low pressure, from hydrogen production, steam methane reforming",water,RAW MATERIALS,kg,-4.129838340105758,raw_material,0.0,ecoinvent 3.10
+"methanol, from methanol production, natural gas reforming",water,RAW MATERIALS,kg,-0.3537266711574275,raw_material,0.0,ecoinvent 3.10
+"p-xylene, from BTX production, from pyrolysis gas, average",water,RAW MATERIALS,kg,-0.0542338746427842,raw_material,0.0,ecoinvent 3.10
+"p-xylene, from BTX production, from reformate, average",water,RAW MATERIALS,kg,-0.0264337556525455,raw_material,0.0,ecoinvent 3.10
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",water,RAW MATERIALS,kg,-2.179032111048024,raw_material,0.0,ecoinvent 3.10
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",water,RAW MATERIALS,kg,-1.2233972523545706,raw_material,0.0,ecoinvent 3.10
+"toluene, liquid, from BTX production, from pyrolysis gas, average",water,RAW MATERIALS,kg,-0.0227664059031161,raw_material,0.0,ecoinvent 3.10
+"ammonia, from Haber-Bosch process",ammonia,PRODUCT,kg,1.0,intermediate,0.0,AB
+"ammonia, from Haber-Bosch process",electricity,UTILITIES,kWh,-0.5985245077866669,intermediate,0.0,AB
+"ammonia, from Haber-Bosch process",hydrogen,RAW MATERIALS,kg,-0.18059587016519593,intermediate,0.0,AB
+"ammonia, from Haber-Bosch process",nitrogen_liquid,RAW MATERIALS,kg,-0.837118096047279,intermediate,0.0,AB
+"adipic_acid, from phenol via cyclohexanol",co_emission,EMISSION,kg,0.0004,emission,0.428,ihsmarkit
+"adipic_acid, from phenol via cyclohexanol",nox_emission_chemical,EMISSION,kg,0.008,emission,0.0,ihsmarkit
+"ammonia, from Haber-Bosch process",co_emission,EMISSION,kg,0.0001,emission,0.428,AB
+"ammonia, from Haber-Bosch process",nh3_emission_chemical,EMISSION,kg,1e-05,emission,0.0,AB
+"ammonia, from Haber-Bosch process",nox_emission_chemical,EMISSION,kg,0.001,emission,0.0,AB
+"ethylbenzene, from benzene via liquid phase alkylation",nmvoc_emission,EMISSION,kg,0.0001,emission,0.0,ihsmarkit
+"ethylene, from methanol-to-olefins",nmvoc_emission,EMISSION,kg,0.0006,emission,0.0,https://onlinelibrary.wiley.com/doi/10.1111/jiec.12583
+"formaldehyde, from methanol",co_emission,EMISSION,kg,0.0002,emission,0.428,ihsmarkit
+"formaldehyde, from methanol",nmvoc_emission,EMISSION,kg,0.0015,emission,0.0,ihsmarkit
+"gpps, by continuous bulk polymerization",nmvoc_emission,EMISSION,kg,0.00011999999999999999,emission,0.0,ihsmarkit
+"hdpe, by gas phase process",nmvoc_emission,EMISSION,kg,0.0023,emission,0.0,ihsmarkit
+"hips, by continuous bulk polymerization",nmvoc_emission,EMISSION,kg,0.00011999999999999999,emission,0.0,ihsmarkit
+"ldpe, by gas phase process",nmvoc_emission,EMISSION,kg,0.0024,emission,0.0,ihsmarkit
+"nitric_acid, from ammonia",nox_emission_chemical,EMISSION,kg,0.01,emission,0.0,ecoinvent
+"pp, by gas phase process",nmvoc_emission,EMISSION,kg,0.004,emission,0.0,ihsmarkit
+"propylene, from methanol-to-olefins",nmvoc_emission,EMISSION,kg,0.0006,emission,0.0,https://onlinelibrary.wiley.com/doi/10.1111/jiec.12583
+"propylene, from ethylene by dimerization and oct",nmvoc_emission,EMISSION,kg,0.0006,emission,0.0,ihsmarkit
+"pvc, by suspension polymerization",nmvoc_emission,EMISSION,kg,9.6e-05,emission,0.0,ihsmarkit
+"pvc, by suspension polymerization",pm25_emission_chemical,EMISSION,kg,5e-06,emission,0.0,ihsmarkit
+"styrene, from ethylbenzene by dehydrogenation",nmvoc_emission,EMISSION,kg,0.001,emission,0.0,ihsmarkit
+"vinyl_chloride, from ethylene by a balanced process",nmvoc_emission,EMISSION,kg,0.0025,emission,0.0,ihsmarkit

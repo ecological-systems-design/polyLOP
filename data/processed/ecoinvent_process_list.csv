@@ -1,0 +1,35 @@
+product_process,product_name,process,ratio,TRL,Data source,include,note,co2_route,agricultural_residue_route,forest_residue_route,fossil_route,chemical_recycling_route,all,dominant,include_o,Comment CO,Column1,number_of_data,note_process,reference,co-products,note_coproduction,process_ghg_emission,process_ghg_emission_amount,process_ghg_emission_reference,unit,value,type,carbon_content
+"tetrahydrofuran, from 1,4-BDO dehydrogenation",tetrahydrofuran,,,commercialized,ecoinvent,yes,,,yes,yes,,,,,,,,,,,,,,,,,,,
+"ammonium sulfate, from ammonia and sulfuric acid",ammonium_sulfate,,,commercialized,ecoinvent 3.10,yes,,,,,,,yes,,,,,,,,,,,,,,,,
+"enzyme, from potato starch",enzyme,,,commercialized,ecoinvent 3.10,yes,,,,,,,yes,,,,,,,,,,,,,,,,
+"nitric_acid, from ammonia",nitric_acid,,,commercialized,ecoinvent 3.10,yes,,,,,,,yes,,,,,,,,,,,,,,,,
+"potato starch, from potato",potato_starch,,,commercialized,ecoinvent 3.10,yes,,,,,,,yes,,,,,,,,,,,,,,,,
+"sulfur dioxide, from sulfur",sulfur_dioxide,,,commercialized,ecoinvent 3.10,yes,,,,,,,yes,,,,,,,,,,,,,,,,
+"ammonia, anhydrous, liquid, from ammonia production, steam reforming, liquid",ammonia,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.0
+"benzene, from BTX production, from pyrolysis gas, average",benzene,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.9230769230769231
+"benzene, from BTX production, from reformate, average",benzene,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.9230769230769231
+"butadiene, from butadiene purification, extractive distillation of crude butadiene",butadiene,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.889
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",butadiene_crude,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.8882
+"butane, from natural gas liquids fractionation",butane,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.8276
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",butene_1,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.857
+"carbon monoxide, from carbon monoxide production",carbon_monoxide,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.42857142857142855
+"diesel, from diesel production, petroleum refinery operation",diesel,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.86
+"ethane, from natural gas liquids fractionation",ethane,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.8
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",ethylene,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.85714
+"heat, district or industrial, natural gas, from heat production, natural gas, at industrial furnace low-NOx >100kW",heat_high,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,MJ,,,0.0
+"heavy fuel oil, from heavy fuel oil production, petroleum refinery operation",heavy_fuel_oil,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.86
+"hydrogen, gaseous, low pressure, from hydrogen production, steam methane reforming",hydrogen,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.0
+"isobutane, from natural gas liquids fractionation",isobutane,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.8276
+"methanol, from methanol production, natural gas reforming",methanol,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.375
+"naphtha, from naphtha production, petroleum refinery operation",naphtha,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.84826
+"natural gas liquids, from natural gas liquids production",natural_gas_liquids,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.82
+"p-xylene, from BTX production, from pyrolysis gas, average",p-xylene,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.9056603773584906
+"p-xylene, from BTX production, from reformate, average",p-xylene,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.9056603773584906
+"pentane, from natural gas liquids fractionation",pentane,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.833
+"propane, from natural gas liquids fractionation",propane,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.828
+"propylene, from potroleum refinery openration",propylene,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.85714
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",propylene,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.85714
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",pyrolysis_gas,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.9075
+"reformate, from reformate production, petroleum refinery operation",reformate,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.92
+"toluene, liquid, from BTX production, from pyrolysis gas, average",toluene,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.91304
+"toluene, liquid, from BTX production, from reformate, average",toluene,,,,ecoinvent 3.10,yes,,,,,,,,,,,,,,,,,,,,kg,,,0.91304

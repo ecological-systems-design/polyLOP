@@ -1,0 +1,58 @@
+process,product_name,type,unit,value,product_type,carbon_content,data_source
+"carbon_monoxide, from co2",carbon_monoxide,PRODUCT,kg,1.0,intermediate,0.42857142857142855,AB
+"carbon_monoxide, from co2",co2_feedstock_fossil,RAW MATERIALS,kg,-1.654,raw_material,0.2727272727272727,AB
+"carbon_monoxide, from co2",electricity,UTILITIES,kWh,-0.2777777777777778,intermediate,0.0,AB
+"carbon_monoxide, from co2",heat_high,UTILITIES,MJ,-2.0,intermediate,0.0,AB
+"carbon_monoxide, from co2",hydrogen,RAW MATERIALS,kg,-0.07519,intermediate,0.0,AB
+"carbon_monoxide, from co2",water,UTILITIES,kg,-0.64286,raw_material,0.0,AB
+"methanol, from co2 hydrogenation",co2_emission_fossil,EMISSION,kg,0.080898,emission,0.2727272727272727,
+"methanol, from co2 hydrogenation",co2_feedstock_fossil,RAW MATERIALS,kg,-1.45732,raw_material,0.2727272727272727,
+"methanol, from co2 hydrogenation",electricity,UTILITIES,kWh,-0.257626,intermediate,0.0,
+"methanol, from co2 hydrogenation",hydrogen,RAW MATERIALS,kg,-0.193204,intermediate,0.0,
+"methanol, from co2 hydrogenation",methanol,PRODUCT,kg,1.0,intermediate,0.375,
+"syngas_2_to_1, from mixing of co and h2",carbon_monoxide,RAW MATERIALS,kg,-0.875676,intermediate,0.42857142857142855,mass balance
+"syngas_2_to_1, from mixing of co and h2",hydrogen,RAW MATERIALS,kg,-0.124324,intermediate,0.0,mass balance
+"syngas_2_to_1, from mixing of co and h2",syngas_2_to_1,PRODUCT,kg,1.0,intermediate,0.374789328,mass balance
+"trimethylamine, from methanol and ammonia, mass balance only",ammonia,RAW MATERIALS,kg,-0.288,intermediate,0.0,mass balance
+"trimethylamine, from methanol and ammonia, mass balance only",methanol,RAW MATERIALS,kg,-1.627,intermediate,0.375,mass balance
+"trimethylamine, from methanol and ammonia, mass balance only",trimethylamine,PRODUCT,kg,1.0,intermediate,0.6101694915254238,mass balance
+"acetaldehyde, from ethylene by one-step oxidation",acetaldehyde,PRODUCT,kg,1.0,intermediate,0.545,ihsmarkit
+"acetic_anhydride, from acetic acid via ketene",acetic_acid,RAW MATERIALS,kg,-1.2331,intermediate,0.4,ihsmarkit
+"acetic_anhydride, from acetic acid via ketene",acetic_anhydride,PRODUCT,kg,1.0,intermediate,0.471,ihsmarkit
+"chlorobenzene, from benzene and chlorine",benzene,RAW MATERIALS,kg,-0.864426344861534,intermediate,0.9230769230769231,ihsmarkit
+"chlorobenzene, from benzene and chlorine",chlorine,RAW MATERIALS,kg,-0.5977689245120346,raw_material,0.0,ihsmarkit
+"chlorobenzene, from benzene and chlorine",chlorobenzene,PRODUCT,kg,1.0,intermediate,0.64,ihsmarkit
+"acetaldehyde, from ethylene by one-step oxidation",cooling_water,UTILITIES,MJ,-7.454477587700302,intermediate,0.0,ihsmarkit
+"acetic_anhydride, from acetic acid via ketene",cooling_water,UTILITIES,MJ,-3.252862981810307,intermediate,0.0,ihsmarkit
+"chlorobenzene, from benzene and chlorine",cooling_water,UTILITIES,MJ,-4.431074501038049,intermediate,0.0,ihsmarkit
+"acetaldehyde, from ethylene by one-step oxidation",electricity,UTILITIES,kWh,-0.1113334399999999,intermediate,0.0,ihsmarkit
+"acetic_anhydride, from acetic acid via ketene",electricity,UTILITIES,kWh,-0.41005981,intermediate,0.0,ihsmarkit
+"chlorobenzene, from benzene and chlorine",electricity,UTILITIES,kWh,-0.4792948283924165,intermediate,0.0,ihsmarkit
+"acetaldehyde, from ethylene by one-step oxidation",ethylene,RAW MATERIALS,kg,-0.68,intermediate,0.85714,ihsmarkit
+"acetic_anhydride, from acetic acid via ketene",heat_high,UTILITIES,MJ,-3.8769768080640006,intermediate,0.0,ihsmarkit
+"acetaldehyde, from ethylene by one-step oxidation",nitrogen_liquid,UTILITIES,kg,-0.00894497485,intermediate,0.0,ihsmarkit
+"acetic_anhydride, from acetic acid via ketene",nitrogen_liquid,UTILITIES,kg,-0.00688075795,intermediate,0.0,ihsmarkit
+"chlorobenzene, from benzene and chlorine",nitrogen_liquid,UTILITIES,kg,-0.0077411698331561,intermediate,0.0,ihsmarkit
+"acetaldehyde, from ethylene by one-step oxidation",oxygen_liquid,RAW MATERIALS,kg,-0.4,intermediate,0.0,ihsmarkit
+"chlorobenzene, from benzene and chlorine",oxygen_liquid,RAW MATERIALS,kg,-0.0377566919645693,intermediate,0.0,ihsmarkit
+"chlorobenzene, from benzene and chlorine",sodium_hydroxide,RAW MATERIALS,kg,-0.2308928149356786,raw_material,0.0,ihsmarkit
+"acetaldehyde, from ethylene by one-step oxidation",steam_high,UTILITIES,MJ,-9.504,intermediate,0.0,ihsmarkit
+"acetic_anhydride, from acetic acid via ketene",steam_high,UTILITIES,MJ,-10.048000000000002,intermediate,0.0,ihsmarkit
+"chlorobenzene, from benzene and chlorine",steam_high,UTILITIES,MJ,-5.526894592581492,intermediate,0.0,ihsmarkit
+"chlorobenzene, from benzene and chlorine",sulfuric_acid,RAW MATERIALS,kg,-0.0044231198962127,raw_material,0.0,ihsmarkit
+"acetaldehyde, from ethylene by one-step oxidation",water,UTILITIES,kg,-2.58707,raw_material,0.0,ihsmarkit
+"chlorobenzene, from benzene and chlorine",water,UTILITIES,kg,-0.0368352533100512,raw_material,0.0,ihsmarkit
+"cyclohexane, from benzene by hydrogenation",benzene,RAW MATERIALS,kg,-0.9135857509664488,intermediate,0.9230769230769231,ihsmarkit
+"cyclohexane, from benzene by hydrogenation",co2_emission_fossil,EMISSION,kg,0.2136651530148972,emission,0.2727272727272727,ihsmarkit
+"cyclohexane, from benzene by hydrogenation",cooling_water,UTILITIES,MJ,-0.4442611870328059,intermediate,0.0,ihsmarkit
+"cyclohexane, from benzene by hydrogenation",cyclohexane,PRODUCT,kg,1.0,intermediate,0.857,ihsmarkit
+"cyclohexane, from benzene by hydrogenation",electricity,UTILITIES,kWh,-0.0668573849869597,intermediate,0.0,ihsmarkit
+"cyclohexane, from benzene by hydrogenation",hydrogen,RAW MATERIALS,kg,-0.0666117853773337,intermediate,0.0,ihsmarkit
+"cyclohexane, from benzene by hydrogenation",water,UTILITIES,kg,-0.8995744815609038,raw_material,0.0,ihsmarkit
+"dimethyl_terephthalate, from p-xylene by oxidation and esterification",cooling_water,UTILITIES,MJ,-3.2864277873451644,intermediate,0.0,ihsmarkit
+"dimethyl_terephthalate, from p-xylene by oxidation and esterification",dimethyl_terephthalate,PRODUCT,kg,1.0,intermediate,0.619,ihsmarkit
+"dimethyl_terephthalate, from p-xylene by oxidation and esterification",electricity,UTILITIES,kWh,-0.3288011095133918,intermediate,0.0,ihsmarkit
+"dimethyl_terephthalate, from p-xylene by oxidation and esterification",heat_high,UTILITIES,MJ,-4.4731293399916,intermediate,0.0,ihsmarkit
+"dimethyl_terephthalate, from p-xylene by oxidation and esterification",methanol,RAW MATERIALS,kg,-0.3969899219264641,intermediate,0.375,ihsmarkit
+"dimethyl_terephthalate, from p-xylene by oxidation and esterification",p-xylene,RAW MATERIALS,kg,-0.6234753707133031,intermediate,0.9056603773584906,ihsmarkit
+"dimethyl_terephthalate, from p-xylene by oxidation and esterification",water,UTILITIES,kg,-0.0830189661952592,raw_material,0.0,ihsmarkit
