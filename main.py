@@ -33,7 +33,7 @@ if __name__ == '__main__':
     #plot_scenarios(master_file_path, plastics_file_path)
     #plot_pareto_curves(user_input)
     #user_input.carbon_flow_sankey('GHG', scenario='with_ccs')
-    plot_system_contribution(master_file_path, plastics_file_path)
+    #plot_system_contribution(master_file_path, plastics_file_path)
     # Fig 2
     #plot_sensitivity_electricity(master_file_path, plastics_file_path)
     #plot_sensitivity_biomass(master_file_path, plastics_file_path)
