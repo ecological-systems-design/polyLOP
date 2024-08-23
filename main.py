@@ -26,7 +26,7 @@ if __name__ == '__main__':
     demand_list = [round(i, 3) for i in np.arange(0.2, 1.201, 0.025)]
     ele_impact_list = [0, 0.001, 0.005] + [round(i, 3) for i in np.arange(0.01, 0.41, 0.01)]
     biomass_availability_list = [0.5, 1]
-    user_input = MasterFile(user_input_file, master_file_path, plastics_file_path)
+    #user_input = MasterFile(user_input_file, master_file_path, plastics_file_path)
     #user_input.export_process_list()
     #'''
     # Fig 1
