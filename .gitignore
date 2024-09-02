@@ -168,3 +168,4 @@ data/intermediate/*
 data/processed/*
 data/figure/*
 figure/*
+.idea/*
