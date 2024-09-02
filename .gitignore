@@ -162,7 +162,7 @@ cython_debug/
 #.idea/
 
 # Data and figure
-data/external/*
+data/external/ihs/*
 data/raw/old/*
 data/intermediate/*
 data/processed/*
