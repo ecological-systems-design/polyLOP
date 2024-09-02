@@ -163,6 +163,7 @@ cython_debug/
 
 # Data and figure
 data/external/*
+data/raw/old/*
 data/intermediate/*
 data/processed/*
 data/figure/*
