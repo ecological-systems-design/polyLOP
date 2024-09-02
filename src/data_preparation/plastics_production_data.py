@@ -16,11 +16,3 @@ def read_plastics_demand(file_path):
     df_plastics_share.drop('EPS', axis=1, inplace=True)
     return df_plastics_demand, df_plastics_share
 
-def get_plastics_production():
-    file_path_2 = r'data/raw/bioplastics_vs_fossil.xlsx'
-    df_plastics_share = read_plastics_demand(file_path_2)[1].copy()
-    df_plastics_demand = read_plastics_demand(file_path_2)[0].copy()
-    if country in df_plastics_demand['Region'].unique():
-        df_plastics_demand = df_plastics_demand[df_plastics_demand['Region'] == country].copy()
-    else:
-        print('country does not exist in the plastics demand data, or if it is a region, to be developed')

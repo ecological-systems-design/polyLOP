@@ -12,11 +12,6 @@ def get_plastic_types_dict():
     return plastic_types_dict
 
 
-def get_plastic_segments_df():
-    df = pd.read_excel(r'data/external/klotz_plastics_recycling.xlsx', sheet_name='S2.3 productgroups')
-    return df
-
-
 def waste_to_secondary_plastics_ratio():
     df0 = pd.read_excel(r'data/external/klotz_plastics_recycling.xlsx', sheet_name='mass_flow_2')
     df = df0.copy()

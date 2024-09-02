@@ -1,0 +1,273 @@
+process,product_name,unit,value,type
+"toluene, liquid, from BTX production, from pyrolysis gas, average",toluene,kg,1.0,PRODUCT
+"toluene, liquid, from BTX production, from pyrolysis gas, average",electricity,kWh,-0.04781460955959864,UTILITIES
+"toluene, liquid, from BTX production, from pyrolysis gas, average",heat_high,MJ,-1.408729886158476,UTILITIES
+"toluene, liquid, from BTX production, from pyrolysis gas, average",hydrogen,kg,-0.039312264543616575,RAW MATERIALS
+"toluene, liquid, from BTX production, from pyrolysis gas, average",pyrolysis_gas,kg,-1.0726112047259178,RAW MATERIALS
+"toluene, liquid, from BTX production, from pyrolysis gas, average",water,kg,-0.02276640590311619,RAW MATERIALS
+"toluene, liquid, from BTX production, from pyrolysis gas, average",co2_emission_fossil,kg,0.21660919106570153,EMISSION
+"toluene, liquid, from BTX production, from pyrolysis gas, average",co_emission,kg,6.588116739080718e-05,EMISSION
+"toluene, liquid, from BTX production, from pyrolysis gas, average",n2o_emission,kg,5.712239941457643e-06,EMISSION
+"toluene, liquid, from BTX production, from pyrolysis gas, average",ch4_emission,kg,4.950607956714421e-06,EMISSION
+"toluene, liquid, from BTX production, from pyrolysis gas, average",nmvoc_emission,kg,1.3557384845492983e-05,EMISSION
+"toluene, liquid, from BTX production, from pyrolysis gas, average",nox_emission,kg,0.00022468143794215675,EMISSION
+"toluene, liquid, from BTX production, from pyrolysis gas, average",sox_emission,kg,0.000468486622328167,EMISSION
+"toluene, liquid, from BTX production, from reformate, average",toluene,kg,1.0,PRODUCT
+"toluene, liquid, from BTX production, from reformate, average",electricity,kWh,-0.04036691449284443,UTILITIES
+"toluene, liquid, from BTX production, from reformate, average",heat_high,MJ,-2.604846144722076,UTILITIES
+"toluene, liquid, from BTX production, from reformate, average",reformate,kg,-1.034557501720613,RAW MATERIALS
+"toluene, liquid, from BTX production, from reformate, average",co2_emission_fossil,kg,0.1027032550953354,EMISSION
+"toluene, liquid, from BTX production, from reformate, average",co_emission,kg,3.123694940030381e-05,EMISSION
+"toluene, liquid, from BTX production, from reformate, average",n2o_emission,kg,2.708406017565056e-06,EMISSION
+"toluene, liquid, from BTX production, from reformate, average",ch4_emission,kg,2.347285215223048e-06,EMISSION
+"toluene, liquid, from BTX production, from reformate, average",nmvoc_emission,kg,9.894813168854476e-06,EMISSION
+"toluene, liquid, from BTX production, from reformate, average",nox_emission,kg,0.00010653063668177291,EMISSION
+"toluene, liquid, from BTX production, from reformate, average",sox_emission,kg,0.00022212862180202145,EMISSION
+"benzene, from BTX production, from pyrolysis gas, average",benzene,kg,1.0,PRODUCT
+"benzene, from BTX production, from pyrolysis gas, average",electricity,kWh,-0.06306625220177653,UTILITIES
+"benzene, from BTX production, from pyrolysis gas, average",heat_high,MJ,-1.7142832329052997,UTILITIES
+"benzene, from BTX production, from pyrolysis gas, average",hydrogen,kg,-0.05685346200804901,RAW MATERIALS
+"benzene, from BTX production, from pyrolysis gas, average",pyrolysis_gas,kg,-1.0742658268614966,RAW MATERIALS
+"benzene, from BTX production, from pyrolysis gas, average",water,kg,-0.027704436667880725,RAW MATERIALS
+"benzene, from BTX production, from pyrolysis gas, average",co2_emission_fossil,kg,0.2635916991508616,EMISSION
+"benzene, from BTX production, from pyrolysis gas, average",co_emission,kg,8.017078485519047e-05,EMISSION
+"benzene, from BTX production, from pyrolysis gas, average",n2o_emission,kg,6.951224113428927e-06,EMISSION
+"benzene, from BTX production, from pyrolysis gas, average",ch4_emission,kg,6.024394240705682e-06,EMISSION
+"benzene, from BTX production, from pyrolysis gas, average",nmvoc_emission,kg,1.4493125744755627e-05,EMISSION
+"benzene, from BTX production, from pyrolysis gas, average",nox_emission,kg,0.0002734148154261293,EMISSION
+"benzene, from BTX production, from pyrolysis gas, average",sox_emission,kg,0.0005701013156522662,EMISSION
+"benzene, from BTX production, from reformate, average",benzene,kg,1.0,PRODUCT
+"benzene, from BTX production, from reformate, average",electricity,kWh,-0.07204395895295107,UTILITIES
+"benzene, from BTX production, from reformate, average",heat_high,MJ,-4.166920548617029,UTILITIES
+"benzene, from BTX production, from reformate, average",hydrogen,kg,-0.022511509944820807,RAW MATERIALS
+"benzene, from BTX production, from reformate, average",reformate,kg,-1.0382080121377715,RAW MATERIALS
+"benzene, from BTX production, from reformate, average",co2_emission_fossil,kg,0.16429235367076556,EMISSION
+"benzene, from BTX production, from reformate, average",co_emission,kg,4.9969126428433995e-05,EMISSION
+"benzene, from BTX production, from reformate, average",n2o_emission,kg,4.332583216654421e-06,EMISSION
+"benzene, from BTX production, from reformate, average",ch4_emission,kg,3.7549054544338307e-06,EMISSION
+"benzene, from BTX production, from reformate, average",nmvoc_emission,kg,1.1344712515248484e-05,EMISSION
+"benzene, from BTX production, from reformate, average",nox_emission,kg,0.00017041493984048587,EMISSION
+"benzene, from BTX production, from reformate, average",sox_emission,kg,0.00035533473656332954,EMISSION
+"p-xylene, from BTX production, from reformate, average",p-xylene,kg,1.0,PRODUCT
+"p-xylene, from BTX production, from reformate, average",electricity,kWh,-0.2643774621099557,UTILITIES
+"p-xylene, from BTX production, from reformate, average",heat_high,MJ,-6.378581243887003,UTILITIES
+"p-xylene, from BTX production, from reformate, average",reformate,kg,-1.0846206748739153,RAW MATERIALS
+"p-xylene, from BTX production, from reformate, average",water,kg,-0.02643375565254558,RAW MATERIALS
+"p-xylene, from BTX production, from reformate, average",co2_emission_fossil,kg,0.25149318625386385,EMISSION
+"p-xylene, from BTX production, from reformate, average",co_emission,kg,7.649105109902137e-05,EMISSION
+"p-xylene, from BTX production, from reformate, average",n2o_emission,kg,6.632172061092838e-06,EMISSION
+"p-xylene, from BTX production, from reformate, average",ch4_emission,kg,5.747882452947126e-06,EMISSION
+"p-xylene, from BTX production, from reformate, average",nmvoc_emission,kg,1.3697396795913995e-05,EMISSION
+"p-xylene, from BTX production, from reformate, average",nox_emission,kg,0.00026086543438065427,EMISSION
+"p-xylene, from BTX production, from reformate, average",sox_emission,kg,0.0005439344137954893,EMISSION
+"p-xylene, from BTX production, from pyrolysis gas, average",p-xylene,kg,1.0,PRODUCT
+"p-xylene, from BTX production, from pyrolysis gas, average",electricity,kWh,-0.2755318211529454,UTILITIES
+"p-xylene, from BTX production, from pyrolysis gas, average",heat_high,MJ,-3.355860401355887,UTILITIES
+"p-xylene, from BTX production, from pyrolysis gas, average",hydrogen,kg,-0.05873042352350475,RAW MATERIALS
+"p-xylene, from BTX production, from pyrolysis gas, average",pyrolysis_gas,kg,-1.1560694258689228,RAW MATERIALS
+"p-xylene, from BTX production, from pyrolysis gas, average",water,kg,-0.054233874642784285,RAW MATERIALS
+"p-xylene, from BTX production, from pyrolysis gas, average",co2_emission_fossil,kg,0.5160039649966971,EMISSION
+"p-xylene, from BTX production, from pyrolysis gas, average",co_emission,kg,0.00015694137180890136,EMISSION
+"p-xylene, from BTX production, from pyrolysis gas, average",n2o_emission,kg,1.3607633380204083e-05,EMISSION
+"p-xylene, from BTX production, from pyrolysis gas, average",ch4_emission,kg,1.1793282280593535e-05,EMISSION
+"p-xylene, from BTX production, from pyrolysis gas, average",nmvoc_emission,kg,2.0543676059107408e-05,EMISSION
+"p-xylene, from BTX production, from pyrolysis gas, average",nox_emission,kg,0.0005352335802045747,EMISSION
+"p-xylene, from BTX production, from pyrolysis gas, average",sox_emission,kg,0.0011160235328884077,EMISSION
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",ethylene,kg,1.0,PRODUCT
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",butane,kg,-0.19711504569082997,RAW MATERIALS
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",diesel,kg,-0.048670383633978916,RAW MATERIALS
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",electricity,kWh,-0.12067424956077953,UTILITIES
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",ethane,kg,-0.05475418004461385,RAW MATERIALS
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",naphtha,kg,-0.7787261257947633,RAW MATERIALS
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",natural_gas_liquids,kg,-0.026768709146353497,RAW MATERIALS
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",propane,kg,-0.09247373260922974,RAW MATERIALS
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",water,kg,-2.179032091189273,RAW MATERIALS
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",co2_emission_fossil,kg,0.724690748303243,EMISSION
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",co_emission,kg,0.00021269019394640345,EMISSION
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",ch4_emission,kg,1.99801230631136e-05,EMISSION
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",nmvoc_emission,kg,0.00039419117793267874,EMISSION
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",nox_emission,kg,0.0004798202767745941,EMISSION
+"ethylene, from unsaturated hydrocarbons production, steam cracking operation, average",sox_emission,kg,1.4821564504407917e-05,EMISSION
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",propylene,kg,1.0,PRODUCT
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",butane,kg,-0.19711504748725092,RAW MATERIALS
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",diesel,kg,-0.04867038407753965,RAW MATERIALS
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",electricity,kWh,-0.1206742506605522,UTILITIES
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",ethane,kg,-0.05475418054361968,RAW MATERIALS
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",naphtha,kg,-0.778726132891735,RAW MATERIALS
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",natural_gas_liquids,kg,-0.026768709390311885,RAW MATERIALS
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",propane,kg,-0.09247373345199518,RAW MATERIALS
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",water,kg,-2.179032111048024,RAW MATERIALS
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",co2_emission_fossil,kg,0.7246907549077595,EMISSION
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",co_emission,kg,0.00021269019588476945,EMISSION
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",ch4_emission,kg,1.9980123245203754e-05,EMISSION
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",nmvoc_emission,kg,0.0003941911815251658,EMISSION
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",nox_emission,kg,0.00047982028114746755,EMISSION
+"propylene, from unsaturated hydrocarbons production, steam cracking operation, average",sox_emission,kg,1.4821564639485213e-05,EMISSION
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",pyrolysis_gas,kg,1.0,PRODUCT
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",butane,kg,-0.1971150502376741,RAW MATERIALS
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",diesel,kg,-0.04867038475665651,RAW MATERIALS
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",electricity,kWh,-0.0677514323628123,UTILITIES
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",ethane,kg,-0.05475418130762612,RAW MATERIALS
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",naphtha,kg,-0.7787261437576045,RAW MATERIALS
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",natural_gas_liquids,kg,-0.026768709763826136,RAW MATERIALS
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",propane,kg,-0.09247373474231727,RAW MATERIALS
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",water,kg,-1.2233972523545706,RAW MATERIALS
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",co2_emission_fossil,kg,0.4068708643006193,EMISSION
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",co_emission,kg,0.00011941292646808897,EMISSION
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",ch4_emission,kg,1.1217653817929096e-05,EMISSION
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",nmvoc_emission,kg,0.0002213149617828928,EMISSION
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",nox_emission,kg,0.0002693906210025889,EMISSION
+"pyrolysis gas, containing benzene, toluene and xylene, from unsaturated hydrocarbons production, steam cracking operation, average",sox_emission,kg,8.321429208686977e-06,EMISSION
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",butene_1,kg,1.0,PRODUCT
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",butane,kg,-0.19711502945543477,RAW MATERIALS
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",diesel,kg,-0.048670379625239193,RAW MATERIALS
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",electricity,kWh,-0.12067423962143607,UTILITIES
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",ethane,kg,-0.05475417553478179,RAW MATERIALS
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",naphtha,kg,-0.7787260616549287,RAW MATERIALS
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",natural_gas_liquids,kg,-0.026768706941546802,RAW MATERIALS
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",propane,kg,-0.09247372499262396,RAW MATERIALS
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",water,kg,-2.1790319117131336,RAW MATERIALS
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",co2_emission_fossil,kg,0.7246906886140361,EMISSION
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",co_emission,kg,0.00021269017642815992,EMISSION
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",ch4_emission,kg,1.9980121417449288e-05,EMISSION
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",nmvoc_emission,kg,0.0003941911454650933,EMISSION
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",nox_emission,kg,0.0004798202372541616,EMISSION
+"butene, mixed, from unsaturated hydrocarbons production, steam cracking operation, average",sox_emission,kg,1.4821563283628663e-05,EMISSION
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",butadiene_crude,kg,1.0,PRODUCT
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",butane,kg,-0.19711503091793453,RAW MATERIALS
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",diesel,kg,-0.04867037998635026,RAW MATERIALS
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",electricity,kWh,-0.12067424051678154,UTILITIES
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",ethane,kg,-0.054754175941031734,RAW MATERIALS
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",naphtha,kg,-0.7787260674327057,RAW MATERIALS
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",natural_gas_liquids,kg,-0.02676870714015787,RAW MATERIALS
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",propane,kg,-0.092473725678735,RAW MATERIALS
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",water,kg,-2.1790319278805144,RAW MATERIALS
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",co2_emission_fossil,kg,0.7246906939908963,EMISSION
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",co_emission,kg,0.0002126901780062199,EMISSION
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",ch4_emission,kg,1.9980121565692288e-05,EMISSION
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",nmvoc_emission,kg,0.00039419114838980414,EMISSION
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",nox_emission,kg,0.0004798202408141996,EMISSION
+"butadiene, crude, from unsaturated hydrocarbons production, steam cracking operation, average",sox_emission,kg,1.4821563393597612e-05,EMISSION
+"diesel, from diesel production, petroleum refinery operation",diesel,kg,1.0,PRODUCT
+"diesel, from diesel production, petroleum refinery operation",petroleum,kg,-1.0825660005786404,RAW MATERIALS
+"diesel, from diesel production, petroleum refinery operation",nh3_emission,kg,4.324734615271036e-07,EMISSION
+"diesel, from diesel production, petroleum refinery operation",co2_emission_fossil,kg,0.193439970390365,EMISSION
+"diesel, from diesel production, petroleum refinery operation",co_emission,kg,7.362033484899456e-05,EMISSION
+"diesel, from diesel production, petroleum refinery operation",n2o_emission,kg,6.795409440659434e-06,EMISSION
+"diesel, from diesel production, petroleum refinery operation",ch4_emission,kg,1.958410291040828e-05,EMISSION
+"diesel, from diesel production, petroleum refinery operation",nmvoc_emission,kg,0.00025391475402990736,EMISSION
+"diesel, from diesel production, petroleum refinery operation",nox_emission,kg,0.00023880050065727194,EMISSION
+"diesel, from diesel production, petroleum refinery operation",pm25_emission,kg,4.4976772236292474e-05,EMISSION
+"diesel, from diesel production, petroleum refinery operation",sox_emission,kg,0.0010916604584945944,EMISSION
+"C3 hydrocarbon mixture, from C3 hydrocarbon production, mixture, petroleum refinery operation",propylene,kg,1.0,PRODUCT
+"C3 hydrocarbon mixture, from C3 hydrocarbon production, mixture, petroleum refinery operation",petroleum,kg,-1.170856374961072,RAW MATERIALS
+"C3 hydrocarbon mixture, from C3 hydrocarbon production, mixture, petroleum refinery operation",nh3_emission,kg,5.5127600478124465e-06,EMISSION
+"C3 hydrocarbon mixture, from C3 hydrocarbon production, mixture, petroleum refinery operation",co2_emission_fossil,kg,0.430753183979744,EMISSION
+"C3 hydrocarbon mixture, from C3 hydrocarbon production, mixture, petroleum refinery operation",co_emission,kg,0.0004849234836923087,EMISSION
+"C3 hydrocarbon mixture, from C3 hydrocarbon production, mixture, petroleum refinery operation",n2o_emission,kg,1.6694484006195274e-05,EMISSION
+"C3 hydrocarbon mixture, from C3 hydrocarbon production, mixture, petroleum refinery operation",ch4_emission,kg,2.6786357630884854e-05,EMISSION
+"C3 hydrocarbon mixture, from C3 hydrocarbon production, mixture, petroleum refinery operation",nmvoc_emission,kg,0.0002578601002386337,EMISSION
+"C3 hydrocarbon mixture, from C3 hydrocarbon production, mixture, petroleum refinery operation",nox_emission,kg,0.000762870255522246,EMISSION
+"C3 hydrocarbon mixture, from C3 hydrocarbon production, mixture, petroleum refinery operation",pm25_emission,kg,6.664600997981687e-05,EMISSION
+"C3 hydrocarbon mixture, from C3 hydrocarbon production, mixture, petroleum refinery operation",sox_emission,kg,0.002766429129598212,EMISSION
+"naphtha, from naphtha production, petroleum refinery operation",naphtha,kg,1.0,PRODUCT
+"naphtha, from naphtha production, petroleum refinery operation",petroleum,kg,-1.0656073683289071,RAW MATERIALS
+"naphtha, from naphtha production, petroleum refinery operation",nh3_emission,kg,3.0479056831071833e-07,EMISSION
+"naphtha, from naphtha production, petroleum refinery operation",co2_emission_fossil,kg,0.09045841749099152,EMISSION
+"naphtha, from naphtha production, petroleum refinery operation",co_emission,kg,3.798669959982977e-05,EMISSION
+"naphtha, from naphtha production, petroleum refinery operation",n2o_emission,kg,3.002308521664396e-06,EMISSION
+"naphtha, from naphtha production, petroleum refinery operation",ch4_emission,kg,1.085002914488013e-05,EMISSION
+"naphtha, from naphtha production, petroleum refinery operation",nmvoc_emission,kg,0.00024095959181334747,EMISSION
+"naphtha, from naphtha production, petroleum refinery operation",nox_emission,kg,0.00010733571235943628,EMISSION
+"naphtha, from naphtha production, petroleum refinery operation",pm25_emission,kg,1.615341834655731e-05,EMISSION
+"naphtha, from naphtha production, petroleum refinery operation",sox_emission,kg,0.0004813063727952506,EMISSION
+"heavy fuel oil, from heavy fuel oil production, petroleum refinery operation",heavy_fuel_oil,kg,1.0,PRODUCT
+"heavy fuel oil, from heavy fuel oil production, petroleum refinery operation",petroleum,kg,-0.9805853825051132,RAW MATERIALS
+"heavy fuel oil, from heavy fuel oil production, petroleum refinery operation",nh3_emission,kg,2.2450946296396378e-07,EMISSION
+"heavy fuel oil, from heavy fuel oil production, petroleum refinery operation",co2_emission_fossil,kg,0.09262568781679645,EMISSION
+"heavy fuel oil, from heavy fuel oil production, petroleum refinery operation",co_emission,kg,2.6382053229463364e-05,EMISSION
+"heavy fuel oil, from heavy fuel oil production, petroleum refinery operation",n2o_emission,kg,2.907332189277562e-06,EMISSION
+"heavy fuel oil, from heavy fuel oil production, petroleum refinery operation",ch4_emission,kg,1.083841689000138e-05,EMISSION
+"heavy fuel oil, from heavy fuel oil production, petroleum refinery operation",nmvoc_emission,kg,0.00022581423577970583,EMISSION
+"heavy fuel oil, from heavy fuel oil production, petroleum refinery operation",nox_emission,kg,9.894219070388201e-05,EMISSION
+"heavy fuel oil, from heavy fuel oil production, petroleum refinery operation",pm25_emission,kg,1.929926206236548e-05,EMISSION
+"heavy fuel oil, from heavy fuel oil production, petroleum refinery operation",sox_emission,kg,0.0004727044630532534,EMISSION
+"reformate, from reformate production, petroleum refinery operation",reformate,kg,1.0,PRODUCT
+"reformate, from reformate production, petroleum refinery operation",petroleum,kg,-1.0510904317997674,RAW MATERIALS
+"reformate, from reformate production, petroleum refinery operation",nh3_emission,kg,1.2862090037643884e-07,EMISSION
+"reformate, from reformate production, petroleum refinery operation",co2_emission_fossil,kg,0.3034688844351578,EMISSION
+"reformate, from reformate production, petroleum refinery operation",co_emission,kg,8.743793648577949e-05,EMISSION
+"reformate, from reformate production, petroleum refinery operation",n2o_emission,kg,1.0500245863024082e-05,EMISSION
+"reformate, from reformate production, petroleum refinery operation",ch4_emission,kg,1.9501266370541562e-05,EMISSION
+"reformate, from reformate production, petroleum refinery operation",nmvoc_emission,kg,0.00022673854034288934,EMISSION
+"reformate, from reformate production, petroleum refinery operation",nox_emission,kg,0.0003572740781681041,EMISSION
+"reformate, from reformate production, petroleum refinery operation",pm25_emission,kg,6.994826505463547e-05,EMISSION
+"reformate, from reformate production, petroleum refinery operation",sox_emission,kg,0.0018363549531884066,EMISSION
+"butadiene, from butadiene purification, extractive distillation of crude butadiene",butadiene,kg,1.0,PRODUCT
+"butadiene, from butadiene purification, extractive distillation of crude butadiene",butadiene_crude,kg,-1.020408163,RAW MATERIALS
+"butadiene, from butadiene purification, extractive distillation of crude butadiene",electricity,kWh,-0.2,UTILITIES
+"butadiene, from butadiene purification, extractive distillation of crude butadiene",heat_high,MJ,-6.23385,UTILITIES
+"isobutane, from natural gas liquids fractionation",isobutane,kg,1.0,PRODUCT
+"isobutane, from natural gas liquids fractionation",electricity,kWh,-0.19339911060530768,UTILITIES
+"isobutane, from natural gas liquids fractionation",heat_high,MJ,-1.160375146111349,UTILITIES
+"isobutane, from natural gas liquids fractionation",natural_gas_liquids,kg,-0.975876024852698,RAW MATERIALS
+"propane, from natural gas liquids fractionation",propane,kg,1.0,PRODUCT
+"propane, from natural gas liquids fractionation",electricity,kWh,-0.19698112189274827,UTILITIES
+"propane, from natural gas liquids fractionation",heat_high,MJ,-1.1818668523452986,UTILITIES
+"propane, from natural gas liquids fractionation",natural_gas_liquids,kg,-0.9939505595556982,RAW MATERIALS
+"pentane, from natural gas liquids fractionation",pentane,kg,1.0,PRODUCT
+"pentane, from natural gas liquids fractionation",electricity,kWh,-0.19121197665450568,UTILITIES
+"pentane, from natural gas liquids fractionation",heat_high,MJ,-1.147252563128502,UTILITIES
+"pentane, from natural gas liquids fractionation",natural_gas_liquids,kg,-0.9648399266046306,RAW MATERIALS
+"butane, from natural gas liquids fractionation",butane,kg,1.0,PRODUCT
+"butane, from natural gas liquids fractionation",electricity,kWh,-0.19339911060530765,UTILITIES
+"butane, from natural gas liquids fractionation",heat_high,MJ,-1.160375146111349,UTILITIES
+"butane, from natural gas liquids fractionation",natural_gas_liquids,kg,-0.9758760248526979,RAW MATERIALS
+"ethane, from natural gas liquids fractionation",ethane,kg,1.0,PRODUCT
+"ethane, from natural gas liquids fractionation",electricity,kWh,-0.2039007248738982,UTILITIES
+"ethane, from natural gas liquids fractionation",heat_high,MJ,-1.2233837719172338,UTILITIES
+"ethane, from natural gas liquids fractionation",natural_gas_liquids,kg,-1.0288663077701998,RAW MATERIALS
+"natural gas liquids, from natural gas liquids production",natural_gas_liquids,kg,1.0,PRODUCT
+"natural gas liquids, from natural gas liquids production",electricity,kWh,-0.026833032634303654,UTILITIES
+"natural gas liquids, from natural gas liquids production",natural_gas,m3,-1.3153447369756686,RAW MATERIALS
+"natural gas liquids, from natural gas liquids production",co2_emission_fossil,kg,0.02196625710749366,EMISSION
+"natural gas liquids, from natural gas liquids production",ch4_emission,kg,2.1571653686400918e-05,EMISSION
+"natural gas liquids, from natural gas liquids production",nmvoc_emission,kg,8.839116632476492e-05,EMISSION
+"natural gas liquids, from natural gas liquids production",nox_emission,kg,2.0256308949425264e-05,EMISSION
+"natural gas liquids, from natural gas liquids production",sox_emission,kg,6.221580605894909e-08,EMISSION
+"ammonia, anhydrous, liquid, from ammonia production, steam reforming, liquid",ammonia,kg,1.0,PRODUCT
+"ammonia, anhydrous, liquid, from ammonia production, steam reforming, liquid",electricity,kWh,-0.22777422449632215,UTILITIES
+"ammonia, anhydrous, liquid, from ammonia production, steam reforming, liquid",heat_high,MJ,-9.956987527982092,UTILITIES
+"ammonia, anhydrous, liquid, from ammonia production, steam reforming, liquid",natural_gas,m3,-0.6058849992047286,RAW MATERIALS
+"ammonia, anhydrous, liquid, from ammonia production, steam reforming, liquid",water,kg,-0.7038223536936361,RAW MATERIALS
+"ammonia, anhydrous, liquid, from ammonia production, steam reforming, liquid",co2_emission_fossil,kg,1.4056923568915893,EMISSION
+"ammonia, anhydrous, liquid, from ammonia production, steam reforming, liquid",nox_emission,kg,0.0006833226734889671,EMISSION
+"hydrogen, gaseous, low pressure, from hydrogen production, steam methane reforming",hydrogen,kg,1.0,PRODUCT
+"hydrogen, gaseous, low pressure, from hydrogen production, steam methane reforming",natural_gas,m3,-4.249188189123408,RAW MATERIALS
+"hydrogen, gaseous, low pressure, from hydrogen production, steam methane reforming",water,kg,-4.129838340105758,RAW MATERIALS
+"hydrogen, gaseous, low pressure, from hydrogen production, steam methane reforming",co2_emission_fossil,kg,8.346607106680535,EMISSION
+"hydrogen, gaseous, low pressure, from hydrogen production, steam methane reforming",co_emission,kg,4.09178856429672e-05,EMISSION
+"hydrogen, gaseous, low pressure, from hydrogen production, steam methane reforming",n2o_emission,kg,1.9480269019089166e-06,EMISSION
+"hydrogen, gaseous, low pressure, from hydrogen production, steam methane reforming",ch4_emission,kg,3.8960538038178334e-05,EMISSION
+"hydrogen, gaseous, low pressure, from hydrogen production, steam methane reforming",nox_emission,kg,0.00034902583625335827,EMISSION
+"hydrogen, gaseous, low pressure, from hydrogen production, steam methane reforming",pm25_emission,kg,3.896053803817833e-06,EMISSION
+"hydrogen, gaseous, low pressure, from hydrogen production, steam methane reforming",sox_emission,kg,1.0718808311939016e-05,EMISSION
+"heat, district or industrial, natural gas, from heat production, natural gas, at industrial furnace low-NOx >100kW",heat_high,MJ,1.0,UTILITIES
+"heat, district or industrial, natural gas, from heat production, natural gas, at industrial furnace low-NOx >100kW",natural_gas,m3,-0.03086419753086423,RAW MATERIALS
+"heat, district or industrial, natural gas, from heat production, natural gas, at industrial furnace low-NOx >100kW",co2_emission_fossil,kg,0.06222222222222226,EMISSION
+"heat, district or industrial, natural gas, from heat production, natural gas, at industrial furnace low-NOx >100kW",co_emission,kg,1.5555555555555518e-05,EMISSION
+"heat, district or industrial, natural gas, from heat production, natural gas, at industrial furnace low-NOx >100kW",n2o_emission,kg,1.1111111111111111e-07,EMISSION
+"heat, district or industrial, natural gas, from heat production, natural gas, at industrial furnace low-NOx >100kW",ch4_emission,kg,2.222222222222222e-06,EMISSION
+"heat, district or industrial, natural gas, from heat production, natural gas, at industrial furnace low-NOx >100kW",nox_emission,kg,2.5555555555555527e-05,EMISSION
+"heat, district or industrial, natural gas, from heat production, natural gas, at industrial furnace low-NOx >100kW",pm25_emission,kg,1.1111111111111111e-07,EMISSION
+"heat, district or industrial, natural gas, from heat production, natural gas, at industrial furnace low-NOx >100kW",sox_emission,kg,6.111111111111116e-07,EMISSION
+"carbon monoxide, from carbon monoxide production",carbon_monoxide,kg,1.0,PRODUCT
+"carbon monoxide, from carbon monoxide production",electricity,kWh,-2.3,UTILITIES
+"carbon monoxide, from carbon monoxide production",heavy_fuel_oil,kg,-0.66,RAW MATERIALS
+"carbon monoxide, from carbon monoxide production",oxygen_liquid,kg,-1.142857143,RAW MATERIALS
+"methanol, from methanol production, natural gas reforming",methanol,kg,1.0,PRODUCT
+"methanol, from methanol production, natural gas reforming",electricity,kWh,-0.088642952,UTILITIES
+"methanol, from methanol production, natural gas reforming",natural_gas,m3,-0.882844371207455,RAW MATERIALS
+"methanol, from methanol production, natural gas reforming",water,kg,-0.35372667115742756,RAW MATERIALS
+"methanol, from methanol production, natural gas reforming",co2_emission_fossil,kg,0.3531,EMISSION
+"methanol, from methanol production, natural gas reforming",co_emission,kg,0.0163,EMISSION
