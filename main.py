@@ -17,7 +17,7 @@ from src.others.aux_functions import track_rm_usage, calculate_raw_material_requ
 if __name__ == '__main__':
     # df_iam = iam_data_preparation()
 
-    master_file_path = r'data/raw/master_file_min_health_c.xlsx'
+    master_file_path = r'data/raw/master_file_health_large_biomass.xlsx'
     #master_file_path = r'data/raw/master_file_average_health.xlsx'
     user_input_file = r'data/raw/user_inputs.xlsx'
     plastics_file_path = r'data/raw/bioplastics_vs_fossil.xlsx'
@@ -47,7 +47,7 @@ if __name__ == '__main__':
     #plot_ele_demand_sensitivity(user_input_file, master_file_path, plastics_file_path)
     #plot_demand_sensitivity_2(user_input_file, master_file_path, plastics_file_path)
     # Fig 5
-    #plot_region(master_file_path, plastics_file_path)
+    plot_region(master_file_path, plastics_file_path)
     # -----------------SI-------------------
     #plot_image_map(master_file_path, plastics_file_path)
     plot_allocation(master_file_path, plastics_file_path)

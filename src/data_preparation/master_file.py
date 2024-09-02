@@ -731,13 +731,13 @@ class MasterFile:
                 co2_name = 'co2_emission_fossil'
             # pm emissions, ecoivnent 3.10, treatment of waste plastic, mixture, municipal incineration, GLO
             co = 2.5353e-5
-            nh3 = 1.7204e-6
+            #nh3 = 1.7204e-6
             nox = 0.00054479
             pm = 1.7807e-6
             so2 = 1.496e-5
             nmvoc = 6.7875e-7
             # pm emissions, from Christopher
-            nh3 = 30.79 * 0.29 * 1e-6 #35 MJ/kg mixed plastics, pollution unit in 1e-6 kg pollutant/MJ
+            #nh3 = 30.79 * 0.29 * 1e-6 #35 MJ/kg mixed plastics, pollution unit in 1e-6 kg pollutant/MJ
             pm = 30.79 * 8.55 * 1e-6  # 35 MJ/kg mixed plastics, pollution unit in 1e-6 kg pollutant/MJ
             nox = 30.79 * 81.68 * 1e-6  # 35 MJ/kg mixed plastics, pollution unit in 1e-6 kg pollutant/MJ
             so2 = 30.79 * 68.32 * 1e-6  # 35 MJ/kg mixed plastics, pollution unit in 1e-6 kg pollutant/MJ
@@ -745,7 +745,12 @@ class MasterFile:
             pm = 3e-6
             nox = 1071e-6
             so2 = 87e-6
-            nh3 = 3e-6
+            #nh3 = 3e-6
+            # pm emissions, based on regulations
+            pm = 1.4e-4
+            nox = 2.84e-3
+            so2 = 7e-4
+            nh3 = 0
             new_process = pd.DataFrame([{'product_name': co2_name,
                                          'product_process': f'waste incineration from {waste}',
                                          'include': 'yes', 'Data source': 'mass balance'}])
@@ -2485,7 +2490,7 @@ def regional_results(master_file_path, plastics_file_path):
 
 def different_scenarios(master_file_path, plastics_file_path):
     user_input_file = r'data/raw/user_inputs.xlsx'
-    base_path = os.path.join("data", "raw", "user_inputs_scenarios2")
+    base_path = os.path.join("data", "raw", "user_inputs_scenarios")
     '''
     df0 = pd.read_excel(user_input_file)
     file_name = 'user_inputs_default.xlsx'

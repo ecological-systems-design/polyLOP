@@ -747,10 +747,11 @@ def plot_region(master_file_path, plastics_file_path):
     df1['size'] = df1['plastic_production']
     df1.loc[df1['size'] < 10, 'size'] = 10
     df1.loc[df1['size'] > 100, 'size'] = 100
+    df1['plastics_health_intensity'] *= 1e6
     fig, ax = plt.subplots(1, 1, figsize=(11.5, 8), squeeze=True)
     p1 = sns.scatterplot(data=df1, x='plastics_ghg_intensity', y='plastics_bdv_intensity', size='size',
                          sizes=(300, 3000), hue='plastics_health_intensity', ax=ax, palette=cmp_purple().reversed(),
-                         alpha=0.8)
+                         alpha=0.8, hue_norm=(0.2, 1.5))
     for line in df1.index:
         p1.text(df1.plastics_ghg_intensity[line], df1.plastics_bdv_intensity[line], df1.country[line],
                 horizontalalignment='center', verticalalignment='center', size='small')
@@ -1660,14 +1661,16 @@ def plot_pareto_curves(user_input):
     df_result = user_input.model_results_multi_objective()
     df_result = df_result.loc[df_result.GHG < 5000]
     df1 = df_result[(df_result['GHG weight'] >= 0.999) & (df_result['GHG weight'] <= 1)]
+    df2 = df_result[df_result['Health Epsilon'] == 0.005]
     cmp = cmp_purple()
     cmp = cmp.reversed()
     indices = np.linspace(0, 255, 5, dtype=int)
     colors = cmp(indices)
     fig, ax = plt.subplots(figsize=(8, 5))
-    sns.lineplot(x='GHG', y='BDV', data=df_result, hue='Health Epsilon', palette=colors, ax=ax)
-    sns.scatterplot(x='GHG', y='BDV', data=df1, color=colors_4[1], ax=ax)
-    sns.lineplot(x='GHG', y='BDV', data=df1, color=colors_4[1], ax=ax, linestyle='--')
+    #sns.lineplot(x='GHG', y='BDV', data=df_result, hue='Health Epsilon', palette=colors, ax=ax)
+    sns.lineplot(x='GHG', y='BDV', data=df2, color=colors_7[0], ax=ax)
+    #sns.scatterplot(x='GHG', y='BDV', data=df1, color=colors_4[1], ax=ax)
+    #sns.lineplot(x='GHG', y='BDV', data=df1, color=colors_4[1], ax=ax, linestyle='--')
     ax.axvline(x=0, color='grey', linestyle='-', linewidth=0.25)
     plt.savefig(r'figure/pareto_curves.pdf')
     df_result.to_excel(r'data/figure/pareto_curves.xlsx')
