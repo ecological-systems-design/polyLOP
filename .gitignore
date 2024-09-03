@@ -169,3 +169,5 @@ data/processed/*
 data/figure/*
 figure/*
 .idea/*
+data/raw/~$master_file_health_large_biomass.xlsx
+data/raw/~$master_file_health_small_biomass.xlsx
