@@ -11,7 +11,8 @@ if __name__ == '__main__':
     user_input_file = r'data/raw/user_inputs.xlsx'
     plastics_file_path = r'data/raw/bioplastics_vs_fossil.xlsx'
     user_input = MasterFile(user_input_file, master_file_path, plastics_file_path)
-    #user_input.export_process_list()
+    user_input.export_process_list()
+    '''
     # Fig 1
     plot_scenarios(master_file_path, plastics_file_path)  # waterfall and radar
     plot_pareto_curves(user_input)
@@ -27,9 +28,10 @@ if __name__ == '__main__':
     plot_demand_sensitivity(master_file_path, plastics_file_path)
     # Fig 5
     plot_region(master_file_path, plastics_file_path)
+    '''
     # -----------------SI-------------------
-    plot_image_map(master_file_path, plastics_file_path)
-    plot_allocation(master_file_path, plastics_file_path)
+    #plot_image_map(master_file_path, plastics_file_path)
+    #plot_allocation(master_file_path, plastics_file_path)
     plot_biogenic_carbon_impact(user_input)
     plot_network(user_input)
 

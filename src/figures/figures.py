@@ -285,6 +285,7 @@ def plot_image_map(master_file_path, plastics_file_path):
     df_image.loc[df_image.IMAGE_region == 'SAF', 'IMAGE_region'] = 'ZAF'
     df_image.loc[df_image.IMAGE_region == 'RUKR', 'IMAGE_region'] = 'UKR'
     cmap = mpl.colors.LinearSegmentedColormap.from_list("", colors_26)
+    # for paper
     fig, ax = plt.subplots(1, 1, figsize=(18/2.54, 10/2.54))
     df_image.plot(column='IMAGE_region',
                   ax=ax,
@@ -302,6 +303,25 @@ def plot_image_map(master_file_path, plastics_file_path):
     ax.axis('off')
     plt.tight_layout()
     plt.savefig(r'figure/image_region_map.png', bbox_inches='tight', dpi=300)
+    plt.show()
+    # for thesis
+    fig, ax = plt.subplots(1, 1, figsize=(18 / 2.54, 10 / 2.54))
+    df_image.plot(column='IMAGE_region',
+                  ax=ax,
+                  legend=True,
+                  linewidth=.5,
+                  edgecolor='white',
+                  cmap=cmap,
+                  missing_kwds={'color': 'white', 'label': 'Missing values'},
+                  legend_kwds={'loc': 'lower center',
+                               'bbox_to_anchor': (0.5, -0.25),
+                               'ncol': 7,  # Adjust this value as needed
+                               'frameon': False,
+                               'markerscale': 0.7,
+                               'fontsize': 8})
+    ax.axis('off')
+    plt.tight_layout()
+    plt.savefig(r'figure/image_region_map.pdf', bbox_inches='tight')
     plt.show()
     return df
 
