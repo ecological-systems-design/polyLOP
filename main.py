@@ -1,9 +1,9 @@
 from src.figures.figures import (plot_network, plot_region, plot_ele_biomass_demand_sensitivity, plot_demand_sensitivity,
                                  plot_image_map, plot_sensitivity_biomass, plot_system_contribution, plot_pareto_curves,
                                  plot_scenarios, plot_sensitivity_electricity, plot_fossil_fuel_impacts,
-                                 plot_allocation, plot_biogenic_carbon_impact
+                                 plot_allocation, plot_biogenic_carbon_impact, plot_ammonia_emission_heatmap
                                  )
-from src.optimization_model.master_file import MasterFile
+from src.optimization_model.master_file import MasterFile, system_contribution_analysis_all, regional_results
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
@@ -11,13 +11,19 @@ if __name__ == '__main__':
     user_input_file = r'data/raw/user_inputs.xlsx'
     plastics_file_path = r'data/raw/bioplastics_vs_fossil.xlsx'
     user_input = MasterFile(user_input_file, master_file_path, plastics_file_path)
-    user_input.export_process_list()
+    user_input.calculate_product_impacts('GHG')
+    #user_input.export_process_list()
+    #plot_ammonia_emission_heatmap()
+    #plot_sensitivity_electricity(master_file_path, plastics_file_path)
+    user_input.carbon_flow_sankey('GHG', scenario='with_ccs')
+    #regional_results(master_file_path, plastics_file_path)
+    system_contribution_analysis_all(master_file_path, plastics_file_path)
     '''
     # Fig 1
     plot_scenarios(master_file_path, plastics_file_path)  # waterfall and radar
     plot_pareto_curves(user_input)
     user_input.carbon_flow_sankey('GHG', scenario='with_ccs')
-    plot_system_contribution(master_file_path, plastics_file_path)
+    plot_system_contribution(master_file_path, plastics_file_path, 'World')
     # Fig 2
     plot_sensitivity_electricity(master_file_path, plastics_file_path)
     plot_sensitivity_biomass(master_file_path, plastics_file_path)

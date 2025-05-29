@@ -200,53 +200,32 @@ def gasification_flows():
 
 
 def pyrolysis_flows():
-    # raw data: MK3
-    naphtha = 0.77
-    fuel_gas = 0.115 / naphtha
-    char = 0.115 / naphtha
-    plastic_waste = -1 / naphtha
-    ele = -0.18 / naphtha  # kWh
-    heat = -1.79 * 3.6 / naphtha  # MJ
-    heat_fuel_gas = fuel_gas * 47.1 * 0.9  # MJ, 47.1 MJ/kg, natural gas, US market
-    co2_fuel_gas = fuel_gas * 47.1 * 0.0561
-    co_fuel_gas = fuel_gas * 47.1 * 0.000039
-    nmvoc_fuel_gas = fuel_gas * 47.1 * 2.6e-6
-    nox_fuel_gas = fuel_gas * 47.1 * 0.000089
-    pm_fuel_gas = fuel_gas * 47.1 * 1.4e-7
-    sox_fuel_gas = fuel_gas * 47.1 * 2.44e-7
-    heat_char = char * 28.4 * 0.9  # MJ, charcoal
-    co2_char = char * 28.4 * 0.112
-    co_char = char * 28.4 * 0.00009
-    nmvoc_char = char * 28.4 * 0.00000731
-    nox_char = char * 28.4 * 0.000081
-    pm_char = char * 28.4 * 0.000133
-    sox_char = char * 28.4 * 0.000133
-    heat_net = heat + heat_fuel_gas + heat_char
-    co2 = co2_fuel_gas + co2_char
-    co = co_fuel_gas + co_char
-    nmvoc = nmvoc_fuel_gas + nmvoc_char
-    nox = nox_fuel_gas + nox_char
-    pm = pm_fuel_gas + pm_char
-    sox = sox_fuel_gas + sox_char
+    # raw data: IHS
+    naphtha = 1
+    sodium_hydroxide = -0.28811 / 2
+    plastic_waste = -110.2 / 70.4
+    ele = -1.221361  # kWh
+    lime = -0.08482
+    steam = 3.2 * 0.399  # MJ
+    co2_1 = (-plastic_waste * 0.857 - 0.84826) / 12 * 44
+    co2_2 = (-plastic_waste * 0.923 - 0.84826) / 12 * 44
     df = pd.DataFrame()
     for p in ['pp', 'ldpe', 'hdpe', 'gpps', 'hips']:
-        suffix_list = ['_co2', '_biogenic_short', '_biogenic_long', '_fossil']
-        if p == 'hips':
-            suffix_list = ['_biogenic_short', '_biogenic_long', '_fossil']
-        for suffix in suffix_list:
-            plastic = f'{p}{suffix}_waste'
-            product_name = f'naphtha{suffix}'
-            if suffix == '_co2':
-                s = '_fossil'
-            else:
-                s = suffix
-            process_name = f'{product_name}, from {plastic} pyrolysis'
-            df_temp = pd.DataFrame({'product_name': [product_name, plastic, 'electricity', f'co2{s}',
-                                                     'co', 'nmvoc', 'nox', 'pm', 'sox', 'heat_high'],
-                                    'unit': ['kg', 'kg', 'kWh', 'kg', 'kg', 'kg', 'kg', 'kg', 'kg', 'MJ'],
-                                    'value': [1, plastic_waste, ele, co2, co, nmvoc, nox, pm, sox, heat_net],
-                                    'type': ['PRODUCT', 'RAW MATERIALS', 'UTILITIES', 'EMISSION', 'EMISSION',
-                                             'EMISSION', 'EMISSION', 'EMISSION', 'EMISSION', 'BY-PRODUCT CREDITS'],
-                                    'process': [process_name] * 10})
-            df = pd.concat([df, df_temp], ignore_index=True)
+        if p == 'gpps' or p == 'hips':
+            co2 = co2_2
+        else:
+            co2 = co2_1
+        plastic = f'{p}_waste'
+        product_name = f'naphtha_mix'
+        process_name = f'{product_name}, from {plastic} pyrolysis'
+        df_temp = pd.DataFrame({'product_name': [product_name, plastic, 'electricity', 'co2_emission',
+                                                 'sodium_hydroxide', 'lime', 'steam_high'],
+                                'unit': ['kg', 'kg', 'kWh', 'kg', 'kg', 'kg', 'MJ'],
+                                'value': [1, plastic_waste, ele, co2, sodium_hydroxide, lime, steam],
+                                'type': ['PRODUCT', 'RAW MATERIALS', 'UTILITIES', 'EMISSION', 'RAW MATERIALS',
+                                         'RAW MATERIALS', 'BY-PRODUCT CREDITS'],
+                                'process': [process_name] * 7})
+        df = pd.concat([df, df_temp], ignore_index=True)
+
+
     return df

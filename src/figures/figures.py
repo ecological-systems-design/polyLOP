@@ -28,6 +28,19 @@ colors_26 = ['#838bc0', '#9ace37', '#dff9a2', '#3b8355', '#92409a', '#84b826', '
              '#83603b', '#40949a', '#b8266d', '#83a7c0', '#cebc37']
 
 
+def cmp_yellow_orange():
+    vals = np.ones((256, 4))
+    vals[:, 0] = np.concatenate((np.linspace(251 / 256, 242 / 256, 100),
+                                 np.linspace(242 / 256, 201 / 256, 156)))
+    vals[:, 1] = np.concatenate((np.linspace(243 / 256, 225 / 256, 100),
+                                 np.linspace(225 / 256, 100 / 256, 156)))
+    vals[:, 2] = np.concatenate((np.linspace(207 / 256, 139 / 256, 100),
+                                 np.linspace(139 / 256, 32 / 256, 156)))
+
+    newcmp = ListedColormap(vals)
+    return newcmp
+
+
 def cmp_purple():
     vals = np.ones((256, 4))
     vals[:, 0] = (np.linspace(39 / 256, 230 / 256, 256))
@@ -209,6 +222,108 @@ def plot_region(master_file_path, plastics_file_path):
     plt.savefig(r'figure/ghg_global_vs_regional_sum.pdf')
     plt.show()
 
+    # stacked bar bdv
+    dfp = df1[['country', 'bdv']].sort_values(by='bdv', ascending=False).copy()
+    bottom = 0
+    fig, ax = plt.subplots(1, 1, figsize=(6, 8), squeeze=True)
+    for x in dfp.index:
+        ax.bar('regional optimization', dfp.loc[x, 'bdv'], bottom=bottom)
+        bottom += dfp.loc[x, 'bdv']
+    plt.show()
+
+    # stacked bar health
+    dfp = df1[['country', 'health']].sort_values(by='health', ascending=False).copy()
+    bottom = 0
+    fig, ax = plt.subplots(1, 1, figsize=(6, 8), squeeze=True)
+    for x in dfp.index:
+        ax.bar('regional optimization', dfp.loc[x, 'health'], bottom=bottom)
+        bottom += dfp.loc[x, 'health']
+    plt.show()
+
+    # stacked bar all impacts， percentage of the world
+    dfp = df1[['country', 'plastic_production', 'ghg', 'bdv', 'health']].copy()
+    dfp.loc[dfp.country == 'CEU', 'country'] = 'EUR'
+    dfp.loc[dfp.country == 'WEU', 'country'] = 'EUR'
+    dfp = dfp.groupby('country').sum(numeric_only=True).reset_index()
+    dfp['plastic_production'] = dfp['plastic_production'] / dfp['plastic_production'].sum() * 100
+    ghg_total_pos = dfp.loc[dfp.ghg > 0, 'ghg'].sum()
+    dfp['ghg'] = dfp['ghg'] / dfp['ghg'].sum() * 100
+    dfp['bdv'] = dfp['bdv'] / dfp['bdv'].sum() * 100
+    dfp['health'] = dfp['health'] / dfp['health'].sum() * 100
+    dfp['color'] = colors_7[-1]
+    dfp.loc[dfp.country == 'CHN', 'color'] = colors_7[0]
+    dfp.loc[dfp.country == 'USA', 'color'] = colors_7[3]
+    dfp.loc[dfp.country == 'BRA', 'color'] = "#E2B597"
+    dfp.loc[dfp.country == 'SEAS', 'color'] = colors_7[5]
+    dfp.loc[dfp.country == 'IND', 'color'] = colors_7[1]
+    dfp.loc[dfp.country == 'EUR', 'color'] = colors_7[2]
+    dfp.loc[dfp.country == 'ME', 'color'] = colors_7[4]
+    dfp.loc[dfp.color == colors_7[-1], 'country'] = 'other'
+    dfp_ghg_p = dfp.loc[dfp.ghg > 0].copy()
+    dfp_ghg_n = dfp.loc[dfp.ghg < 0].copy()
+    dfp_ghg_p = dfp_ghg_p.groupby(['color', 'country']).sum(numeric_only=True).reset_index()
+    dfp_ghg_n = dfp_ghg_n.groupby(['color', 'country']).sum(numeric_only=True).reset_index()
+    dfp_ghg_p.sort_values(by='ghg', ascending=True, inplace=True)
+    dfp_ghg_n.sort_values(by='ghg', ascending=False, inplace=True)
+    dfp_ghg_p.loc[dfp_ghg_p.country == 'other', 'country'] = 'other positive'
+    dfp_ghg_n.loc[dfp_ghg_n.country == 'other', 'country'] = 'other negative'
+    dfp_ghg = pd.concat([dfp_ghg_p, dfp_ghg_n], ignore_index=True)
+    #dfp_ghg.sort_values(by='ghg', ascending=False, inplace=True)
+    condition = dfp_ghg['country'] == 'CHN'
+    dfp_ghg = pd.concat([dfp_ghg[condition], dfp_ghg[~condition]]).reset_index(drop=True)
+    country_order = dfp_ghg['country'].unique()
+    country_order = [x for x in country_order if 'other' not in x][::-1]
+    country_order = country_order + ['other']
+    dfp0 = dfp.copy()
+    dfp = dfp.groupby(['color', 'country']).sum(numeric_only=True).reset_index()
+    dfp['country'] = pd.Categorical(dfp['country'],
+                                    categories=country_order,
+                                    ordered=True)
+    dfp = dfp.sort_values('country')
+
+    fig, ax = plt.subplots(1, 1, figsize=(8, 8), squeeze=True)
+    bottom = 0
+    condition = dfp['country'] == 'other'
+    #dfp.sort_values(by='plastic_production', ascending=False, inplace=True)
+    #dfp = pd.concat([dfp[~condition], dfp[condition]]).reset_index(drop=True)
+    for x in dfp.index:
+        ax.bar('plastic_production', dfp.loc[x, 'plastic_production'], bottom=bottom, color=dfp.loc[x, 'color'])
+        bottom += dfp.loc[x, 'plastic_production']
+    #dfp.sort_values(by='health', ascending=False, inplace=True)
+    #dfp = pd.concat([dfp[~condition], dfp[condition]]).reset_index(drop=True)
+    bottom = 0
+    for x in dfp.index:
+        ax.bar('health', dfp.loc[x, 'health'], bottom=bottom, color=dfp.loc[x, 'color'])
+        bottom += dfp.loc[x, 'health']
+    #dfp.sort_values(by='bdv', ascending=False, inplace=True)
+    #dfp = pd.concat([dfp[~condition], dfp[condition]]).reset_index(drop=True)
+    bottom = 0
+    for x in dfp.index:
+        ax.bar('bdv', dfp.loc[x, 'bdv'], bottom=bottom, color=dfp.loc[x, 'color'])
+        bottom += dfp.loc[x, 'bdv']
+    ax.set_ylim(0, 100)
+    plt.savefig(r'figure/regional_contribution_impacts.pdf')
+    plt.show()
+
+    # stacked bar climate change impacts
+    fig, ax = plt.subplots(1, 1, figsize=(6, 8), squeeze=True)
+    neg_b = 0
+    pos_b = 0
+    for x in dfp_ghg.index:
+        value = dfp_ghg.loc[x, 'ghg']
+        color = dfp_ghg.loc[x, 'color']
+        if value < 0:
+            ax.bar('regional optimization', value, bottom=neg_b, color=color)
+            neg_b += value
+        else:
+            ax.bar('regional optimization', value, bottom=pos_b, color=color)
+            pos_b += value
+    ax.bar('global optimization', world_ghg, color=colors_7[6])
+    ax.scatter('regional optimization', world_ghg_r, color=colors_7[6], edgecolor='white', s=80)
+    ax.scatter('global optimization', world_ghg, color=colors_7[6], edgecolor='white', s=80)
+    #plt.savefig(r'figure/ghg_global_vs_regional_sum.pdf')
+    plt.show()
+
     # plot feedstock use percentage
     fig, ax = plt.subplots(1, 1, figsize=(12, 4), squeeze=True)
     sns.barplot(data=df1, x='country', y=1, ax=ax, color='lightgrey')
@@ -260,6 +375,7 @@ def plot_region(master_file_path, plastics_file_path):
     plt.subplots_adjust(top=0.95, bottom=0.2, right=0.85, left=0.08)
     ax.legend(loc='upper right', frameon=False, bbox_to_anchor=(1.255, 0.99))
     plt.savefig(r'figure/carbon_input_source_key_countries.pdf')
+    df3.to_csv(r'data/figure/carbon_input_source_key_countries.csv')
     plt.show()
     mpl.rcParams['hatch.linewidth'] = 1.0
     mpl.rcParams['hatch.color'] = 'black'
@@ -614,13 +730,8 @@ def plot_scenarios(master_file_path, plastics_file_path):
     plt.show()
 
 
-def plot_system_contribution(master_file_path, plastics_file_path):
-    df = system_contribution_analysis(master_file_path, plastics_file_path)
-    df.loc[df.scenario.str.contains('fossil_linear'), 'scenario'] = 'fossil linear'
-    df.loc[df.scenario.str.contains('ccs'), 'scenario'] = 'renewable circular'
-    df['bdv'] *= 1e-6  # PDF
-    df['health'] *= 1e9  # DALY
-    df['ghg'] *= 1e-3  #Gt CO2eq
+def plot_system_contribution(master_file_path, plastics_file_path, country):
+    df = system_contribution_analysis(master_file_path, plastics_file_path, country)
     df.to_excel(r'data/figure/system_contribution.xlsx')
     # ghg
     dfp = pd.pivot_table(df, index='scenario', columns='contributor', values='ghg')
@@ -679,13 +790,14 @@ def plot_pareto_curves(user_input):
     df_result = user_input.model_results_multi_objective()
     df_result = df_result.loc[df_result.GHG < 5000]
     df1 = df_result[(df_result['GHG weight'] >= 0.999) & (df_result['GHG weight'] <= 1)]
-    df2 = df_result[df_result['Health Epsilon'] == 0.005]
+    df2 = df_result
     fig, ax = plt.subplots(figsize=(8, 5))
     sns.lineplot(x='GHG', y='BDV', data=df2, color=colors_7[0], ax=ax)
     ax.axvline(x=0, color='grey', linestyle='-', linewidth=0.25)
     plt.savefig(r'figure/pareto_curves.pdf')
     df_result.to_excel(r'data/figure/pareto_curves.xlsx')
     plt.show()
+    a=0
 
 
 def plot_sensitivity_electricity(master_file_path, plastics_file_path):
@@ -850,7 +962,7 @@ def plot_allocation(master_file_path, plastics_file_path):
         else:
             df_se1, df_se2 = user_input.carbon_flow_sankey('GHG')
 
-        df1, df2 = user_input.model_results('GHG')
+        df1, df2, df3 = user_input.model_results('GHG')
         df1['scenario'] = scenario_name
         df_list.append(df1)
     df0 = pd.concat(df_list, ignore_index=True)
@@ -929,3 +1041,38 @@ def plot_biogenic_carbon_impact(user_input):
     plt.savefig(r'figure/ghg_biogenic_carbon.png', bbox_inches='tight', dpi=300)
     plt.show()
     return df
+
+
+def plot_ammonia_emission_heatmap():
+    df0 = pd.read_csv('data/raw/raw_material_impact_2050_scenRCP1p9.csv', index_col=0)
+    ag_list = ['barley_straw', 'maize_stover', 'rapeseed_straw', 'rice_straw', 'sorghum_straw', 'soybean_straw',
+               'sugarcane_tops_and_leaves', 'wheat_straw']
+    loc_list = ['BR', 'CN', 'IN', 'US', 'WAF', 'WEU', 'SEAS', 'World']
+    df = df0.loc[df0.Product.isin(ag_list)].copy()
+    df = df.loc[df.Location.isin(loc_list)].copy()
+    df = df[['Product', 'Location', 'Ammonia']].copy()
+    df['Ammonia'] *= 1000  # 1e-3 kg/kg straw
+    table = pd.pivot_table(df, index='Product', columns='Location', values='Ammonia', aggfunc='mean')
+    table = table[loc_list]
+    mpl.rcParams['svg.fonttype'] = 'none'  # Don't convert fonts to paths
+    mpl.rcParams['font.family'] = 'sans-serif'
+    mpl.rcParams['font.sans-serif'] = ['Arial', 'Helvetica', 'DejaVu Sans']
+    fig, ax = plt.subplots(figsize=(10, 9))
+
+    sns.heatmap(
+        np.where(table.isna(), 0, np.nan),
+        ax=ax, vmin=0, vmax=0,
+        cbar=False,
+        annot=np.full_like(table, "NA", dtype=object),
+        fmt="",
+        annot_kws={"size": 10, "va": "center_baseline", "color": "black"},
+        cmap=ListedColormap(['#d8d8d8']),
+        linewidth=0)
+    sns.heatmap(table, cmap=cmp_yellow_orange(), square=True, annot=True, fmt=".2f",
+                linewidth=0.5, cbar=False, ax=ax, vmax=2, vmin=0,
+                annot_kws={"size": 10, "va": "center_baseline", "color": "black"}, )
+    figname = f'figures/lcia/lcia_heatmap_ammonia.pdf'
+    #plt.savefig(figname, bbox_inches='tight')
+    plt.tight_layout()
+    fig.show()
+

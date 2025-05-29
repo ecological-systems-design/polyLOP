@@ -13,6 +13,7 @@ from src.others.variable_declaration import (residue_list_code, image_region_lis
                                              co2_feedstock_list, final_product_list, df_pm_emission)
 from src.data_preparation.ihs_data import ihs_data_inventory
 from src.data_preparation.plastics_recycling_data import (mechanical_recycling_flows, gasification_flows,
+                                                          pyrolysis_flows,
                                                           waste_to_secondary_plastics_ratio,
                                                           consumption_to_secondary_plastics_ratio)
 
@@ -31,6 +32,11 @@ class MasterFile:
                                                       'value'].values[0]
         self.gasi = self.df_input.loc[self.df_input['parameter'] == 'chemical_recycling_gasification',
                                       'value'].values[0]
+        if 'chemical_recycling_pyrolysis' in self.df_input['parameter'].values:
+            self.pyrolysis = self.df_input.loc[self.df_input['parameter'] == 'chemical_recycling_pyrolysis',
+                                               'value'].values[0]
+        else:
+            self.pyrolysis = False
         self.fossil_routes = self.df_input.loc[self.df_input['parameter'] == 'fossil_routes', 'value'].values[0]
         self.bs_routes = self.df_input.loc[self.df_input['parameter'] == 'agricultural_residue_routes',
                                            'value'].values[0]
@@ -91,8 +97,7 @@ class MasterFile:
         df.rename(columns={'Product': 'product_name'}, inplace=True)
         df = df[~df.product_name.str.contains('agricultural_residue')]
         df = df.drop_duplicates()
-        # regions
-        # to be developed
+
         if self.low_biodiversity:
             biomass_list = residue_list_code
             biomass_list_lbdv = [f'{x}_lbdv' for x in biomass_list]
@@ -466,7 +471,7 @@ class MasterFile:
         else:
             return df, df_process_all, df_flow_all
 
-    def prepare_master_file_4_add_chemical_recycling_gasification(self):
+    def prepare_master_file_4_add_chemical_recycling(self):
         df, df_process_all, df_flow_all = self.prepare_master_file_3_add_mechanical_recycling()
         if self.gasi:
             df_gasi = gasification_flows()
@@ -481,12 +486,27 @@ class MasterFile:
             df_process_gasi['fossil_route'] = 'yes'
             df_process_all = pd.concat([df_process_all, df_process_gasi], ignore_index=True)
             df_flow_all['product_type'] = df_flow_all['product_name'].map(df.set_index('product_name')['product_type'])
-            return df, df_process_all, df_flow_all
-        else:
-            return df, df_process_all, df_flow_all
+        if self.pyrolysis:
+            df_pyrolysis = pyrolysis_flows()
+            df_flow_all = pd.concat([df_flow_all, df_pyrolysis], ignore_index=True)
+            df_process_pyrolysis = df_pyrolysis[df_pyrolysis.type == 'PRODUCT'].copy()
+            df_process_pyrolysis.rename(columns={'process': 'product_process'}, inplace=True)
+            df_process_pyrolysis['include'] = 'yes'
+            df_process_pyrolysis['Data source'] = 'IHSmarkit'
+            df_process_pyrolysis['co2_route'] = 'yes'
+            df_process_pyrolysis['agricultural_residue_route'] = 'yes'
+            df_process_pyrolysis['forest_residue_route'] = 'yes'
+            df_process_pyrolysis['fossil_route'] = 'yes'
+            df_process_all = pd.concat([df_process_all, df_process_pyrolysis], ignore_index=True)
+            df_flow_all['product_type'] = df_flow_all['product_name'].map(df.set_index('product_name')['product_type'])
+            df_temp = pd.DataFrame({'product_name': 'naphtha_mix', 'unit': 'kg', 'product_type': 'intermediate',
+                                    'include': 'yes', 'carbon_content': 0.84826}, index=[0])
+            df = pd.concat([df, df_temp], ignore_index=True)
+        return df, df_process_all, df_flow_all
+
 
     def prepare_master_file_5_separate_routes(self):
-        df_product_all, df_process_all, df_flow_all = self.prepare_master_file_4_add_chemical_recycling_gasification()
+        df_product_all, df_process_all, df_flow_all = self.prepare_master_file_4_add_chemical_recycling()
         df_process_all.loc[df_process_all.product_process.str.contains('hips'), 'co2_route'] = ''
         route_list = ['co2_route', 'forest_residue_route', 'agricultural_residue_route', 'fossil_route']
         active_routes = [self.co2_routes, self.bl_routes, self.bs_routes, self.fossil_routes]
@@ -594,6 +614,47 @@ class MasterFile:
             df = pd.concat([df, dff_product], ignore_index=True)
             df_process_all = pd.concat([df_process_all, dff_process], ignore_index=True)
             df_flow_all = pd.concat([df_flow_all, dff], ignore_index=True)
+
+            df_sc = dff.loc[dff.process.str.contains('steam cracking')]
+            sc_process_list = list(df_sc.process.unique())
+            feedstock_list = ['butane_fossil', 'diesel_fossil', 'ethane_fossil', 'naphtha_fossil',
+                              'natural_gas_liquids_fossil', 'propane_fossil']
+            suffix_list = ['_co2', '_biogenic_short', '_biogenic_long', '_fossil']
+            df_sc2 = pd.DataFrame()
+            for sc_process in sc_process_list:
+                df_temp = df_sc[df_sc.process == sc_process].copy()
+                df_temp['process'] = df_temp['process'].str.replace('_fossil', '_pyrolysis')
+                process_name = df_temp['process'].iloc[0]
+                df_temp1 = df_temp[df_temp.product_name.isin(feedstock_list)].copy()
+                feedstock_amount = df_temp1.value.sum()
+                df_temp = df_temp[~df_temp.product_name.isin(feedstock_list)].copy()
+                df_temp['product_name'] = df_temp['product_name'].str.replace('_fossil', '')
+                df_temp2 = pd.DataFrame({'product_name': 'naphtha_mix', 'process': process_name, 'unit': 'kg',
+                                         'type': 'RAW MATERIALS', 'value': feedstock_amount, 'carbon_content': 0.84826},
+                                        index=[0])
+                df_temp = pd.concat([df_temp, df_temp2], ignore_index=True)
+                for suffix in suffix_list:
+                    df_temp3 = df_temp.copy()
+                    df_temp3['process'] += suffix
+                    df_temp3.loc[df_temp3.product_name == 'naphtha_mix', 'product_name'] += suffix
+                    df_temp3.loc[df_temp3.product_name == 'co2_emission', 'product_name'] += suffix
+                    df_temp3.loc[df_temp3['type'] == 'PRODUCT', 'product_name'] += suffix
+                    df_sc2 = pd.concat([df_sc2, df_temp3], ignore_index=True)
+            df_sc2['product_name'] = df_sc2['product_name'].str.replace('co2_emission_co2', 'co2_emission_fossil')
+            df_sc_process = df_sc2[df_sc2['type'] == 'PRODUCT'].copy()
+            df_sc_process['Data source'] = 'ecoinvent 3.10'
+            df_sc_process['include'] = 'yes'
+            df_sc_process = df_sc_process.rename(columns={'process': 'product_process'})
+            df_sc_process = df_sc_process[
+                ['product_name', 'product_process', 'unit', 'include', 'Data source', 'carbon_content']].copy()
+            df_sc_product = df_sc2[~df_sc2.product_name.isin(list(df['product_name'].unique()))].copy()
+            df_sc_product = df_sc_product[['product_name', 'unit', 'carbon_content']].copy()
+            df_sc_product.drop_duplicates(inplace=True)
+            df_sc_product['product_type'] = 'intermediate'
+            df_sc_product['include'] = 'yes'
+            df = pd.concat([df, df_sc_product], ignore_index=True)
+            df_process_all = pd.concat([df_process_all, df_sc_process], ignore_index=True)
+            df_flow_all = pd.concat([df_flow_all, df_sc2], ignore_index=True)
             return df, df_process_all, df_flow_all
 
     def prepare_master_file_7_new_bio_plastics(self):
@@ -870,6 +931,7 @@ class MasterFile:
             price_dict = {'tetrahydrofuran': 159.95, 'glucose': 100.87, 'succinic_acid': 273.37,
                           'syngas_2_to_1': 11.79, 'ammonia': 42.55}  # price from ihsmarkit
             df_flow_temp['price'].fillna(df_flow_temp['product_name2'].map(price_dict), inplace=True)
+            df_flow_temp.loc[df_flow_temp.product_name.str.contains('naphtha_mix'), 'price'] = 58.26  # price from ihsmarkit
             for p in process_with_byproducts:
                 df_temp = df_flow_temp.loc[df_flow_temp['process'] == p].copy()
                 df_temp2 = df_temp.loc[(df_temp.type.isin(['PRODUCT', 'BY-PRODUCT CREDITS'])) &
@@ -1045,6 +1107,7 @@ class MasterFile:
         df8 = df8.loc[df8.product_name != 'nmvoc_emission']
         df8 = df8.loc[df8.product_name != 'co_emission']
         df8.to_csv(f"data/processed/flows_from_literature.csv", index=False)
+        df_flow_all.to_csv(f"data/processed/flows_all.csv", index=False)
         return df, df_process_all, df1
 
     def set_up_optimization_model(self):
@@ -1161,9 +1224,10 @@ class MasterFile:
                         self.m.addConstr(all_production * ratio_c - mr_plastics >= 0,
                                              name=f"mr_flow_c_positive_{i}{suffix}")
 
-        if self.gasi:
-            ratio_dict_w = waste_to_secondary_plastics_ratio()[2]
-            ratio_dict_c = consumption_to_secondary_plastics_ratio()[2]
+        ratio_dict_w = waste_to_secondary_plastics_ratio()[2]
+        ratio_dict_c = consumption_to_secondary_plastics_ratio()[2]
+
+        if self.gasi and not self.pyrolysis:
             for i in ratio_dict_w.keys():
                 ratio_w = ratio_dict_w[i]
                 ratio_c = ratio_dict_c[i]
@@ -1178,6 +1242,38 @@ class MasterFile:
                     waste = gp.quicksum(self.flow[p] * df_flow_temp2.loc[df_flow_temp2.process == p, 'value'].sum()
                                         for p in df_flow_temp2['process'].unique())
                     self.m.addConstr(waste * ratio_w - gasi_plastics >= 0, name=f"gasi_flow_w_{i}{suffix}")
+
+        elif self.pyrolysis and not self.gasi:
+            for i in ratio_dict_w.keys():
+                ratio_w = ratio_dict_w[i]
+                ratio_c = ratio_dict_c[i]
+                for suffix in polymer_source_list[0:4]:
+                    waste = f'{i}_waste{suffix}'
+                    df_flow_temp1 = self.df_flow[(self.df_flow['product_name'].str.contains(waste)) &
+                                                 (self.df_flow['process'].str.contains('waste pyrolysis'))].copy()
+                    df_flow_temp2 = self.df_flow[(self.df_flow['product_name'] == f'{i}_waste{suffix}') &
+                                                 (self.df_flow['type'] == 'WASTE')].copy()
+                    pyro_plastics = -gp.quicksum(self.flow[p] * df_flow_temp1.loc[df_flow_temp1.process == p, 'value'].sum()
+                                                 for p in df_flow_temp1['process'].unique())
+                    waste = gp.quicksum(self.flow[p] * df_flow_temp2.loc[df_flow_temp2.process == p, 'value'].sum()
+                                        for p in df_flow_temp2['process'].unique())
+                    self.m.addConstr(waste * ratio_w - pyro_plastics >= 0, name=f"pyro_flow_w_{i}{suffix}")
+        elif self.pyrolysis and self.gasi:
+            for i in ratio_dict_w.keys():
+                ratio_w = ratio_dict_w[i]
+                ratio_c = ratio_dict_c[i]
+                for suffix in polymer_source_list[0:4]:
+                    waste = f'{i}_waste{suffix}'
+                    df_flow_temp1 = self.df_flow[(self.df_flow['product_name'].str.contains(waste)) &
+                                                 ((self.df_flow['process'].str.contains('pyrolysis')) |
+                                                 (self.df_flow['process'].str.contains('waste gasification')))].copy()
+                    df_flow_temp2 = self.df_flow[(self.df_flow['product_name'] == f'{i}_waste{suffix}') &
+                                                 (self.df_flow['type'] == 'WASTE')].copy()
+                    gasi_pyro_plastics = -gp.quicksum(self.flow[p] * df_flow_temp1.loc[df_flow_temp1.process == p, 'value'].sum()
+                                                 for p in df_flow_temp1['process'].unique())
+                    waste = gp.quicksum(self.flow[p] * df_flow_temp2.loc[df_flow_temp2.process == p, 'value'].sum()
+                                        for p in df_flow_temp2['process'].unique())
+                    self.m.addConstr(waste * ratio_w - gasi_pyro_plastics >= 0, name=f"gasi_pyro_flow_w_{i}{suffix}")
 
         # 7. maximum new bio plastics
         if self.new_bio_plastics:
@@ -1439,7 +1535,20 @@ class MasterFile:
             df2 = df_flow_result[df_flow_result.flow_amount > 0.01]
             df_flow_result.to_csv(f'data/processed/flow_result_ele_{self.ele_impact}.csv')
             # df1 = df_flow_result[df_flow_result.flow_amount > 0.01]
-            return df1, df_flow_result
+            df_process = self.df_process[['product_process', 'product_name']]
+            df_result_0 = df_result.copy()
+            df_result = pd.merge(df_result, df_process, left_on='process', right_on='product_process', how='left')
+            df_product2 = self.df_product[['product_name', 'unit']].copy()
+            df_result = pd.merge(df_result, df_product2, on='product_name', how='left')
+            df_result['unit'] = df_result['unit'].fillna('kg')
+            df_result.loc[df_result.unit == 'MJ', 'unit'] = 'PJ'
+            df_result.loc[df_result.unit == 'kWh', 'unit'] = 'TWh'
+            df_result.loc[df_result.unit == 'kg', 'unit'] = 'Mt'
+            df_result = df_result[['process', 'product_name', 'flow_amount', 'unit']].copy()
+            df_result.rename(columns={'flow_amount': 'value'}, inplace=True)
+            mask = df_result.process.str.contains('waste incineration')
+            df_result.loc[mask, 'product_name'] = df_result.loc[mask, 'process'].str.split('from ').str[1]
+            return df1, df_flow_result, df_result
         else:
             return df1, None
 
@@ -1458,16 +1567,16 @@ class MasterFile:
         total_impact_health = gp.quicksum(self.flow[p] * self.inflow[p, i] * impact_dict_health[i]
                                           for i in impact_dict_health.keys()
                                           for p in self.df_flow.loc[self.df_flow.product_name == i, "process"].unique())
-        ghg_min = -170
-        ghg_max = 6013.404
+        ghg_min = -263.3
+        ghg_max = 3683.4
         bdv_min = 0
-        bdv_max = 4852.442
+        bdv_max = 4234
         ghg_norm = (total_impact_ghg - ghg_min) / (ghg_max - ghg_min)
         bdv_norm = (total_impact_bdv - bdv_min) / (bdv_max - bdv_min)
         pareto_solutions = []
-        health_epsilons = np.linspace(0.0023, 0.0002, 30)
         health_epsilons = [0.005, 0.0006, 0.0005, 0.0004, 0.0003]
-        weights = np.linspace(0, 1.01, 100)
+        health_epsilons = [1]
+        weights = np.linspace(0, 1, 100)
         for health_eps in health_epsilons:
             health_constraint = m.addConstr(total_impact_health <= health_eps, f"HealthConstraint_{health_eps}")
             for weight in weights:
@@ -1993,6 +2102,15 @@ class MasterFile:
             new_rows.append({'product_from': 'methanol', 'product_to': f'co2_feedstock',
                              'flow_amount': co2_f_amount})
 
+            # 5. waste pyrolysis to naphtha
+            df_temp = df[df['process'].str.startswith('naphtha') &
+                            df['process'].str.contains(f'waste pyrolysis')]
+            naphtha_amount = abs(df_temp.loc[df_temp['product_name'].str.startswith('naphtha'), 'carbon_flow'].sum())
+            waste_amount = abs(df_temp.loc[df_temp['product_name'].str.contains('waste'), 'carbon_flow'].sum())
+            loss_amount = waste_amount - naphtha_amount
+            new_rows.append({'product_from': 'plastic_waste', 'product_to': 'steam_cracker_feedstock', 'flow_amount': waste_amount})
+            new_rows.append({'product_from': 'steam_cracker_feedstock', 'product_to': 'loss', 'flow_amount': loss_amount})
+
             # 6. methanol to ethylene
             df_temp = df[(df['process'].str.contains('ethylene, from methanol'))]
             methanol_amount = abs(df_temp.loc[df_temp['product_name'].str.contains('methanol'), 'carbon_flow'].sum())
@@ -2073,14 +2191,16 @@ class MasterFile:
                 df_temp = df[(df.product_name == f'{p}_fossil') & (df.type == 'PRODUCT') &
                              (~df.process.str.contains('methanol'))]
                 p_amount = abs(df_temp['carbon_flow'].sum())
-                new_rows.append({'product_from': 'fossil_fuel', 'product_to': p, 'flow_amount': p_amount})
+                new_rows.append({'product_from': 'fossil_fuel', 'product_to': 'steam_cracker_feedstock', 'flow_amount': p_amount})
+                new_rows.append({'product_from': 'steam_cracker_feedstock', 'product_to': p, 'flow_amount': p_amount})
                 new_rows.append({'product_from': p, 'product_to': 'plastic_product', 'flow_amount': p_amount})
             p_amount = 0
             for p in ['benzene', 'toluene', 'p-xylene']:
                 df_temp = df[(df.product_name == f'{p}_fossil') & (df.type == 'PRODUCT') &
                              (~df.process.str.contains('methanol'))]
                 p_amount += abs(df_temp['carbon_flow'].sum())
-            new_rows.append({'product_from': 'fossil_fuel', 'product_to': 'btx', 'flow_amount': p_amount})
+            new_rows.append({'product_from': 'fossil_fuel', 'product_to': 'steam_cracker_feedstock', 'flow_amount': p_amount})
+            new_rows.append({'product_from': 'steam_cracker_feedstock', 'product_to': 'btx', 'flow_amount': p_amount})
             new_rows.append({'product_from': 'btx', 'product_to': 'plastic_product', 'flow_amount': p_amount})
             df_temp = df[df.process.str.startswith('heat, district')]
             natural_gas_amount = abs(df_temp.loc[df_temp.product_name == 'natural_gas', 'carbon_flow'].sum())
@@ -2192,13 +2312,18 @@ def regional_results(master_file_path, plastics_file_path):
         df.to_excel(os.path.join(base_path, file_name), index=False)
     files = glob.glob(os.path.join(base_path, "*.xlsx"))
     df_list = []
-    for f in files:
-        country_name = f.split('.')[0][40:]
-        print('-----------', country_name, '-----------')
-        user_input = MasterFile(f, master_file_path, plastics_file_path)
-        df1, df2 = user_input.model_results('GHG')
-        df1['country'] = country_name
-        df_list.append(df1)
+    i = 26
+    with pd.ExcelWriter('data/processed/route_choice_by_process_all_regions_1.xlsx', engine='openpyxl') as writer:
+        for f in files:
+            country_name = f.split('.')[0][41:]
+            print('-----------', country_name, '-----------')
+            user_input = MasterFile(f, master_file_path, plastics_file_path)
+            df1, df2, df3 = user_input.model_results('GHG')
+            sheet_name = f'Table S{i}_{country_name}'
+            df3.to_excel(writer, sheet_name=sheet_name, index=False)
+            df1['country'] = country_name
+            df_list.append(df1)
+            i+=1
     df = pd.concat(df_list, ignore_index=True)
     agri_list = [x for x in residue_list_code if x != 'forest_residue']
     agri_avai_list = [x + '_availability' for x in agri_list]
@@ -2294,7 +2419,7 @@ def different_scenarios(master_file_path, plastics_file_path):
         scenario_name = f.split('inputs_')[2].split('.')[0]
         print('-----------', scenario_name, '-----------')
         user_input = MasterFile(f, master_file_path, plastics_file_path)
-        df1, df2 = user_input.model_results('GHG')
+        df1, df2, df3 = user_input.model_results('GHG')
         df1['scenario'] = scenario_name
         df_list.append(df1)
     df = pd.concat(df_list, ignore_index=True)
@@ -2309,13 +2434,19 @@ def different_scenarios(master_file_path, plastics_file_path):
     return df
 
 
-def system_contribution_analysis(master_file_path, plastics_file_path):
+def system_contribution_analysis(master_file_path, plastics_file_path, country):
     user_file_path1 = r'data/raw/user_inputs_scenarios/user_inputs_step1_fossil_linear.xlsx'
     user_file_path2 = r'data/raw/user_inputs_scenarios/user_inputs_step6_ccs.xlsx'
+    df1 = pd.read_excel(user_file_path1)
+    df2 = pd.read_excel(user_file_path2)
+    df1.loc[df1.parameter == 'country', 'value'] = country
+    df2.loc[df2.parameter == 'country', 'value'] = country
+    df1.to_excel(user_file_path1, index=False)
+    df2.to_excel(user_file_path2, index=False)
     df = pd.DataFrame()
     for f in [user_file_path1, user_file_path2]:
         user_input = MasterFile(f, master_file_path, plastics_file_path)
-        df1, df2 = user_input.model_results('GHG')
+        df1, df2, df3 = user_input.model_results('GHG')
         df_fossil = df2.loc[df2.product_name.isin(['petroleum', 'natural_gas'])]
         df_fossil_heat = df2.loc[df2.product_name.isin(['petroleum', 'natural_gas']) &
                                  (df2.process.str.startswith('heat'))]
@@ -2348,7 +2479,28 @@ def system_contribution_analysis(master_file_path, plastics_file_path):
         df_temp = pd.concat([df_temp, df_other], ignore_index=True)
         df_temp['scenario'] = f.split('inputs_')[-1].split('.')[0]
         df = pd.concat([df, df_temp], ignore_index=True)
-
-
+    df.loc[df.scenario.str.contains('fossil_linear'), 'scenario'] = 'fossil-linear'
+    df.loc[df.scenario.str.contains('ccs'), 'scenario'] = 'net-zero'
+    df['bdv'] *= 1e-6  # PDF
+    df['health'] *= 1e9  # DALY
+    df['ghg'] *= 1e-3  #Gt CO2eq
     return df
 
+
+def system_contribution_analysis_all(master_file_path, plastics_file_path):
+    df_all = pd.DataFrame()
+    country_list = ['CAN', 'CHN', 'KOR', 'USA', 'JPN', 'BRA', 'IND', 'IDN', 'ZAF', 'RUS', 'TUR', 'MEX', 'UKR',
+                    'World'] + image_region_list
+    for country in country_list:
+        df = system_contribution_analysis(master_file_path, plastics_file_path, country)
+        df['country'] = country
+        df_all = pd.concat([df_all, df], ignore_index=True)
+    df = df_all.copy()
+    df = df.loc[df.scenario == 'net-zero'].copy()
+    df = df[['country', 'contributor', 'ghg', 'bdv', 'health']]
+    df['bdv'] *= 1e6  # 10-6 PDF
+    df['ghg'] *= 1e3  # Mt CO2eq
+    df.rename(columns={'ghg': 'GHG (Mt CO2eq)', 'bdv': 'Biodiversity (1e-6 PDF)', 'health': 'Health (DALY)'}, inplace=True)
+    df.loc[df.country == 'ME', 'country'] = 'RME'
+
+    df.to_csv('data/figure/contribution_analysis_all_countries.csv', index=False)
