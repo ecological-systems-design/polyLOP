@@ -11,13 +11,14 @@ if __name__ == '__main__':
     user_input_file = r'data/raw/user_inputs.xlsx'
     plastics_file_path = r'data/raw/bioplastics_vs_fossil.xlsx'
     user_input = MasterFile(user_input_file, master_file_path, plastics_file_path)
-    user_input.calculate_product_impacts('GHG')
+
     #user_input.export_process_list()
     #plot_ammonia_emission_heatmap()
     #plot_sensitivity_electricity(master_file_path, plastics_file_path)
-    user_input.carbon_flow_sankey('GHG', scenario='with_ccs')
+    plot_system_contribution(master_file_path, plastics_file_path, 'World')
     #regional_results(master_file_path, plastics_file_path)
     system_contribution_analysis_all(master_file_path, plastics_file_path)
+    plot_region(master_file_path, plastics_file_path)
     '''
     # Fig 1
     plot_scenarios(master_file_path, plastics_file_path)  # waterfall and radar
@@ -34,6 +35,9 @@ if __name__ == '__main__':
     plot_demand_sensitivity(master_file_path, plastics_file_path)
     # Fig 5
     plot_region(master_file_path, plastics_file_path)
+    # others
+    user_input.calculate_product_impacts('GHG')
+    user_input.carbon_flow_sankey('GHG', scenario='with_ccs')
     '''
     # -----------------SI-------------------
     #plot_image_map(master_file_path, plastics_file_path)

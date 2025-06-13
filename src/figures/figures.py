@@ -733,17 +733,24 @@ def plot_scenarios(master_file_path, plastics_file_path):
 def plot_system_contribution(master_file_path, plastics_file_path, country):
     df = system_contribution_analysis(master_file_path, plastics_file_path, country)
     df.to_excel(r'data/figure/system_contribution.xlsx')
+    mpl.rcParams['hatch.linewidth'] = 3
+    hatch_patterns = ['', '//', '', '', '', '']
+    color_list = [colors_7[2], colors_7[1], colors_7[1], colors_7[3], colors_7[0], colors_7[4]]
     # ghg
     dfp = pd.pivot_table(df, index='scenario', columns='contributor', values='ghg')
     dfp['scope1_emission'] = dfp['onsite_heat'] + dfp['onsite_process']
     dfp['scope3_ccs'] = dfp['ccs']
-    dfp['scope2_raw_material'] = dfp['feedstock_fossil_total'] + dfp['feedstock_biomass'] + dfp['feedstock_other']
+    dfp['scope2_raw_material_b'] = dfp['feedstock_biomass']
+    dfp['scope2_raw_material_o'] = dfp['feedstock_fossil_total'] + dfp['feedstock_other']
     dfp['scope2_electricity'] = dfp['electricity_grid']
     dfp['scope3_waste'] = dfp['waste_treatment']
-    dfp = dfp[['scope1_emission', 'scope2_raw_material', 'scope2_electricity', 'scope3_waste', 'scope3_ccs']]
-    color_list = [colors_7[2], colors_7[1], colors_7[3], colors_7[0], colors_7[4]]
-    fig, ax = plt.subplots(figsize=(7, 12))
-    dfp.plot(kind='bar', stacked=True, ax=ax, color=color_list, edgecolor='white')
+    dfp = dfp[['scope1_emission', 'scope2_raw_material_b', 'scope2_raw_material_o','scope2_electricity', 'scope3_waste', 'scope3_ccs']]
+    fig, ax = plt.subplots(figsize=(6, 5))
+    bars = dfp.plot(kind='bar', stacked=True, ax=ax, color=color_list, edgecolor='white')
+    for i, (col_name, hatch) in enumerate(zip(dfp.columns, hatch_patterns)):
+        if hatch:  # Only apply if hatch pattern is not empty
+            for j, bar in enumerate(ax.containers[i]):
+                bar.set_hatch(hatch)
     ax.axhline(y=0, color='grey', linestyle='-', linewidth=0.5)
     ax.scatter(x=[0, 1], y=list(dfp.sum(axis=1)), color='black', s=50, label='sum')
     ax.set_ylabel('climate change impact (Mt CO2eq)')
@@ -754,13 +761,17 @@ def plot_system_contribution(master_file_path, plastics_file_path, country):
     dfp = pd.pivot_table(df, index='scenario', columns='contributor', values='bdv')
     dfp['scope1_emission'] = dfp['onsite_heat'] + dfp['onsite_process']
     dfp['scope3_ccs'] = dfp['ccs']
-    dfp['scope2_raw_material'] = dfp['feedstock_fossil_total'] + dfp['feedstock_biomass'] + dfp['feedstock_other']
+    dfp['scope2_raw_material_b'] = dfp['feedstock_biomass']
+    dfp['scope2_raw_material_o'] = dfp['feedstock_fossil_total'] + dfp['feedstock_other']
     dfp['scope2_electricity'] = dfp['electricity_grid']
     dfp['scope3_waste'] = dfp['waste_treatment']
-    dfp = dfp[['scope1_emission', 'scope2_raw_material', 'scope2_electricity', 'scope3_waste', 'scope3_ccs']]
-    color_list = [colors_7[2], colors_7[1], colors_7[3], colors_7[0], colors_7[4]]
-    fig, ax = plt.subplots(figsize=(7, 12))
-    dfp.plot(kind='bar', stacked=True, ax=ax, color=color_list, edgecolor='white')
+    dfp = dfp[['scope1_emission', 'scope2_raw_material_b', 'scope2_raw_material_o','scope2_electricity', 'scope3_waste', 'scope3_ccs']]
+    fig, ax = plt.subplots(figsize=(6, 5))
+    bars = dfp.plot(kind='bar', stacked=True, ax=ax, color=color_list, edgecolor='white')
+    for i, (col_name, hatch) in enumerate(zip(dfp.columns, hatch_patterns)):
+        if hatch:  # Only apply if hatch pattern is not empty
+            for j, bar in enumerate(ax.containers[i]):
+                bar.set_hatch(hatch)
     ax.axhline(y=0, color='grey', linestyle='-', linewidth=0.5)
     ax.scatter(x=[0, 1], y=list(dfp.sum(axis=1)), color='black', s=50, label='sum')
     ax.set_ylabel('biodiversity loss impact (PDF)')
@@ -772,13 +783,17 @@ def plot_system_contribution(master_file_path, plastics_file_path, country):
     dfp.sum(axis=1)
     dfp['scope1_emission'] = dfp['onsite_heat'] + dfp['onsite_process']
     dfp['scope3_ccs'] = dfp['ccs']
-    dfp['scope2_raw_material'] = dfp['feedstock_fossil_total'] + dfp['feedstock_biomass'] + dfp['feedstock_other']
+    dfp['scope2_raw_material_b'] = dfp['feedstock_biomass']
+    dfp['scope2_raw_material_o'] = dfp['feedstock_fossil_total'] + dfp['feedstock_other']
     dfp['scope2_electricity'] = dfp['electricity_grid']
     dfp['scope3_waste'] = dfp['waste_treatment']
-    dfp = dfp[['scope1_emission', 'scope2_raw_material', 'scope2_electricity', 'scope3_waste', 'scope3_ccs']]
-    color_list = [colors_7[2], colors_7[1], colors_7[3], colors_7[0], colors_7[4]]
-    fig, ax = plt.subplots(figsize=(7, 12))
-    dfp.plot(kind='bar', stacked=True, ax=ax, color=color_list, edgecolor='white')
+    dfp = dfp[['scope1_emission', 'scope2_raw_material_b', 'scope2_raw_material_o','scope2_electricity', 'scope3_waste', 'scope3_ccs']]
+    fig, ax = plt.subplots(figsize=(6, 5))
+    bars = dfp.plot(kind='bar', stacked=True, ax=ax, color=color_list, edgecolor='white')
+    for i, (col_name, hatch) in enumerate(zip(dfp.columns, hatch_patterns)):
+        if hatch:  # Only apply if hatch pattern is not empty
+            for j, bar in enumerate(ax.containers[i]):
+                bar.set_hatch(hatch)
     ax.axhline(y=0, color='grey', linestyle='-', linewidth=0.5)
     ax.scatter(x=[0, 1], y=list(dfp.sum(axis=1)), color='black', s=50, label='sum')
     ax.set_ylabel('PM-related health impact (DALY)')

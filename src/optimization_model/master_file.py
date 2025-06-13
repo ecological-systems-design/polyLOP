@@ -1291,8 +1291,19 @@ class MasterFile:
                         op_produced = gp.quicksum(self.flow[p] for p in df_temp2['process'].unique())
                         self.m.addConstr(np_replaced - op_produced * max_replacing_rate_dict[f'{npl}_{op}'] <= 0,
                                          name=f"np_replaced_{npl}_{op}")
+        '''
+        # only for sensitivity, make sure new bio plastics are produced:
+        for npl in ['pla', 'phb', 'pbs', 'pbat', 'pef']:
+            df_temp1 = self.df_flow[(self.df_flow['process'].str.contains(f'{npl}')) &
+                                    (self.df_flow['process'].str.contains(f'replacing')) &
+                                    (self.df_flow['product_name'].str.contains(f'{npl}')) &
+                                    (self.df_flow['product_type'] == 'intermediate')].copy()
+            if df_temp1.shape[0] > 0:
+                np_produced = -gp.quicksum(self.flow[p] * df_temp1.loc[df_temp1.process == p, 'value'].sum()
+                                            for p in df_temp1['process'].unique())
+                self.m.addConstr(np_produced >= 1, name=f"np_produced_{npl}")
 
-        # '''
+        '''
         # 8. MTO ethylene to propylene ratio (0.6-1.3)
         for suffix in polymer_source_list:
             df_temp = self.df_flow[(self.df_flow['process'].str.contains('methanol-to-olefin')) &
@@ -2027,6 +2038,9 @@ class MasterFile:
             df_sankey.loc[df_sankey.value > 0, "product_to"] = df_sankey.loc[df_sankey.value > 0, "product_name"]
             df_sankey["flow_amount"] = abs(df_sankey["flow_amount"])
             df1 = df_flow_result[df_flow_result['type'] == 'PRODUCT'].copy()
+            df2 = df1[df1.process.str.contains('Beverage bottles')]
+            df2 = df2.loc[(df2.process.str.contains('replacing')) | (df2.flow_amount > 0.1) | (df2.process.str.contains('fossil'))]
+            df3 = df_flow_result[df_flow_result.process.str.contains('incineration')]
             df = df_flow_result[df_flow_result.flow_amount > 0.001].copy()
             # df_flow_result.to_csv(f'flow_result_ele_{self.ele_impact}_with_product_impact.csv')
             df1 = df_flow_result.loc[df_flow_result.product_type.isin(['raw_material', 'emission'])]
