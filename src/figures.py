@@ -11,11 +11,11 @@ import geopandas as gpd
 import os
 import glob
 
-from src.others.variable_declaration import (final_product_list,
-                                             )
-from src.optimization_model.master_file import (regional_results,
-                                                different_scenarios, MasterFile, system_contribution_analysis
-                                                )
+from src.variable_declaration import (final_product_list,
+                                      )
+from src.optimization import (regional_results,
+                              different_scenarios, MasterFile, system_contribution_analysis
+                              )
 
 colors_4 = ['#838BC0', '#BDCE37', '#F9EBA2', '#53833B']
 colors_5 = ['#B84426', '#838BC0', '#BDCE37', '#F9EBA2', '#53833B']
@@ -160,11 +160,6 @@ def plot_region(master_file_path, plastics_file_path):
 
     world_ghg = df.loc[df.country.str.contains('World'), 'ghg'].values[0]
     world_ghg_r = df.loc[~df.country.str.contains('World'), 'ghg'].sum()
-    world_bdv = df.loc[df.country.str.contains('World'), 'bdv'].values[0]
-    world_bdv_r = df.loc[~df.country.str.contains('World'), 'bdv'].sum()
-    world_health = df.loc[df.country.str.contains('World'), 'health'].values[0]
-    world_health_r = df.loc[~df.country.str.contains('World'), 'health'].sum()
-    world_production_r = df.loc[~df.country.str.contains('World'), 'plastic_production'].sum()
     df['plastics_health_intensity'] = df['health'] / df['plastic_production']
     df['country'] = df['country'].str.replace('_', '')
     df['c_plastics_waste'] = df['c_plastics'] + df['c_plastics_gasi']
@@ -274,7 +269,6 @@ def plot_region(master_file_path, plastics_file_path):
     country_order = dfp_ghg['country'].unique()
     country_order = [x for x in country_order if 'other' not in x][::-1]
     country_order = country_order + ['other']
-    dfp0 = dfp.copy()
     dfp = dfp.groupby(['color', 'country']).sum(numeric_only=True).reset_index()
     dfp['country'] = pd.Categorical(dfp['country'],
                                     categories=country_order,
@@ -283,20 +277,13 @@ def plot_region(master_file_path, plastics_file_path):
 
     fig, ax = plt.subplots(1, 1, figsize=(8, 8), squeeze=True)
     bottom = 0
-    condition = dfp['country'] == 'other'
-    #dfp.sort_values(by='plastic_production', ascending=False, inplace=True)
-    #dfp = pd.concat([dfp[~condition], dfp[condition]]).reset_index(drop=True)
     for x in dfp.index:
         ax.bar('plastic_production', dfp.loc[x, 'plastic_production'], bottom=bottom, color=dfp.loc[x, 'color'])
         bottom += dfp.loc[x, 'plastic_production']
-    #dfp.sort_values(by='health', ascending=False, inplace=True)
-    #dfp = pd.concat([dfp[~condition], dfp[condition]]).reset_index(drop=True)
     bottom = 0
     for x in dfp.index:
         ax.bar('health', dfp.loc[x, 'health'], bottom=bottom, color=dfp.loc[x, 'color'])
         bottom += dfp.loc[x, 'health']
-    #dfp.sort_values(by='bdv', ascending=False, inplace=True)
-    #dfp = pd.concat([dfp[~condition], dfp[condition]]).reset_index(drop=True)
     bottom = 0
     for x in dfp.index:
         ax.bar('bdv', dfp.loc[x, 'bdv'], bottom=bottom, color=dfp.loc[x, 'color'])
@@ -446,7 +433,6 @@ def plot_demand_sensitivity(master_file_path, plastics_file_path):
     ele_impact_list = [-999]
     biomass_ratio_list = [1]
     demand_list = [round(i, 2) for i in np.arange(0.1, 1.501, 0.025)]
-    #demand_list = [0.4638, 1]
     base_path = os.path.join("data", "raw", "user_inputs_ccs_no_ccs")
     files = glob.glob(os.path.join(base_path, "*.xlsx"))
     df0 = pd.DataFrame()
@@ -474,8 +460,6 @@ def plot_demand_sensitivity(master_file_path, plastics_file_path):
 
     # all
     fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(12, 10))
-    # ax1.axvline(x=8, color='grey')
-    # ax1.axvline(x=0.4638 * 10 - 2, color='grey')
     ax1.axvline(x=1, color='grey')
     ax1.axvline(x=0.4638, color='grey')
     ax2.axvline(x=1, color='grey')
@@ -525,16 +509,9 @@ def plot_demand_sensitivity(master_file_path, plastics_file_path):
 
 def plot_ele_biomass_demand_sensitivity(user_input_file, master_file_path, plastics_file_path):
     ele_impact_list = [round(i, 2) for i in np.arange(0, 0.401, 0.01)]
-    #ele_impact_list = [-999]
-    biomass_ratio_list = [1]
     biomass_ratio_list = [round(i, 2) for i in np.arange(0.0, 2.001, 0.05)]
-    demand_list = [round(i, 2) for i in np.arange(0.2, 1.201, 0.025)]
-    demand_list = [1]
     base_path = os.path.join("data", "raw", "user_inputs_fossil_impacts_no_ccs")
-    #base_path = os.path.join("data", "raw", "user_inputs_fossil_impacts")
     files = glob.glob(os.path.join(base_path, "*.xlsx"))
-    #ele_impact_list = [0, 0.001, 0.005] + [round(i, 3) for i in np.arange(0.01, 0.41, 0.01)]
-    #ele_impact_list = [0.2]
     demand_list = [1]
     df = pd.DataFrame()
     for user_input_file in files:
@@ -546,7 +523,6 @@ def plot_ele_biomass_demand_sensitivity(user_input_file, master_file_path, plast
     df.loc[df.scenario == 'in', 'scenario'] = 'fossil_lock_in'
     df.loc[df.scenario == 'fossil', 'scenario'] = 'no_fossil'
     df['fossil'] = df['natural_gas'] + df['petroleum']
-    #df = sensitivity_ele_demand(master_file_path, plastics_file_path)
     cmap = 'magma_r'
     df1 = df.loc[df.scenario == 'default']
     df2 = df.loc[df.scenario == 'no_fossil']
@@ -636,8 +612,6 @@ def plot_ele_biomass_demand_sensitivity(user_input_file, master_file_path, plast
 def plot_scenarios(master_file_path, plastics_file_path):
     df0 = different_scenarios(master_file_path, plastics_file_path)
     df = df0[['scenario', 'ghg', 'bdv', 'health']].copy()
-    #df_fossil_bau = pd.DataFrame({'scenario': ['fossil_bau'], 'ghg': [3048.9], 'bdv': [0], 'health': [0.001338512]})
-    #df = pd.concat([df, df_fossil_bau], ignore_index=True)
     scenario_list = ['step1_fossil_linear', 'step6_ccs']
     df = df.loc[df.scenario.isin(scenario_list)].copy()
     df['scenario'] = pd.Categorical(df['scenario'], categories=scenario_list, ordered=True)
@@ -665,7 +639,6 @@ def plot_scenarios(master_file_path, plastics_file_path):
             color = colors_5[4]
         ax.fill(angles, values, color=color, alpha=0.1)
         ax.plot(angles, values, color=color, linewidth=1, label=scenario, linestyle=line_style)
-    # ax.set_yticklabels([])
     ax.set_xticks(angles[:-1])
     ax.set_ylim(-0.4, 1)
     ax.set_xticklabels(features)
@@ -697,7 +670,6 @@ def plot_scenarios(master_file_path, plastics_file_path):
             color = colors_5[4]
         ax.fill(angles, values, color=color, alpha=0.1)
         ax.plot(angles, values, color=color, linewidth=1, label=scenario, linestyle=line_style)
-    # ax.set_yticklabels([])
     ax.set_xticks(angles[:-1])
     ax.set_ylim(-0.4, 2)
     ax.set_xticklabels(features)
@@ -812,7 +784,6 @@ def plot_pareto_curves(user_input):
     plt.savefig(r'figure/pareto_curves.pdf')
     df_result.to_excel(r'data/figure/pareto_curves.xlsx')
     plt.show()
-    a=0
 
 
 def plot_sensitivity_electricity(master_file_path, plastics_file_path):
@@ -919,7 +890,6 @@ def plot_sensitivity_biomass(master_file_path, plastics_file_path):
 
 
 def plot_fossil_fuel_impacts(master_file_path, plastics_file_path):
-    user_input_file = r'data/raw/user_inputs.xlsx'
     base_path1 = os.path.join("data", "raw", "user_inputs_fossil_impacts")
     base_path2 = os.path.join("data", "raw", "user_inputs_fossil_impacts_no_ccs")
     ele_impact_list = [0, 0.001, 0.005] + [round(i, 3) for i in np.arange(0.01, 0.41, 0.01)]
@@ -995,13 +965,7 @@ def plot_allocation(master_file_path, plastics_file_path):
     df11.fillna(0, inplace=True)
     df11['impact_flow_delta'] = df11['impact_flow_se'] - df11['impact_flow_default']
     df11['group'] = 'others'
-    #df11.loc[df11.type == 'EMISSION', 'group'] = 'process emissions'
-    #df11.loc[df11.process.str.contains('CCS'), 'group'] = 'CCS'
-    #df11.loc[df11.product_name.isin(residue_list_code), 'group'] = 'feedstock_biomass'
-    #df11.loc[df11.product_name.isin(['petroleum', 'natural_gas']), 'group'] = 'feedstock_fossil'
     df11.loc[df11.process.str.contains('heat'), 'group'] = 'heat'
-    #df11.loc[df11.product_name.str.contains('electricity'), 'group'] = 'electricity'
-    #df11.loc[df11.process.str.contains('waste'), 'group'] = 'plastic_waste_treatment'
     df12 = df11.groupby('group').sum(numeric_only=True)
     df12.rename(columns={'impact_flow_default': 'economic allocation (baseline)',
                          'impact_flow_se': 'substitution'}, inplace=True)

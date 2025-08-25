@@ -2,10 +2,10 @@ import glob
 import pandas as pd
 import os
 
-from src.others.variable_declaration import (gas_density_dict, products_purity_dict,
-                                             cut_off_raw_material_list, fuel_lhv_dict,
-                                             rename_dict_ihs, fuel_list, dilute_product_list,
-                                             fuel_co2_dict, ihs_to_master_name_alignment_dict, df_pm_emission)
+from src.variable_declaration import (gas_density_dict, products_purity_dict,
+                                      cut_off_raw_material_list, fuel_lhv_dict,
+                                      rename_dict_ihs, fuel_list, dilute_product_list,
+                                      fuel_co2_dict, ihs_to_master_name_alignment_dict, df_pm_emission)
 
 
 def read_ihs_data(product_name, process_name, allocation_choice):

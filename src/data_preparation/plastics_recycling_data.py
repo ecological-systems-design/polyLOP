@@ -1,7 +1,5 @@
 import pandas as pd
 
-from src.others.variable_declaration import plastics_sector_match_dict, sector_subsector_dict
-
 
 def get_plastic_types_dict():
     df = pd.read_excel(r'data/external/klotz_plastics_recycling.xlsx', sheet_name='S2.1 plastic types')
