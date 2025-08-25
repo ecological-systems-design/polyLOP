@@ -1,4 +1,4 @@
-<img src='logo.png' alt='Logo' width='100'/>
+<img src='logo.png' alt='Logo' width='110'/>
 
 # PolyLOP (Polymer Lifecycle Optimization Program)
 
