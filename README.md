@@ -1,3 +1,5 @@
+<img src='logo.png' alt='Logo' width='100'/>
+
 # PolyLOP (Polymer Lifecycle Optimization Program)
 
 PolyLOP (**Poly**mer **L**ifecycle **O**ptimization **P**rogram) is an open-source Python-based tool designed to optimize process routes and quantities across the plastics production chain and end-of-life treatment to minimize system-wide impacts.
